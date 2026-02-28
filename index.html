@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hickman Family Tree — Descendants of Roger Hickman (1813-1889)</title>
+<title>Hickman Family Tree — Descendants of William Roger Hickman (1813-1889)</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 <style>
@@ -361,12 +361,12 @@
   .modal {
     background: var(--card-bg);
     border-radius: 16px;
-    max-width: 700px;
+    max-width: 900px;
     width: 100%;
-    max-height: 85vh;
+    max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 8px 40px rgba(0,0,0,0.3);
-    padding: 30px;
+    padding: 35px;
     position: relative;
   }
 
@@ -386,40 +386,132 @@
 
   .modal-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+    text-align: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
     border-bottom: 2px solid var(--highlight);
   }
 
   .modal-photo {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    border-radius: 12px;
     background: var(--photo-bg);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
+    font-size: 72px;
     font-weight: 600;
     color: var(--text-light);
     border: 3px solid var(--highlight);
+    overflow: hidden;
     flex-shrink: 0;
   }
 
   .modal-header h2 {
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 300;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
 
   .modal-header .bio {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-light);
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
+  /* Modal section titles */
+  .modal-section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e0d8c8;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+  }
+
+  /* Biography section */
+  .modal-bio-section {
+    margin-bottom: 25px;
+  }
+
+  .modal-bio-section p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #4a3e2e;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  /* Correspondence section */
+  .modal-correspondence-section {
+    margin-bottom: 25px;
+  }
+
+  .correspondence-item {
+    margin: 8px 0;
+    border-left: 3px solid var(--highlight);
+    background: #fdfcfa;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .correspondence-header {
+    padding: 12px 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .correspondence-header:hover {
+    background: #f8f4ed;
+  }
+
+  .correspondence-arrow {
+    font-size: 12px;
+    color: var(--highlight);
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+
+  .correspondence-item.open .correspondence-arrow {
+    transform: rotate(90deg);
+  }
+
+  .correspondence-header strong {
+    font-size: 14px;
+    color: var(--text);
+  }
+
+  .correspondence-source {
+    font-size: 11px;
+    color: var(--text-light);
+    font-style: italic;
+    flex-basis: 100%;
+    padding-left: 20px;
+  }
+
+  .correspondence-body {
+    display: none;
+    padding: 0 16px 14px 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #4a3e2e;
+  }
+
+  .correspondence-item.open .correspondence-body {
+    display: block;
+  }
+
+  /* Legacy excerpt-card styles kept for backward compat */
   .excerpt-card {
     margin: 15px 0;
     padding: 15px 18px;
@@ -453,25 +545,6 @@
     padding-right: 8px;
   }
 
-  .excerpt-card audio {
-    width: 100%;
-    margin-top: 10px;
-    border-radius: 8px;
-  }
-
-  .audio-label {
-    font-size: 10px;
-    color: var(--text-light);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 8px;
-  }
-
-  .audio-label::before {
-    content: '\1F50A';
-  }
-
   .clickable {
     cursor: pointer;
   }
@@ -493,7 +566,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10px;
   }
 
   .feedback-section {
@@ -620,7 +693,7 @@
 
   /* Hero banner with Sunrise background */
   .hero-banner {
-    background: url('photos/sunrise_homestead.jpg') center/cover no-repeat;
+    background: url('photos/sunrise_homestead.jpg?v=2') center/cover no-repeat;
     margin: -20px -20px 15px -20px;
     position: relative;
     overflow: hidden;
@@ -1035,6 +1108,84 @@
     object-fit: cover;
   }
 
+  /* ========== BILL GABRIEL TRIBUTE ========== */
+  .tribute-section {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    background: linear-gradient(135deg, #faf8f4, #f5f0e8);
+    border-radius: 16px;
+    border: 1px solid #e0d8c8;
+    text-align: center;
+  }
+
+  .tribute-section .section-title {
+    margin-bottom: 5px;
+  }
+
+  .tribute-subtitle {
+    font-size: 16px;
+    color: var(--text-light);
+    font-weight: 300;
+    margin-bottom: 4px;
+  }
+
+  .tribute-dates {
+    font-size: 14px;
+    color: var(--text-light);
+    margin-bottom: 25px;
+  }
+
+  .tribute-photo {
+    width: 400px;
+    height: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 3px solid var(--highlight);
+    margin: 0 auto 25px;
+    display: block;
+  }
+
+  .tribute-narrative {
+    text-align: left;
+    max-width: 650px;
+    margin: 0 auto 30px;
+  }
+
+  .tribute-narrative p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #4a3e2e;
+    font-family: Georgia, 'Times New Roman', serif;
+    margin-bottom: 14px;
+  }
+
+  .tribute-quote {
+    max-width: 600px;
+    margin: 25px auto 0;
+    padding: 20px 25px;
+    background: rgba(212,168,83,0.08);
+    border-left: 4px solid var(--highlight);
+    border-radius: 0 8px 8px 0;
+    text-align: left;
+  }
+
+  .tribute-quote p {
+    font-size: 14px;
+    line-height: 1.7;
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #4a3e2e;
+    font-style: italic;
+  }
+
+  .tribute-quote cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--text-light);
+    font-style: normal;
+  }
+
   /* ========== MOBILE RESPONSIVE ========== */
   @media (max-width: 768px) {
     .nav-toggle { display: flex; }
@@ -1064,6 +1215,10 @@
     .tl-dot { left: -22px; width: 10px; height: 10px; }
     .tl-year { left: -50px; width: 40px; font-size: 9px; }
     #family-map { height: 350px !important; }
+    .modal { padding: 20px; }
+    .modal-photo { width: 280px; height: 280px; }
+    .modal-header h2 { font-size: 22px; }
+    .tribute-photo { width: 280px; height: 280px; }
   }
 </style>
 </head>
@@ -1081,7 +1236,7 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="nav-links">
-      <li><a href="#section-roger">Roger</a></li>
+      <li><a href="#section-roger">Wm. Roger</a></li>
       <li><a href="#section-plh">PLH &amp; Ollie</a></li>
       <li class="nav-dropdown">
         <a href="#section-grandchildren">Grandchildren &#9662;</a>
@@ -1093,6 +1248,7 @@
           <li><a href="#branch-harry">Harry's Branch</a></li>
         </ul>
       </li>
+      <li><a href="#section-tribute">Bill&rsquo;s Tribute</a></li>
       <li><a href="#section-timeline">Timeline</a></li>
       <li><a href="#section-map">Family Map</a></li>
       <li><a href="#section-mystery">Mystery Photos</a></li>
@@ -1104,7 +1260,7 @@
 <div class="hero-banner">
   <div class="hero-overlay">
     <h1>Hickman Family Tree</h1>
-    <p class="subtitle">Descendants of Roger Hickman (1813&ndash;1889) &bull; Back Creek, Bath County, Virginia</p>
+    <p class="subtitle">Descendants of William Roger Hickman (1813&ndash;1889) &bull; Back Creek, Bath County, Virginia</p>
     <p class="hero-caption">&ldquo;Sunrise&rdquo; &mdash; The Hickman family home on Back Creek, ca. 1931</p>
     <div class="legend no-print">
       <div class="legend-item"><div class="legend-dot" style="border-color: #5a8eb8; background: var(--male);"></div> Male</div>
@@ -1121,14 +1277,14 @@
 <!-- ROGER HICKMAN (1813-1889) — ROOT -->
 <!-- ============================================================ -->
 <div class="section" id="section-roger">
-  <div class="section-title">Roger Hickman &bull; 1813&ndash;1889</div>
+  <div class="section-title">William Roger Hickman &bull; 1813&ndash;1889</div>
 
   <div style="display: flex; justify-content: center; margin-bottom: 15px;">
     <div class="person male direct-line" style="width: 150px;">
-      <div class="photo" style="width: 65px; height: 65px; font-size: 22px;">RH</div>
-      <div class="name">Roger Hickman</div>
+      <div class="photo" style="width: 65px; height: 65px; font-size: 22px;">WRH</div>
+      <div class="name">William Roger Hickman</div>
       <div class="dates">20 Jul 1813 &ndash; 14 Feb 1889</div>
-      <div class="note">Back Creek, Bath Co., VA</div>
+      <div class="note">Bath Co., VA &bull; Buried Sively Cemetery, Warm Springs</div>
     </div>
   </div>
 
@@ -1137,7 +1293,7 @@
 
     <!-- MARRIAGE 1: Martha Ann Lockridge -->
     <div class="marriage-group" style="border-top: 3px solid var(--accent1); max-width: 450px;">
-      <h3 style="color: var(--accent1);">&#9829; Marriage 1 &mdash; m. 11 Jan 1838</h3>
+      <h3 style="color: var(--accent1);">&#9829; Marriage 1 &mdash; m. 10 Jan 1838, Pocahontas, VA</h3>
       <div class="marriage-header">
         <div class="person female" style="width: 120px;">
           <div class="photo" style="width: 45px; height: 45px; font-size: 15px;">ML</div>
@@ -2018,9 +2174,55 @@
 </div><!-- end tree -->
 
 <div style="text-align: center; margin-top: 30px; padding: 15px; font-size: 11px; color: var(--text-light); border-top: 1px solid var(--border);">
-  Hickman Family Tree &bull; Descendants of Roger Hickman (1813&ndash;1889) of Back Creek, Bath County, Virginia<br>
+  Hickman Family Tree &bull; Descendants of William Roger Hickman (1813&ndash;1889) of Back Creek, Bath County, Virginia<br>
   Source: <em>Hickman Family Tree-extended.docx</em> &bull; Generated Feb 2026<br>
   135 individuals across 5 generations &bull; GEDCOM: Hickman_Family_Tree.ged
+</div>
+
+<!-- ============================================================ -->
+<!-- BILL GABRIEL TRIBUTE -->
+<!-- ============================================================ -->
+<div class="tribute-section" id="section-tribute">
+  <div class="section-title">In Memoriam</div>
+  <div class="tribute-subtitle">Herman William &ldquo;Bill&rdquo; Gabriel III</div>
+  <div class="tribute-dates">December 21, 1933 &ndash; 2020</div>
+
+  <img src="photos/bill_portrait.jpg" alt="Bill Gabriel" class="tribute-photo">
+
+  <div class="tribute-narrative">
+    <p>Bill Gabriel was born in Richmond, Virginia, the elder son of Ruth Hickman Gabriel and Hermann William Gabriel Jr. He attended Virginia Polytechnic Institute as a cadet and went on to earn a doctorate in wildlife biology from the University of Montana.</p>
+
+    <p>His career with the U.S. Forest Service took him across the American West&mdash;from Utah and Wyoming to Alaska and finally Montana, where he settled in the Bitterroot Valley at what he affectionately called &ldquo;The Beautiful Bitter Root Bird Farm.&rdquo; Bill was a gifted nature writer and photographer who found his deepest contentment watching pygmy owls roost in his woodpile and tracking the coveys of gray partridge through long mountain winters.</p>
+
+    <p>Bill was project-oriented by nature, and after retiring he turned that drive to a task that would define his later years: preserving the Hickman family history. What he expected to be a simple project at Christmas 1992 grew into a multi-year labor of love. He transcribed hundreds of letters dating back to the 1830s, compiled three volumes of family correspondence, and worked closely with his uncle Clare&mdash;the family&rsquo;s recognized authority on Hickman history&mdash;to piece together the story of the family on Back Creek.</p>
+
+    <p>Bill also adventured with his brother Henmar&mdash;floating the Colorado River through the Grand Canyon, rafting the Salmon River, hiking with llamas in Hell&rsquo;s Canyon, and canoeing the Missouri. He authored the memoir &ldquo;Memories of a Career&rdquo; and never stopped writing letters to his Hickman cousins, filled with observations about birds, weather, comets, and the passage of time.</p>
+
+    <p>The archive that forms the foundation of this website exists because of Bill Gabriel. His devotion to family, his meticulous care with documents, and his belief that these stories mattered have given future generations a window into the world of Back Creek. He never married. He died in Montana in 2020.</p>
+  </div>
+
+  <div class="tribute-quote">
+    <p>&ldquo;What I thought, last Christmas, would be a fairly simple task has turned into a multi-year project. And that is fine with me, because I am project-oriented. Instead of a routine, go-to-the-office and shuffle-the-papers job, I always worked on projects that could be defined, measured, and had definite products marking their completion.&rdquo;</p>
+    <cite>&mdash; Bill Gabriel, letter to Hickman cousins, October 25, 1993</cite>
+  </div>
+
+  <div class="photo-gallery" style="margin-top: 25px;">
+    <h3 class="modal-section-title">Photos</h3>
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="showLightbox(this)">
+        <img src="photos/bill_portrait.jpg" alt="Bill Gabriel VPI cadet">
+        <div class="caption">VPI cadet headshot</div>
+      </div>
+      <div class="gallery-item" onclick="showLightbox(this)">
+        <img src="photos/bill_gallery1.jpg" alt="Bill Gabriel">
+        <div class="caption">Bill Gabriel</div>
+      </div>
+      <div class="gallery-item" onclick="showLightbox(this)">
+        <img src="photos/bill_gallery2.jpg" alt="H. William Bill Gabriel">
+        <div class="caption">H. William &ldquo;Bill&rdquo; Gabriel</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ============================================================ -->
@@ -2031,7 +2233,7 @@
   <p style="text-align: center; font-size: 12px; color: var(--text-light); margin-bottom: 12px;">
     Traditional Appalachian &amp; old-time music from the hills of Virginia
   </p>
-  <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/playlist/0UhXP3LbgDqEPRJDVdTdRe?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/playlist/0UhXP3LbgDqEPRJDVdTdRe?utm_source=generator&theme=0&autoplay=1" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
 
 <!-- ============================================================ -->
@@ -2173,20 +2375,29 @@
     <button class="modal-close" onclick="closeModal('modal-plh')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/plh_portrait.jpg" alt="Peter Lightner Hickman"></div>
-      <div>
-        <h2>Peter Lightner Hickman</h2>
-        <div class="bio">
-          23 Feb 1858, Mountain Grove, VA &ndash; 20 Apr 1937, Hot Springs, VA<br>
-          Farmer, justice of the peace, ruling elder &bull; Back Creek, Bath County<br>
-          Married Ollie Gertrude Lockridge, 18 Sep 1895 &bull; Seven children
-        </div>
+      <h2>Peter Lightner Hickman</h2>
+      <div class="bio">
+        23 Feb 1858, Mountain Grove, VA &ndash; 20 Apr 1937, Hot Springs, VA<br>
+        Farmer, justice of the peace, ruling elder &bull; Back Creek, Bath County<br>
+        Married Ollie Gertrude Lockridge, 18 Sep 1895 &bull; Seven children
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Obituary &mdash; April 1937</h4>
-      <div class="source">Monterey newspaper clipping, April 22, 1937</div>
-      <div class="text">Peter Lightner Hickman, born at Mountain Grove, February 23, 1858, youngest son of the late Roger and Margaret Campbell Hickman, died in the Community House at Hot Springs on Tuesday night, April 20th. He had been a patient there for two weeks, suffering from an infection which caused his death.
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Peter Lightner Hickman was the youngest son of Roger and Margaret Campbell Hickman, born at Mountain Grove in the highlands of Virginia. He was educated at Roller&rsquo;s school, now the Augusta Military Academy at Fort Defiance. For many years he served Bath County as a justice of the peace and was a ruling elder in the Presbyterian church.</p>
+      <p>In 1895 he married Ollie Gertrude Lockridge of Columbus, Ohio, where they lived for two years before returning to Virginia and establishing their home at &ldquo;Sunrise&rdquo; on Back Creek, near the Highland-Bath county line. There they raised seven children: Roger, Forrest, Virginia, Clare, Ruth, Julian, and Harry. Peter was known as a devoted family man&mdash;honest, modest, and firm in his convictions. He died at the Community House in Hot Springs on April 20, 1937.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Obituary &mdash; April 1937</strong>
+          <span class="correspondence-source">Monterey newspaper clipping, April 22, 1937</span>
+        </div>
+        <div class="correspondence-body">Peter Lightner Hickman, born at Mountain Grove, February 23, 1858, youngest son of the late Roger and Margaret Campbell Hickman, died in the Community House at Hot Springs on Tuesday night, April 20th. He had been a patient there for two weeks, suffering from an infection which caused his death.
 
 His home at Sunrise was near the Highland-Bath line, where he had lived during the greater part of his life, and was a prominent citizen, farmer, and churchman. His ancestors were pioneers of this section and were of Scotch descent, all prominent in their day and generation.
 
@@ -2195,12 +2406,14 @@ He was educated at Roller's school, now the Augusta Military Academy at Fort Def
 In 1895 he was happily married to Miss Ollie Gertrude Lockridge, of Columbus, Ohio, where they lived for two years, returning to his native state and county, and establishing a home at Sunrise. To this union seven children were born, all of whom survive, as does his widow.
 
 He lived an exemplary Christian life, and was honest and upright in all his dealings; devoted to his home, family, and friends; modest and unassuming, yet strong and firm in his convictions; always standing for that which was right and noble.</div>
-    </div>
-
-    <div class="excerpt-card">
-      <h4>Julian's Letter on Father's Estate &mdash; May 1937</h4>
-      <div class="source">Letter from Julian K. Hickman to siblings, Warm Springs, VA, May 17, 1937</div>
-      <div class="text">Dear Roger, Forrest, Virginia, Clare, Ruth, and Harry:
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Julian&rsquo;s Letter on Father&rsquo;s Estate &mdash; May 1937</strong>
+          <span class="correspondence-source">Letter from Julian K. Hickman to siblings, Warm Springs, VA, May 17, 1937</span>
+        </div>
+        <div class="correspondence-body">Dear Roger, Forrest, Virginia, Clare, Ruth, and Harry:
 
 Don't laugh at the heading of this letter because you will receive many from me like this.
 
@@ -2213,11 +2426,11 @@ In view of the fact that we are so scattered, it is going to be a terrible job t
 Just how long will it take you to answer this letter?
 
 Sincerely your brother, Julian.</div>
+      </div>
     </div>
 
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/plh_portrait.jpg" alt="Peter Lightner Hickman studio portrait">
@@ -2247,21 +2460,30 @@ Sincerely your brother, Julian.</div>
     <button class="modal-close" onclick="closeModal('modal-ollie')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/ollie_portrait.jpg" alt="Ollie Gertrude Lockridge Hickman"></div>
-      <div>
-        <h2>Ollie Gertrude Lockridge Hickman</h2>
-        <div class="bio">
-          4 Jun 1870, Athens County, Ohio &ndash; 14 Aug 1965, Richmond, VA<br>
-          Typist/clerk at General Hocking Coal Co. before marriage<br>
-          Married Peter L. Hickman, 18 Sep 1895 &bull; Seven children<br>
-          Member, St. Giles' Presbyterian Church, Richmond
-        </div>
+      <h2>Ollie Gertrude Lockridge Hickman</h2>
+      <div class="bio">
+        4 Jun 1870, Athens County, Ohio &ndash; 14 Aug 1965, Richmond, VA<br>
+        Typist/clerk at General Hocking Coal Co. before marriage<br>
+        Married Peter L. Hickman, 18 Sep 1895 &bull; Seven children<br>
+        Member, St. Giles&rsquo; Presbyterian Church, Richmond
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Courtship Letter to Peter &mdash; March 1895</h4>
-      <div class="source">Letter from Ollie Lockridge to Peter Hickman, Columbus, Ohio, March 6, 1895 &mdash; typed on company letterhead at her desk</div>
-      <div class="text">Dear Squire,
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Ollie Gertrude Lockridge was born in Athens County, Ohio, and worked as a typist and clerk at the General Hocking Coal Company in Columbus before her marriage. It was there, writing letters on the company typewriter when no one was looking, that she carried on her courtship with Peter Lightner Hickman of Back Creek, Virginia.</p>
+      <p>They married in September 1895 and lived in Columbus for two years before returning to Virginia, where they built their life at &ldquo;Sunrise&rdquo; on Back Creek. Together they raised seven children. After Peter&rsquo;s death in 1937, Ollie lived with her daughter Virginia and son-in-law Doc Campbell in Richmond. She was a member of St. Giles&rsquo; Presbyterian Church. Ollie lived to the remarkable age of 95, passing away in Richmond on August 14, 1965. At a family reunion near Hot Springs in July 1965, she was honored as the oldest member of the Hickman clan.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Courtship Letter to Peter &mdash; March 1895</strong>
+          <span class="correspondence-source">Letter from Ollie Lockridge to Peter Hickman, Columbus, Ohio, March 6, 1895 &mdash; typed on company letterhead at her desk</span>
+        </div>
+        <div class="correspondence-body">Dear Squire,
 
 I received your letter last evening. You have not fully understood my meaning in my former letter to you. I did not mean that I never expected to marry, neither did I mean that I would not marry you. But as you do not seem to look at this matter the same as I do, it seems almost useless to try to explain my meaning.
 
@@ -2272,12 +2494,14 @@ I am sorry to be obliged to write you on the machine, but I started it with pen 
 I have not the time to write you any more at present. So will have to quit before they get after me.
 
 With love, Ollie.</div>
-    </div>
-
-    <div class="excerpt-card">
-      <h4>Letter to Daughter Ruth &mdash; January 1938</h4>
-      <div class="source">Letter from Ollie Hickman to Ruth Gabriel, Richmond, VA, January 9, 1938 &mdash; nine months after Peter's death, living with Virge &amp; Doc</div>
-      <div class="text">Dear Ruth,
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Letter to Daughter Ruth &mdash; January 1938</strong>
+          <span class="correspondence-source">Letter from Ollie Hickman to Ruth Gabriel, Richmond, VA, January 9, 1938 &mdash; nine months after Peter&rsquo;s death</span>
+        </div>
+        <div class="correspondence-body">Dear Ruth,
 
 How are you all tonight? We are well. We had a nice drive this afternoon, went out to see Mister and Mrs. Angus Wood and Bobby, who made me think so much of Billie.
 
@@ -2292,12 +2516,14 @@ I mailed Clare a birthday card today for the 12th. Had a letter from the Franson
 Love and kisses to Billie and Henmar.
 
 Mother.</div>
-    </div>
-
-    <div class="excerpt-card">
-      <h4>Selling the Family Farm &mdash; June 1945</h4>
-      <div class="source">Letter from Mrs. P. L. Hickman to Ballard Moore, Richmond, June 15, 1945 &mdash; negotiating sale of Sunrise</div>
-      <div class="text">Dear Mister Moore,
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Selling the Family Farm &mdash; June 1945</strong>
+          <span class="correspondence-source">Letter from Mrs. P. L. Hickman to Ballard Moore, Richmond, June 15, 1945 &mdash; negotiating sale of Sunrise</span>
+        </div>
+        <div class="correspondence-body">Dear Mister Moore,
 
 I am indeed sorry to have been so long in replying to your letter of May 14th, but after hearing from you I communicated with each of my children, one being in the Pacific, and have just received a reply from him.
 
@@ -2309,11 +2535,11 @@ Thanking you to let me hear from you, I am,
 
 Very truly yours,
 Mrs. P. L. Hickman.</div>
+      </div>
     </div>
 
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/ollie_portrait.jpg" alt="Ollie Gertrude Lockridge Hickman">
@@ -2340,49 +2566,62 @@ Mrs. P. L. Hickman.</div>
     <button class="modal-close" onclick="closeModal('modal-roger')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/roger_portrait.jpg" alt="Roger L. Hickman"></div>
-      <div>
-        <h2>Roger Lockridge &ldquo;Roge&rdquo; Hickman</h2>
-        <div class="bio">
-          1896, Back Creek, VA &ndash; 1979, Wynne, AR<br>
-          Physician, world traveler, clinical hypnotist, newspaper columnist<br>
-          Medical missionary in Nigeria &bull; Married Nellie Christine Shaw, 1930
-        </div>
+      <h2>Roger Lockridge &ldquo;Roge&rdquo; Hickman</h2>
+      <div class="bio">
+        1896, Back Creek, VA &ndash; 1979, Wynne, AR<br>
+        Physician, world traveler, clinical hypnotist, newspaper columnist<br>
+        Medical missionary in Nigeria &bull; Married Nellie Christine Shaw, 1930
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Daydreaming and its Benefits &mdash; April 1968</h4>
-      <div class="source">Column, &ldquo;To and Fro,&rdquo; Wynne, Arkansas, April 26, 1968</div>
-      <div class="text">As an experienced daydreamer with a long personal history of visual imagery, my thoughts on this subject may be worthy of pondering.
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Roger Lockridge Hickman, eldest son of Peter and Ollie, grew up at Sunrise on Back Creek before pursuing a career in medicine. He served as a medical missionary in Nigeria and later settled in Wynne, Arkansas, where he practiced medicine and wrote a regular newspaper column called &ldquo;To and Fro.&rdquo;</p>
+      <p>Roger was a lifelong reader, daydreamer, and world traveler. He sailed on freighters across the Indian Ocean and visited Fiji, Samoa, and Manila. He was married three times, most notably to Nellie Christine Shaw in 1930. His columns reveal a philosophical mind that never lost the wonder of the boy who walked the hills of Back Creek listening for cow bells. He died in 1979 in Wynne at the age of 83.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Daydreaming and its Benefits &mdash; April 1968</strong>
+          <span class="correspondence-source">Column, &ldquo;To and Fro,&rdquo; Wynne, Arkansas, April 26, 1968</span>
+        </div>
+        <div class="correspondence-body">As an experienced daydreamer with a long personal history of visual imagery, my thoughts on this subject may be worthy of pondering.
 
 As a lad each evening as I walked and listened for the tinkle of the cow bell, I became Napoleon and talked with enemy generals. When the few cows were found on some rocky hillside they were driven towards the barn as I continued my reverie. At about 8 years of age, I acquired a faithful hound dog who was named for my heroic figure, Napoleon. Later his name was shortened to just &ldquo;Nap.&rdquo;
 
 If we, both as individuals and nations, are to survive we must learn to live in harmony, with no ethnic group outside this long dreamed of Utopian structure. May I continue to daydream of Universal Brotherhood until my respiration ceases.</div>
-    </div>
-
-    <div class="excerpt-card">
-      <h4>Ship&rsquo;s Doctor Endorses Galen&rsquo;s Advice</h4>
-      <div class="source">Column, undated, ca. 1970s &mdash; Roger traveled the world on freighters</div>
-      <div class="text">The best place in the entire world to read is on the upper deck of a freighter in mid-ocean. There are no telephones to ring, no conferences to meet, no appointments to make and definitely no chatter of neighborhood children.
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Ship&rsquo;s Doctor Endorses Galen&rsquo;s Advice</strong>
+          <span class="correspondence-source">Column, undated, ca. 1970s &mdash; Roger traveled the world on freighters</span>
+        </div>
+        <div class="correspondence-body">The best place in the entire world to read is on the upper deck of a freighter in mid-ocean. There are no telephones to ring, no conferences to meet, no appointments to make and definitely no chatter of neighborhood children.
 
 Again it is certain that the firmament can be viewed best on a clear mid-night, while sailing west on a tranquil Indian ocean. It was no accident that Galen, a physician who lived two centuries before Christ, on the shores of the Mediterranean, advised a sea voyage for those of physical and mental indisposition.
 
 Fall into line, live joyous and enchanted days aboard a ship with no definite arrival date. Let fate, luck or chance play a part in your previously over-planned life. Become a modern day, maritime Marco Polo, following the sun, north to south, east and west &mdash; always reading, concentrating, meditating and contemplating.</div>
-    </div>
-
-    <div class="excerpt-card">
-      <h4>Life&rsquo;s Strife &mdash; Reflections on Aging</h4>
-      <div class="source">Column, undated, ca. 1970s</div>
-      <div class="text">One who has lived approximately 29.5 percent of the time since the United States became an independent nation is certainly entitled to disclose a few observations on change in attitudes. My struggle began in childhood and continued on through manhood. Old age has been somewhat less of a competitive hassle.
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Life&rsquo;s Strife &mdash; Reflections on Aging</strong>
+          <span class="correspondence-source">Column, undated, ca. 1970s</span>
+        </div>
+        <div class="correspondence-body">One who has lived approximately 29.5 percent of the time since the United States became an independent nation is certainly entitled to disclose a few observations on change in attitudes. My struggle began in childhood and continued on through manhood. Old age has been somewhat less of a competitive hassle.
 
 As a &ldquo;kid,&rdquo; I was amazed by the pleasures of the printed page. This incessant urge to read remains unabated. Most of my happy moments have been, as my dear mother would say, &ldquo;I knew I would find you with your face in a book.&rdquo;
 
 Real life is something that flows by unknown to us and possibly foreign to us. I want to assure you, as almost all of my useful years are over, that my greatest pleasure, enjoyment, happiness and satisfaction was found in routine work in my fields, and by reading about far-away places, then years later, in visiting such places as Fiji or Samoa.</div>
+      </div>
     </div>
 
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/roger_portrait.jpg" alt="Roger at Casemate Museum">
@@ -2408,30 +2647,42 @@ Real life is something that flows by unknown to us and possibly foreign to us. I
     <button class="modal-close" onclick="closeModal('modal-forrest')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo">FE</div>
-      <div>
-        <h2>Forrest Elwood &ldquo;Si&rdquo; Hickman</h2>
-        <div class="bio">
-          1898, Back Creek, VA &ndash; 1954, Elkton, VA<br>
-          Unmarried &bull; Worked in Elkton, Virginia<br>
-          Few letters survive; his siblings&rsquo; words speak for him
-        </div>
+      <h2>Forrest Elwood &ldquo;Si&rdquo; Hickman</h2>
+      <div class="bio">
+        1898, Back Creek, VA &ndash; 1954, Elkton, VA<br>
+        Unmarried &bull; Worked in Elkton, Virginia<br>
+        Few letters survive; his siblings&rsquo; words speak for him
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Virginia&rsquo;s Tribute After Si&rsquo;s Death &mdash; September 1954</h4>
-      <div class="source">Letter from Virginia Campbell to Julian, September 30, 1954</div>
-      <div class="text">Just a note to say what a swell job you did in handling all the details in connection with Si&rsquo;s illness and death. I still can not realize that he is no longer here. At first one is numbed by the shock but after you recover from that it becomes quite clear that one is absent from the group. My mind constantly returns to him and his work in Elkton. Together the many friends he left there. I shall never forget how considerate Carl and his wife were.
-
-Mother has been awfully tired as we all have been. She is one marvelous person, with her philosophical attitude. Rog. took the 950 flight yesterday morning. He is really some boy.</div>
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Forrest Elwood Hickman, known to his family as &ldquo;Si,&rdquo; was the second child of Peter and Ollie Hickman. He lived and worked in Elkton, Virginia, where he was known for his tireless work ethic, often putting in seven days a week. He never married.</p>
+      <p>Few of Si&rsquo;s own letters survive, but his siblings&rsquo; words after his death in September 1954 paint a picture of a quiet, hardworking man who was deeply loved. His sister Virginia wrote of the shock of his absence from the family circle, and of the many friends he left behind in Elkton. His mother Ollie, then 84, took Si&rsquo;s passing very hard.</p>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Virginia Mediates Between Brothers &mdash; October 1954</h4>
-      <div class="source">Letter from Virginia Campbell to Julian, October 7, 1954</div>
-      <div class="text">I have purposely delayed in replying to your letter because I wanted time to think. My feeling of loyalty and brotherly love toward each other outweighs all emotions or apprehensions regarding honesty in settling the affairs of a deceased brother. Si did not slave seven days per week &mdash; hours on end &mdash; to accumulate money for the rest of his brothers to wrangle over. I am indeed grateful for any portion I receive from this source. As I told you I do not measure success or happiness by the dollar sign.
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Virginia&rsquo;s Tribute After Si&rsquo;s Death &mdash; September 1954</strong>
+          <span class="correspondence-source">Letter from Virginia Campbell to Julian, September 30, 1954</span>
+        </div>
+        <div class="correspondence-body">Just a note to say what a swell job you did in handling all the details in connection with Si&rsquo;s illness and death. I still can not realize that he is no longer here. At first one is numbed by the shock but after you recover from that it becomes quite clear that one is absent from the group. My mind constantly returns to him and his work in Elkton. Together the many friends he left there. I shall never forget how considerate Carl and his wife were.
+
+Mother has been awfully tired as we all have been. She is one marvelous person, with her philosophical attitude. Rog. took the 950 flight yesterday morning. He is really some boy.</div>
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Virginia Mediates Between Brothers &mdash; October 1954</strong>
+          <span class="correspondence-source">Letter from Virginia Campbell to Julian, October 7, 1954</span>
+        </div>
+        <div class="correspondence-body">I have purposely delayed in replying to your letter because I wanted time to think. My feeling of loyalty and brotherly love toward each other outweighs all emotions or apprehensions regarding honesty in settling the affairs of a deceased brother. Si did not slave seven days per week &mdash; hours on end &mdash; to accumulate money for the rest of his brothers to wrangle over. I am indeed grateful for any portion I receive from this source. As I told you I do not measure success or happiness by the dollar sign.
 
 Mother is taking Si&rsquo;s going very hard and when she knows there is dissention among us that adds to her sorrow. Let there be no bitterness or harsh words at this time in our lives.</div>
+      </div>
     </div>
 
   </div>
@@ -2443,33 +2694,44 @@ Mother is taking Si&rsquo;s going very hard and when she knows there is dissenti
     <button class="modal-close" onclick="closeModal('modal-virge')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/virge_portrait.jpg" alt="Virginia Hickman Campbell"></div>
-      <div>
-        <h2>Ollie Virginia &ldquo;Virge&rdquo; Hickman Campbell</h2>
-        <div class="bio">
-          1902, Back Creek, VA &ndash; 1996<br>
-          Nurse &bull; Married Warren &ldquo;Doc&rdquo; Campbell, 1927<br>
-          Richmond &amp; Monterey, VA &bull; Family peacemaker and protector
-        </div>
+      <h2>Ollie Virginia &ldquo;Virge&rdquo; Hickman Campbell</h2>
+      <div class="bio">
+        1902, Back Creek, VA &ndash; 1996<br>
+        Nurse &bull; Married Warren &ldquo;Doc&rdquo; Campbell, 1927<br>
+        Richmond &amp; Monterey, VA &bull; Family peacemaker and protector
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Mother&rsquo;s Destroyed Possessions &mdash; September 1965</h4>
-      <div class="source">Letter from Virginia Campbell to Mrs. Penn, Richmond Home for Ladies, September 1, 1965</div>
-      <div class="text">My sister and I have been grieved over the destruction of the very intimate possessions of our mother, Mrs. P. L. Hickman. As for her clothes, robes, gowns, underwear and shoes we are more than happy for the Home to use them in any way they see fit, but when it comes to her letters, pictures, books, hankies, scarves and her keepsakes &mdash; who was to know the value of these items? No one but a member of the family.
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Ollie Virginia Hickman, called &ldquo;Virge&rdquo; by her family, was the third child and eldest daughter of Peter and Ollie Hickman. A trained nurse, she married Warren &ldquo;Doc&rdquo; Campbell in 1927 and lived in both Richmond and Monterey, Virginia.</p>
+      <p>Virginia served as the family&rsquo;s peacemaker and protector. When tensions arose among siblings over their brother Si&rsquo;s estate or the sale of Sunrise, it was Virge who counseled calm and unity. She fiercely guarded her mother&rsquo;s dignity and privacy, and was devastated when Ollie&rsquo;s personal keepsakes were destroyed at the Richmond Home for Ladies. She lived to 94, the last link to the world of Back Creek.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Mother&rsquo;s Destroyed Possessions &mdash; September 1965</strong>
+          <span class="correspondence-source">Letter from Virginia Campbell to Mrs. Penn, Richmond Home for Ladies, September 1, 1965</span>
+        </div>
+        <div class="correspondence-body">My sister and I have been grieved over the destruction of the very intimate possessions of our mother, Mrs. P. L. Hickman. As for her clothes, robes, gowns, underwear and shoes we are more than happy for the Home to use them in any way they see fit, but when it comes to her letters, pictures, books, hankies, scarves and her keepsakes &mdash; who was to know the value of these items? No one but a member of the family.
 
 I had attended a family reunion near Hot Springs, Virginia, on July 11th at which time a great tribute was paid to my mother as the oldest member of the clan and a card was signed by old and young who had attended. That card was among the things that were destroyed. Truthfully, we don&rsquo;t know exactly what she did have there as there has always existed in my family a respect for the privacy of others and I never thought of rummaging through her possessions.</div>
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Agreeing to Sell the Farm &mdash; March 1948</strong>
+          <span class="correspondence-source">Letter from Virginia Campbell, March 31, 1948</span>
+        </div>
+        <div class="correspondence-body">I am in full accord to selling the farm to Mrs. Shifflett for the sum of $7,500.00. In fact, I am somewhat relieved that it will be sold rather than have you and Clare try to carry on. I am also rather pleased that the farm will be sold to someone who will have a community interest in the activities of the valley rather than someone who will buy it for its commercial value.</div>
+      </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Agreeing to Sell the Farm &mdash; March 1948</h4>
-      <div class="source">Letter from Virginia Campbell, March 31, 1948</div>
-      <div class="text">I am in full accord to selling the farm to Mrs. Shifflett for the sum of $7,500.00. In fact, I am somewhat relieved that it will be sold rather than have you and Clare try to carry on. I am also rather pleased that the farm will be sold to someone who will have a community interest in the activities of the valley rather than someone who will buy it for its commercial value.</div>
-    </div>
-
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/virge_portrait.jpg" alt="Virge and Doc Campbell">
@@ -2495,33 +2757,38 @@ I had attended a family reunion near Hot Springs, Virginia, on July 11th at whic
     <button class="modal-close" onclick="closeModal('modal-clare')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/clare_portrait.jpg" alt="Clare Brown Hickman"></div>
-      <div>
-        <h2>Clare Brown Hickman</h2>
-        <div class="bio">
-          1905, Back Creek, VA &ndash; 1997, Staunton, VA<br>
-          Justice of the Peace, Augusta County &bull; Family historian<br>
-          Married Juanita Elizabeth Rohr, 1935
-        </div>
+      <h2>Clare Brown Hickman</h2>
+      <div class="bio">
+        1905, Back Creek, VA &ndash; 1997, Staunton, VA<br>
+        Justice of the Peace, Augusta County &bull; Family historian<br>
+        Married Juanita Elizabeth Rohr, 1935
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Letter to Julian &mdash; the Brigham Case &mdash; November 1956</h4>
-      <div class="source">Letter from Clare Hickman to Julian, Staunton, November 1, 1956 &mdash; the only surviving personal letter from Clare</div>
-      <div class="text">Your case vs. Brigham&rsquo;s Gardens, Inc. is set for 11/2/56. It is a very doubtful account as to collecting it and if you like will get Abstract and have it recorded. Enclosed is a clipping from the Staunton Leader in reply to your letter in the paper. The cost of the suit including Abstract will be $3.25 &mdash; have not cashed check since thought it better to wait and see about Abstract.
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Clare Brown Hickman was the fourth child of Peter and Ollie Hickman. He settled in Staunton, Virginia, where he served as a Justice of the Peace for Augusta County. In 1935 he married Juanita Elizabeth Rohr, and together they had three daughters: Carolyn, Kathleen (&ldquo;Jimmie&rdquo;), and Penelope.</p>
+      <p>Clare was recognized as the family&rsquo;s foremost authority on Hickman history. His meticulous knowledge of the family&rsquo;s past was indispensable to the archive that exists today. In the 1990s, Bill Gabriel worked with Clare extensively on the family history project, drawing on Clare&rsquo;s deep memory and records. Though few of Clare&rsquo;s own letters survive, his legacy lives on in every page of the family archive. He died in 1997 at the age of 92.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Letter to Julian &mdash; the Brigham Case &mdash; November 1956</strong>
+          <span class="correspondence-source">Letter from Clare Hickman to Julian, Staunton, November 1, 1956 &mdash; the only surviving personal letter from Clare</span>
+        </div>
+        <div class="correspondence-body">Your case vs. Brigham&rsquo;s Gardens, Inc. is set for 11/2/56. It is a very doubtful account as to collecting it and if you like will get Abstract and have it recorded. Enclosed is a clipping from the Staunton Leader in reply to your letter in the paper. The cost of the suit including Abstract will be $3.25 &mdash; have not cashed check since thought it better to wait and see about Abstract.
 
 Hope you and family are well, we are fine.
 
 LETS ALL VOTE &mdash; Your Bro. Clare.</div>
+      </div>
     </div>
 
-    <p style="font-size: 12px; color: var(--text-light); font-style: italic; margin-top: 15px; padding: 0 18px;">
-      Clare was recognized as the family&rsquo;s authority on Hickman history. Bill Gabriel worked with him extensively on the family history project in the 1990s. Though few of Clare&rsquo;s own letters survive, his meticulous knowledge of the family&rsquo;s past informed much of the archive that exists today.
-    </p>
-
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/clare_portrait.jpg" alt="Clare B. Hickman studio portrait">
@@ -2547,35 +2814,46 @@ LETS ALL VOTE &mdash; Your Bro. Clare.</div>
     <button class="modal-close" onclick="closeModal('modal-ruth')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/ruth_portrait.jpg" alt="Ruth Gertrude Hickman"></div>
-      <div>
-        <h2>Ruth Gertrude Hickman Gabriel</h2>
-        <div class="bio">
-          16 Jan 1908, Back Creek, VA &ndash; 1997, Richmond, VA<br>
-          Insurance worker, Muhleman &amp; Co. &bull; DAR member #624441<br>
-          Married Hermann William Gabriel Jr., 1933 &bull; Later married Edward Hardy, 1969
-        </div>
+      <h2>Ruth Gertrude Hickman Gabriel</h2>
+      <div class="bio">
+        16 Jan 1908, Back Creek, VA &ndash; 1997, Richmond, VA<br>
+        Insurance worker, Muhleman &amp; Co. &bull; DAR member #624441<br>
+        Married Hermann William Gabriel Jr., 1933 &bull; Later married Edward Hardy, 1969
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Confiding in Virginia &mdash; A Drastic Change &mdash; May 1941</h4>
-      <div class="source">Letter from Ruth Gabriel to Virginia Campbell, May 4, 1941</div>
-      <div class="text">Virge, I am going to confide something in you which I hope you will keep confidential. I am making a most drastic change in my life&hellip; Doc and I are separating. It is not a rash decision, I&rsquo;ve been struggling with myself for the past several weeks and I&rsquo;ve finally decided that a separation is inevitable. I therefore want to go to Richmond and see what luck I have at finding work as I simply have to occupy my mind or I&rsquo;ll go mad. I am pretty much of a nervous wreck now.
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Ruth Gertrude Hickman was the fifth child of Peter and Ollie Hickman, born on January 16, 1908 at Back Creek. She married Hermann William Gabriel Jr. in 1933 and they had two sons: Herman William &ldquo;Bill&rdquo; Gabriel III and Henmar Ruskin &ldquo;Gabe&rdquo; Gabriel.</p>
+      <p>After her separation from Hermann, Ruth moved to Richmond, Virginia, where she built an independent life working in insurance at Muhleman &amp; Co. She was a proud member of the Daughters of the American Revolution (member #624441). In 1969 she married Edward Hardy. Ruth was a devoted mother and a faithful correspondent whose letters reveal the private struggles and deep family bonds of the Hickman siblings. She died in 1997 in Richmond at the age of 89.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Confiding in Virginia &mdash; A Drastic Change &mdash; May 1941</strong>
+          <span class="correspondence-source">Letter from Ruth Gabriel to Virginia Campbell, May 4, 1941</span>
+        </div>
+        <div class="correspondence-body">Virge, I am going to confide something in you which I hope you will keep confidential. I am making a most drastic change in my life&hellip; Doc and I are separating. It is not a rash decision, I&rsquo;ve been struggling with myself for the past several weeks and I&rsquo;ve finally decided that a separation is inevitable. I therefore want to go to Richmond and see what luck I have at finding work as I simply have to occupy my mind or I&rsquo;ll go mad. I am pretty much of a nervous wreck now.
 
 I am going to see if Fred and Marian will take Henmar for me for a period of a few weeks, until I can get myself adjusted. Bill I&rsquo;ll keep with me as he would suffer too much from being away from me. It distresses me to have to write my troubles to you but I&rsquo;ve kept it to myself as long as I possibly can.</div>
-    </div>
-
-    <div class="excerpt-card">
-      <h4>Mother Declining in the Infirmary &mdash; ca. 1965</h4>
-      <div class="source">Letter from Ruth Gabriel to family, undated, ca. 1965</div>
-      <div class="text">I got a real shock when I walked into the Infirmary yesterday afternoon and found mother&rsquo;s bed made up. Mary spied me in a few seconds and told me mother had been moved into one of the private rooms just outside the Infirmary. When I went in she said a few words to me but was too tired and sleepy to stay awake long. I sat there and every once in awhile she would say, Honey you go on home.
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Mother Declining in the Infirmary &mdash; ca. 1965</strong>
+          <span class="correspondence-source">Letter from Ruth Gabriel to family, undated, ca. 1965</span>
+        </div>
+        <div class="correspondence-body">I got a real shock when I walked into the Infirmary yesterday afternoon and found mother&rsquo;s bed made up. Mary spied me in a few seconds and told me mother had been moved into one of the private rooms just outside the Infirmary. When I went in she said a few words to me but was too tired and sleepy to stay awake long. I sat there and every once in awhile she would say, Honey you go on home.
 
 I waited until I saw that she was made comfortable &mdash; by putting a rubber ring under her as her back is getting sore. Mrs. Doak just told me also that mother does not ask for the bed pan now and that with great difficulty she was able to get her to take a little liquid this morning.</div>
+      </div>
     </div>
 
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/ruth_portrait.jpg" alt="Ruth Hickman Gabriel portrait">
@@ -2601,37 +2879,48 @@ I waited until I saw that she was made comfortable &mdash; by putting a rubber r
     <button class="modal-close" onclick="closeModal('modal-julian')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/julian_portrait.jpg" alt="Julian Kenneth Hickman"></div>
-      <div>
-        <h2>Julian Kenneth Hickman</h2>
-        <div class="bio">
-          1911, Back Creek, VA &ndash; 1964, Harrisonburg, VA<br>
-          Attorney &bull; Commonwealth&rsquo;s Attorney for Bath County<br>
-          7th District Republican Chairman &bull; Married Neva Lee Martin, 1937
-        </div>
+      <h2>Julian Kenneth Hickman</h2>
+      <div class="bio">
+        1911, Back Creek, VA &ndash; 1964, Harrisonburg, VA<br>
+        Attorney &bull; Commonwealth&rsquo;s Attorney for Bath County<br>
+        7th District Republican Chairman &bull; Married Neva Lee Martin, 1937
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Birthday Letter to Mother &mdash; May 1964</h4>
-      <div class="source">Letter from Julian K. Hickman to Ollie Hickman, May 29, 1964 &mdash; his last letter to her, five months before his death</div>
-      <div class="text">As a special tribute to your upcoming birthday I had hoped to be able to write a letter of at least some reasonable level of thankfulness for a life well spent. I am not this morning in a very philosophical mood, and my efforts will not be fruitful of any tribute commensurate to the importance and magnitude of the occasion.
-
-There have been problems, anxieties and difficulties to which we should not close our eyes, but he who sees only with his eyes sees seldom more than the gloss, or dross of the exterior, but he who sees with his heart sees as much as faith in God has given the will to see. I am convinced that you produced seven children who see primarily from the heart.</div>
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Julian Kenneth Hickman was the sixth child and youngest son of Peter and Ollie Hickman. He studied law and became an attorney, serving as Commonwealth&rsquo;s Attorney for Bath County and rising to Chairman of the 7th District Republican Committee. He married Neva Lee Martin in 1937 and they settled in Harrisonburg, Virginia, where they raised two children: Neva Martin and Julian Kenneth &ldquo;Pete&rdquo; Hickman II.</p>
+      <p>Julian was the family&rsquo;s most eloquent letter-writer&mdash;philosophical, witty, and deeply devoted to his mother. After his father Peter&rsquo;s death in 1937, Julian served as administrator of the estate, a task that tested the bonds between the seven siblings. His letters to Robert F. Kennedy, Barry Goldwater, and Richard Nixon reflect his political engagement. He died in October 1964 in Harrisonburg at the age of 53, a loss felt deeply across the family.</p>
     </div>
 
-    <div class="excerpt-card">
-      <h4>Letter to Roger in Manila &mdash; April 1961</h4>
-      <div class="source">Letter from Julian K. Hickman to Roger Hickman, Manila, April 21, 1961</div>
-      <div class="text">There are many philosophical questions which we have not been able to resolve and which I hope we can never resolve. Unresolved philosophical questions add spice to life and point up man&rsquo;s individuality.
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Birthday Letter to Mother &mdash; May 1964</strong>
+          <span class="correspondence-source">Letter from Julian K. Hickman to Ollie Hickman, May 29, 1964 &mdash; his last letter to her, five months before his death</span>
+        </div>
+        <div class="correspondence-body">As a special tribute to your upcoming birthday I had hoped to be able to write a letter of at least some reasonable level of thankfulness for a life well spent. I am not this morning in a very philosophical mood, and my efforts will not be fruitful of any tribute commensurate to the importance and magnitude of the occasion.
+
+There have been problems, anxieties and difficulties to which we should not close our eyes, but he who sees only with his eyes sees seldom more than the gloss, or dross of the exterior, but he who sees with his heart sees as much as faith in God has given the will to see. I am convinced that you produced seven children who see primarily from the heart.</div>
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Letter to Roger in Manila &mdash; April 1961</strong>
+          <span class="correspondence-source">Letter from Julian K. Hickman to Roger Hickman, Manila, April 21, 1961</span>
+        </div>
+        <div class="correspondence-body">There are many philosophical questions which we have not been able to resolve and which I hope we can never resolve. Unresolved philosophical questions add spice to life and point up man&rsquo;s individuality.
 
 A lawyer&rsquo;s life must be vicarious as well as episodical. I have learned to some extent through the years that a lawyer cannot become too deeply involved emotionally with the problems of the client because when and if he does he cannot view the problem with the objectivity that is essential.
 
 Of all the Hickman clan, I think it is generally conceded by all that the elder has the more repentive mind. Mother is looking forward to getting back to Virginia for a while in June. Never have I seen a person of ninety years of age who has the keen interest in life and people that mother has.</div>
+      </div>
     </div>
 
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/julian_portrait.jpg" alt="Julian in living room, May 1963">
@@ -2657,39 +2946,50 @@ Of all the Hickman clan, I think it is generally conceded by all that the elder 
     <button class="modal-close" onclick="closeModal('modal-harry')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/harry_portrait.jpg" alt="Harry Herman Hickman"></div>
-      <div>
-        <h2>Harry Herman Hickman</h2>
-        <div class="bio">
-          1914, Back Creek, VA &ndash; 1999, Selmer, TN<br>
-          WWII radar specialist, 93rd AAA Gun Battalion &bull; Ie Shima, Pacific<br>
-          Motel operator, City Judge &amp; Recorder &bull; Married Virginia Jefferson, 1948
-        </div>
+      <h2>Harry Herman Hickman</h2>
+      <div class="bio">
+        1914, Back Creek, VA &ndash; 1999, Selmer, TN<br>
+        WWII radar specialist, 93rd AAA Gun Battalion &bull; Ie Shima, Pacific<br>
+        Motel operator, City Judge &amp; Recorder &bull; Married Virginia Jefferson, 1948
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>The War Ending &mdash; From Ie Shima &mdash; August 1945</h4>
-      <div class="source">Letter from Harry Hickman to Ruth Gabriel, Ie Shima, August 31, 1945 &mdash; Harry witnessed the Japanese surrender envoys arrive</div>
-      <div class="text">Yes it truly joyous news that the war is ending. However when all of the celebrating was in progress back there it didn&rsquo;t seem here as if any war was over. We were having air raids. At the present I have no idea of my next move. I&rsquo;m only hoping it will be home, but am not placing too much credence in that hope. To be home by Xmas with Danny would far surpass all expectations.
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Harry Herman Hickman was the youngest of Peter and Ollie&rsquo;s seven children, born in 1914 at Back Creek. During World War II, he served as a radar specialist with the 93rd AAA Gun Battalion in the Pacific theater, stationed on Ie Shima. He was present on the airfield when the Japanese surrender envoys arrived&mdash;a moment of history he witnessed firsthand.</p>
+      <p>After the war, Harry settled in Selmer, Tennessee, where he operated a motel and served as City Judge and Recorder. He married Virginia Jefferson in 1948. His wartime letters to his sister Ruth are filled with humor, affection, and longing for home&mdash;asking his young nephews Bill and Henmar to write him, promising to teach them to live in a foxhole. He died in 1999 at the age of 85, the last of the Hickman brothers.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>The War Ending &mdash; From Ie Shima &mdash; August 1945</strong>
+          <span class="correspondence-source">Letter from Harry Hickman to Ruth Gabriel, Ie Shima, August 31, 1945 &mdash; Harry witnessed the Japanese surrender envoys arrive</span>
+        </div>
+        <div class="correspondence-body">Yes it truly joyous news that the war is ending. However when all of the celebrating was in progress back there it didn&rsquo;t seem here as if any war was over. We were having air raids. At the present I have no idea of my next move. I&rsquo;m only hoping it will be home, but am not placing too much credence in that hope. To be home by Xmas with Danny would far surpass all expectations.
 
 Did you hear the broadcast from here on the day the Jap envoys arrived? I was on the field and saw the activities.
 
 I wish Billy would write me. Come, Billy, write &ldquo;Uncle&rdquo; a letter. He would like it very much. That goes for you also Henmar. I will show you how to live in a fox-hole, eat out of cans, wash and bathe in a helmet, also laundry.</div>
-    </div>
-
-    <div class="excerpt-card">
-      <h4>Counting Points and Teeth &mdash; October 1945</h4>
-      <div class="source">Letter from Harry Hickman to Ruth Gabriel, Ie Shima, October 26, 1945</div>
-      <div class="text">Say kid, what is this I&rsquo;m being led to believe about you being in the hospital for an old operation? I&rsquo;m sorry sis. How are you progressing? Tip top, I&rsquo;m hoping, and thinking.
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Counting Points and Teeth &mdash; October 1945</strong>
+          <span class="correspondence-source">Letter from Harry Hickman to Ruth Gabriel, Ie Shima, October 26, 1945</span>
+        </div>
+        <div class="correspondence-body">Say kid, what is this I&rsquo;m being led to believe about you being in the hospital for an old operation? I&rsquo;m sorry sis. How are you progressing? Tip top, I&rsquo;m hoping, and thinking.
 
 The sixty pointers, presumably will be leaving Ie Shima on the 5th of Nov. going to Okinawa to a staging area. I as of now have 58 points. The chances of my getting home for Xmas are very good. I hope by Mon. that I can write, &ldquo;I&rsquo;M COMING HOME, DO NOT WRITE ME ANY LONGER.&rdquo;
 
 I am going to have all of my jaw teeth X-rayed, having all of those pulled that look on the verge of going bad. The few remaining jaw teeth are nothing but huge fillings, so I will be removing possible trouble if I have them all pulled. I hope our children don&rsquo;t inherit our miserable teeth conditions.</div>
+      </div>
     </div>
 
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/harry_portrait.jpg" alt="Harry H. Hickman WWII military portrait">
@@ -2715,40 +3015,52 @@ I am going to have all of my jaw teeth X-rayed, having all of those pulled that 
     <button class="modal-close" onclick="closeModal('modal-bill')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img src="photos/bill_portrait.jpg" alt="Bill Gabriel"></div>
-      <div>
-        <h2>Herman William &ldquo;Bill&rdquo; Gabriel III</h2>
-        <div class="bio">
-          21 Dec 1933, Richmond, VA &ndash; 2020, Montana<br>
-          USFS forester, wildlife biologist (PhD, U. of Montana)<br>
-          Nature writer &amp; photographer &bull; Drove the family history project<br>
-          Author, &ldquo;Memories of a Career&rdquo;
-        </div>
+      <h2>Herman William &ldquo;Bill&rdquo; Gabriel III</h2>
+      <div class="bio">
+        21 Dec 1933, Richmond, VA &ndash; 2020, Montana<br>
+        USFS forester, wildlife biologist (PhD, U. of Montana)<br>
+        Nature writer &amp; photographer &bull; Drove the family history project<br>
+        Author, &ldquo;Memories of a Career&rdquo;
       </div>
     </div>
 
-    <div class="excerpt-card">
-      <h4>The Family History Project &mdash; October 1993</h4>
-      <div class="source">Letter from Bill Gabriel to Hickman cousins, October 25, 1993</div>
-      <div class="text">I am pressing on with the Hickman family history and am about to start on the third volume of letters. It will begin with the oldest letters written in the 1830&rsquo;s, and some deeds that are even older. There is no Hickman family history in this book. So &mdash; I am awaiting your stories, anecdotes, and clarification of the points raised in my earlier lists of questions.
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Herman William &ldquo;Bill&rdquo; Gabriel III was the elder son of Ruth Hickman Gabriel and Hermann William Gabriel Jr., born in Richmond, Virginia on December 21, 1933. He attended Virginia Polytechnic Institute (VPI) as a cadet and went on to earn a PhD in wildlife biology from the University of Montana.</p>
+      <p>Bill spent his career with the U.S. Forest Service as a forester and wildlife biologist, living in Utah, Wyoming, Alaska, and finally Montana, where he settled at what he called &ldquo;The Beautiful Bitter Root Bird Farm.&rdquo; He was an accomplished nature writer and photographer, and authored the memoir &ldquo;Memories of a Career.&rdquo;</p>
+      <p>In retirement, Bill devoted himself to preserving the Hickman family history. What he thought would be a simple task at Christmas 1992 became a multi-year project spanning three volumes of transcribed letters, deeds dating to the 1830s, and extensive correspondence with cousins. Working closely with his uncle Clare, Bill assembled the archive that is the foundation of this website. He never married. He died in 2020 in Montana.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Notable Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>The Family History Project &mdash; October 1993</strong>
+          <span class="correspondence-source">Letter from Bill Gabriel to Hickman cousins, October 25, 1993</span>
+        </div>
+        <div class="correspondence-body">I am pressing on with the Hickman family history and am about to start on the third volume of letters. It will begin with the oldest letters written in the 1830&rsquo;s, and some deeds that are even older. There is no Hickman family history in this book. So &mdash; I am awaiting your stories, anecdotes, and clarification of the points raised in my earlier lists of questions.
 
 What I thought, last Christmas, would be a fairly simple task has turned into a multi-year project. And that is fine with me, because I am project-oriented. Instead of a routine, go-to-the-office and shuffle-the-papers job, I always worked on projects that could be defined, measured, and had definite products marking their completion.
 
 In 1988 Henmar and I floated the Colorado River through the Grand Canyon. In 1989 I floated the Salmon River in April; Henmar and I hiked and camped with llamas in Hell&rsquo;s Canyon in May; and I canoed the Missouri River in July.</div>
-    </div>
-
-    <div class="excerpt-card">
-      <h4>A Montana Winter &mdash; March 1997</h4>
-      <div class="source">Letter from Bill Gabriel to Hickman cousins, March 31, 1997 &mdash; from The Beautiful Bitter Root Bird Farm</div>
-      <div class="text">I seem to have been in a winter-long funk during which I got little of anything worthwhile accomplished but now the sun has returned, comet Hale-Bop is bright in the evening sky, and I have come out of hibernation.
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>A Montana Winter &mdash; March 1997</strong>
+          <span class="correspondence-source">Letter from Bill Gabriel to Hickman cousins, March 31, 1997 &mdash; from The Beautiful Bitter Root Bird Farm</span>
+        </div>
+        <div class="correspondence-body">I seem to have been in a winter-long funk during which I got little of anything worthwhile accomplished but now the sun has returned, comet Hale-Bop is bright in the evening sky, and I have come out of hibernation.
 
 One of the really neat things this winter was how there were predators in the yard catching the smaller birds here to use the feeders. There was a northern pygmy owl here for about ten days. This tiny guy was exceptionally tame, roosted in the wood pile next to my front door, and was little bothered by my coming and going.
 
 On the other hand, I hated to see the dwindling size of the covey of gray partridge. It started with twelve birds in the fall. There were nine of the birds in my yard almost every day during the worst of the winter to get the cracked corn and millet I put out for them, and I was beginning to believe they would make it through the winter. Then, with the thaw and declining snow cover, I began to see one fewer birds every couple days. Two weeks ago there were only three, and now there are none.</div>
+      </div>
     </div>
 
-  
     <div class="photo-gallery">
-      <h4>Photo Gallery</h4>
+      <h3 class="modal-section-title">Photo Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/bill_portrait.jpg" alt="Bill Gabriel VPI cadet">
@@ -3239,7 +3551,7 @@ function clearSearch() {
     {
       lat: 38.22, lng: -79.80, icon: iconHome,
       title: 'Back Creek, Bath County, VA',
-      html: '<div class="map-popup"><img class="map-photo" src="photos/sunrise_homestead.jpg" alt="Sunrise"><h4>&ldquo;Sunrise&rdquo; &mdash; Back Creek</h4><p>Hickman family homestead since the 1770s</p><p><b>Roger Hickman</b> (1813&ndash;1889)</p><p><b>Peter L. Hickman</b> (1858&ndash;1937)</p><p><b>Ollie G. Lockridge</b> (1870&ndash;1965)</p><p>All seven PLH children born here</p></div>'
+      html: '<div class="map-popup"><img class="map-photo" src="photos/sunrise_homestead.jpg" alt="Sunrise"><h4>&ldquo;Sunrise&rdquo; &mdash; Back Creek</h4><p>Hickman family homestead since the 1770s</p><p><b>William Roger Hickman</b> (1813&ndash;1889)</p><p><b>Peter L. Hickman</b> (1858&ndash;1937)</p><p><b>Ollie G. Lockridge</b> (1870&ndash;1965)</p><p>All seven PLH children born here</p></div>'
     },
     {
       lat: 38.45, lng: -78.87, icon: iconLive,
@@ -3319,6 +3631,11 @@ function clearSearch() {
   map.fitBounds(bounds, { padding: [30, 30] });
 })();
 
+// ── Correspondence toggle (expand/collapse) ──
+function toggleCorrespondence(headerEl) {
+  var item = headerEl.parentElement;
+  item.classList.toggle('open');
+}
 
 </script>
 
