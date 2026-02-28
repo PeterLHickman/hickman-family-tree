@@ -1473,7 +1473,7 @@
           <div class="photo"><img src="photos/pete_hickman_ii.jpg" alt="Pete Hickman II"></div>
           <div class="name">Julian Kenneth "Pete" II</div>
           <div class="dates"></div>
-          <div class="note">m. (1) Ruth Bennett<br>m. (2) Patti Glenn<br>m. (3) Cindy Hickman</div>
+          <div class="note">m. (1) Ruth Nauman<br>m. (2) Patti Glenn<br>m. (3) Cindy Hickman</div>
         </div>
       </div>
     </div>
@@ -1835,30 +1835,65 @@
       </div>
 
       <!-- Pete Hickman II -->
-      <div class="family-unit">
-        <div class="couple">
-          <div class="person male">
-            <div class="photo"><img src="photos/pete_hickman_ii.jpg" alt="Pete Hickman II"></div>
-            <div class="name">Julian Kenneth "Pete" Hickman II</div>
-            <div class="dates"></div>
-            <div class="note">m. (3) Cindy Hickman</div>
-          </div>
-          <span class="ring">&#9829;</span>
-          <div class="person female">
-            <div class="photo">PG</div>
-            <div class="name">Jean "Patti" Glenn</div>
-            <div class="dates"></div>
-            <div class="note">d/o Jean &amp; Francis Berkerly Glenn</div>
-          </div>
+      <div style="display: flex; flex-direction: column; align-items: center;">
+        <div class="person male" style="width: 150px; margin-bottom: 10px;">
+          <div class="photo"><img src="photos/pete_hickman_ii.jpg" alt="Pete Hickman II"></div>
+          <div class="name">Julian Kenneth "Pete" Hickman II</div>
+          <div class="dates"></div>
+          <div class="note">m. (3) Cindy Hickman (current)</div>
         </div>
-        <div style="font-size: 8px; color: var(--text-light); text-align: center;">m. (2) 13 Oct 1973</div>
-        <div class="children-row">
-          <div class="person female small-person">
-            <div class="photo">AH</div>
-            <div class="name">Amy Bethe Hickman</div>
-            <div class="dates"></div>
-            <div class="note">m. Michel Cathey</div>
+
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+          <!-- Marriage 1: Ruth Nauman -->
+          <div class="marriage-group" style="border-top: 3px solid var(--accent1); max-width: 300px;">
+            <h3 style="color: var(--accent1); font-size: 12px;">&#9829; Marriage 1 &mdash; Ruth Nauman</h3>
+            <div class="marriage-header">
+              <div class="person female" style="width: 110px;">
+                <div class="photo" style="width: 40px; height: 40px; font-size: 13px;">RN</div>
+                <div class="name">Ruth Nauman</div>
+              </div>
+            </div>
+            <div class="children-row">
+              <div class="family-unit">
+                <div class="couple">
+                  <div class="person female small-person">
+                    <div class="photo">AH</div>
+                    <div class="name">Amy Bethe Hickman</div>
+                    <div class="dates"></div>
+                  </div>
+                  <span class="ring" style="font-size: 10px;">&#9829;</span>
+                  <div class="person male small-person">
+                    <div class="photo">MC</div>
+                    <div class="name">Michel Cathey</div>
+                  </div>
+                </div>
+                <div class="children-row">
+                  <div class="person male small-person" style="width: 85px;">
+                    <div class="photo" style="width: 30px; height: 30px; font-size: 11px;">AC</div>
+                    <div class="name">Alex Cathey</div>
+                    <div class="dates"></div>
+                  </div>
+                  <div class="person female small-person" style="width: 85px;">
+                    <div class="photo" style="width: 30px; height: 30px; font-size: 11px;">AC</div>
+                    <div class="name">Amanda Cathey</div>
+                    <div class="dates"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- Marriage 2: Patti Glenn -->
+          <div class="marriage-group" style="border-top: 3px solid var(--accent2); max-width: 500px;">
+            <h3 style="color: var(--accent2); font-size: 12px;">&#9829; Marriage 2 &mdash; m. 13 Oct 1973</h3>
+            <div class="marriage-header">
+              <div class="person female" style="width: 110px;">
+                <div class="photo">PG</div>
+                <div class="name">Jean "Patti" Glenn</div>
+                <div class="note" style="font-size: 7px;">d/o Jean &amp; Francis Berkerly Glenn</div>
+              </div>
+            </div>
+            <div class="children-row">
           <div class="family-unit">
             <div class="couple">
               <div class="person male small-person">
@@ -1905,8 +1940,10 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
+            </div><!-- end children-row marriage 2 -->
+          </div><!-- end marriage-group 2 -->
+        </div><!-- end marriages wrapper -->
+      </div><!-- end Pete section -->
 
     </div>
   </div>
