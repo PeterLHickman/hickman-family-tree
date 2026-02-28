@@ -1345,6 +1345,151 @@
     height: 34px;
     font-size: 14px;
   }
+
+  /* Welcome & orientation */
+  .welcome-bar {
+    max-width: 900px;
+    margin: 0 auto 20px;
+    text-align: center;
+    padding: 24px 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .welcome-bar p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0 0 8px;
+  }
+  .welcome-bar p:last-child { margin-bottom: 0; }
+  .welcome-bar .welcome-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .welcome-bar .welcome-nav a {
+    font-size: 12px;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    color: var(--text);
+    text-decoration: none;
+    background: var(--bg);
+    transition: all 0.2s;
+  }
+  .welcome-bar .welcome-nav a:hover {
+    background: var(--highlight);
+    color: white;
+    border-color: var(--highlight);
+  }
+
+  /* Featured stories rotator */
+  .featured-stories {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    text-align: center;
+  }
+  .featured-stories h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .featured-card {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.2s;
+  }
+  .featured-card.active { display: flex; align-items: center; gap: 16px; justify-content: center; }
+  .featured-card:hover { background: var(--bg); }
+  .featured-card .featured-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+  }
+  .featured-card .featured-initials {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--photo-bg);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--text-light);
+    flex-shrink: 0;
+  }
+  .featured-card .featured-info {
+    text-align: left;
+  }
+  .featured-card .featured-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .featured-card .featured-teaser {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.5;
+    max-width: 400px;
+  }
+  .featured-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .featured-dots button {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s;
+  }
+  .featured-dots button.active {
+    background: var(--highlight);
+    border-color: var(--highlight);
+  }
+
+  /* Responsive two-column grid for wide screens */
+  .dual-column {
+    display: block;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media (min-width: 1100px) {
+    .dual-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .dual-column > .section,
+    .dual-column > .feedback-section {
+      max-width: none !important;
+      margin: 0 !important;
+    }
+  }
 </style>
 </head>
 <body>
@@ -1403,6 +1548,75 @@
   </div>
 </div>
 
+<!-- ============================================================ -->
+<!-- WELCOME & ORIENTATION -->
+<!-- ============================================================ -->
+<div class="welcome-bar no-print">
+  <p>Welcome to the Hickman family archive &mdash; a living record of the descendants of <strong>William Roger Hickman</strong> who settled on Back Creek in Bath County, Virginia. This site brings together five generations of letters, photographs, and stories drawn from a private archive of over 670 documents spanning 1833&ndash;2022.</p>
+  <p style="font-size: 13px; color: var(--text-light);">Click any highlighted name on the tree to explore their letters, photos, and biography. Scroll down to explore the timeline, family map, photo archives, and more.</p>
+  <div class="welcome-nav">
+    <a href="#section-roger">Family Tree</a>
+    <a href="#section-tribute">Bill&rsquo;s Tribute</a>
+    <a href="#section-timeline">Timeline</a>
+    <a href="#section-map">Family Map</a>
+    <a href="#section-archive">Photo Archive</a>
+    <a href="#section-mystery">Mystery Photos</a>
+    <a href="#section-archives">Collections</a>
+    <a href="#section-family-news">Family News</a>
+    <a href="#feedback-form">Contribute</a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FEATURED STORIES ROTATOR -->
+<!-- ============================================================ -->
+<div class="featured-stories no-print" id="featured-stories">
+  <h3>Featured Stories</h3>
+  <div class="featured-card active" data-modal="modal-bill" onclick="openModal('modal-bill')">
+    <img class="featured-thumb" src="photos/bill_gallery3.jpg" alt="Bill Gabriel">
+    <div class="featured-info">
+      <div class="featured-name">Bill Gabriel</div>
+      <div class="featured-teaser">Wildlife photographer, UN forester, and family historian who published in 30+ magazines and donated his papers to Virginia Tech.</div>
+    </div>
+  </div>
+  <div class="featured-card" data-modal="modal-julian" onclick="openModal('modal-julian')">
+    <img class="featured-thumb" src="photos/julian_portrait.jpg" alt="Julian Kenneth Hickman">
+    <div class="featured-info">
+      <div class="featured-name">Julian Kenneth Hickman</div>
+      <div class="featured-teaser">Small-town lawyer turned Virginia legislator who wrote to RFK, Goldwater, and Nixon &mdash; and died too young at 52.</div>
+    </div>
+  </div>
+  <div class="featured-card" data-modal="modal-thomas-brown" onclick="openModal('modal-thomas-brown')">
+    <div class="featured-initials">TB</div>
+    <div class="featured-info">
+      <div class="featured-name">Thomas Brown &ldquo;Uncle Tom&rdquo; Hickman</div>
+      <div class="featured-teaser">The colorful Civil War veteran who read the Bible 17 times, ate peas with a knife, and prophesied from the book of Daniel.</div>
+    </div>
+  </div>
+  <div class="featured-card" data-modal="modal-roger" onclick="openModal('modal-roger')">
+    <img class="featured-thumb" src="photos/roger_portrait.jpg" alt="Roger Hickman">
+    <div class="featured-info">
+      <div class="featured-name">Roger Lockridge &ldquo;Roge&rdquo; Hickman</div>
+      <div class="featured-teaser">Physician, world traveler, and newspaper columnist who sailed on freighters across the Indian Ocean.</div>
+    </div>
+  </div>
+  <div class="featured-card" data-modal="modal-virginia-alice" onclick="openModal('modal-virginia-alice')">
+    <div class="featured-initials">VA</div>
+    <div class="featured-info">
+      <div class="featured-name">Virginia Alice &ldquo;Aunt Jenny&rdquo; Hickman</div>
+      <div class="featured-teaser">Waited 26 years for Joe Hamilton to return from the West &mdash; and when he did, they finally married.</div>
+    </div>
+  </div>
+  <div class="featured-card" data-modal="modal-wrh" onclick="openModal('modal-wrh')">
+    <div class="featured-initials">WRH</div>
+    <div class="featured-info">
+      <div class="featured-name">William Roger Hickman</div>
+      <div class="featured-teaser">The patriarch who raised 18 children on Back Creek, hid meat from the Confederates, and kept the Hickman homestead through the Civil War.</div>
+    </div>
+  </div>
+  <div class="featured-dots" id="featured-dots"></div>
+</div>
+
 <div class="tree">
 
 <!-- ============================================================ -->
@@ -1442,7 +1656,7 @@
           <div class="note">CSA Cavalry</div>
         </div>
         <div class="person female small-person deceased">
-          <div class="photo">ML</div>
+          <div class="photo"><img src="photos/archive_mary_elizabeth_1880.jpg" alt="Mary Elizabeth Hickman"></div>
           <div class="name">Mary Elizabeth</div>
           <div class="nickname">"Lizzie"</div>
           <div class="dates">1840&ndash;1909</div>
@@ -1613,7 +1827,7 @@
         </div>
         <span class="ring">&#9829;</span>
         <div class="person female">
-          <div class="photo">NS</div>
+          <div class="photo"><img src="photos/nellie_ann_1936.png" alt="Nellie Shaw"></div>
           <div class="name">Nellie Christine Shaw</div>
           <div class="dates">1907&ndash;1978</div>
         </div>
@@ -2490,8 +2704,9 @@
 <!-- ============================================================ -->
 
 
+<div class="dual-column no-print">
 <!-- 1996 Photo Archive Viewer -->
-<div class="section no-print" id="section-archive" style="max-width: 700px; margin: 30px auto;">
+<div class="section" id="section-archive" style="max-width: 700px; margin: 30px auto;">
   <div class="section-title">The 1996 Photo Archive</div>
   <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 15px;">
     In 1996, Bill Gabriel scanned the family&rsquo;s photo collection &mdash; portraits, landscapes, and heirlooms spanning
@@ -2610,6 +2825,7 @@
     </form>
   </div>
 </div>
+</div><!-- end dual-column: archive + mystery -->
 
 <div class="feedback-section no-print" id="feedback-form">
   <h3>Contribute to This Archive</h3>
@@ -2628,6 +2844,7 @@
   </form>
 </div>
 
+<div class="dual-column">
 <!-- ============================================================ -->
 <!-- WHAT'S NEXT -->
 <!-- ============================================================ -->
@@ -2642,7 +2859,7 @@
       <ul style="font-size: 12px; color: var(--text); line-height: 1.8; padding-left: 16px; margin: 0;">
         <li>Organized 676 items across 53 folders from 1833&ndash;2022</li>
         <li>Indexed 78 notable correspondence entries</li>
-        <li>Built 28 interactive profiles with letters &amp; photos</li>
+        <li>Built 38 interactive profiles with letters &amp; photos</li>
         <li>Digitized 275 vintage photos from EPS/PICT formats</li>
         <li>Transcribed 50+ handwritten letters to readable text</li>
       </ul>
@@ -2685,6 +2902,7 @@
     </div>
   </div>
 </div>
+</div><!-- end dual-column: what's next + collections -->
 
 <!-- ============================================================ -->
 <!-- FAMILY NEWS -->
@@ -5446,6 +5664,161 @@ The original letters are preserved in the family archive but the ornate handwrit
 </div>
 </div>
 
+<!-- Virginia Alice Hickman "Aunt Jenny" Modal -->
+<div class="modal-overlay" id="modal-virginia-alice">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-virginia-alice')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo" style="background: var(--female);">VAH</div>
+      <h2>Virginia Alice Hickman Hamilton</h2>
+      <div class="bio">
+        13 May 1848 &ndash; ca. 1930s<br>
+        &ldquo;Aunt Jenny&rdquo; &bull; Eldest child of Roger &amp; Margaret Campbell Hickman<br>
+        Married Joseph Hamilton after waiting 26 years &bull; No children
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Virginia Alice Hickman &mdash; known to the family as &ldquo;Aunt Jenny&rdquo; &mdash; was the oldest child of Roger Hickman&rsquo;s second marriage to Margaret Brown Campbell. She was born on May 13, 1848, at Sunrise on Back Creek.</p>
+      <p>Jenny&rsquo;s love story is the classic tale of the woman who waited. She fell in love with a neighbor&rsquo;s son, Joe Hamilton, but the young man left for California to make his fortune, promising to return for her. So Jenny waited &mdash; and ran the large, busy household. Her mother Margaret had nine children in less than twenty years of marriage and had never been robust. After Margaret&rsquo;s death in 1862, Jenny took on the responsibility of raising her younger siblings, and that burden was not lessened by her father&rsquo;s third marriage to Rebecca Ann Lowry, who suffered from arthritis and was a semi-invalid most of her life.</p>
+      <p>Jenny waited twenty-six years. Joe Hamilton finally came back for her, and they married and moved to California. She never had children of her own, but she raised her brother Tom&rsquo;s children after the death of his first wife. Family accounts describe her as &ldquo;a strong looking woman with a definite set to her chin&rdquo; &mdash; a chin she likely developed from her long years of service to the family.</p>
+      <p>&ldquo;She was neither the most beautiful nor the most colorful member of the family, but for sheer force of character and goodness she walks away with the prize.&rdquo;</p>
+    </div>
+
+</div>
+</div>
+
+<!-- Thomas Brown Hickman "Uncle Tom" Modal -->
+<div class="modal-overlay" id="modal-thomas-brown">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-thomas-brown')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo" style="background: var(--male);">TBH</div>
+      <h2>Thomas Brown Hickman</h2>
+      <div class="bio">
+        1 Nov 1849 &ndash; ca. 1930s<br>
+        &ldquo;Uncle Tom&rdquo; &bull; Son of Roger &amp; Margaret Campbell Hickman<br>
+        m. (1) Mary W. Payne, 1881 &bull; m. (2) Mary Whitmore, 1901
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Thomas Brown Hickman &mdash; &ldquo;Uncle Tom&rdquo; &mdash; was born on November 1, 1849, the most colorful and controversial member of the Hickman family. He had long flowing white hair and a long beard, and to his young relatives he looked like the prophets in the book of Bible stories in the parlour.</p>
+      <p>Tom had a streak of brilliance. He could prove that all recent events were foretold in the Bible, reciting chapter and verse to uphold his theories. He ate peas with his knife &mdash; when his nephew George tried to imitate him, grandmother told George to use a fork; Uncle Tom fixed the boy with a glittering eye and told him to listen to his grandmother, but that he himself would continue eating with his knife.</p>
+      <p>As a child during the Civil War, Tom witnessed a Yankee raiding party taking grain from the granary &mdash; a log building on piers over the stream. While the soldiers were distracted, young Tom picked up one of their guns and dropped it into the water below. The gun was ruined, but the bayonet survived for many years as a family relic.</p>
+      <p>Tom talked back to his parents and got away with it, though he once nearly got himself thrown out of his sister Ollie&rsquo;s house for making earthy remarks about a waitress in Huntington. He married twice: first Mary W. Payne on December 22, 1881 (four daughters: Carrie, Sara, Brownie, Theola), and after her death, Mary Whitmore on June 2, 1901 (three children: Margaret, Lucille, R. Ancel). &ldquo;Every family needs spice from a character like Uncle Tom. I guess he was marching to a different drummer.&rdquo;</p>
+    </div>
+
+</div>
+</div>
+
+<!-- Laura Eugenia Hickman Modal -->
+<div class="modal-overlay" id="modal-laura">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-laura')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo" style="background: var(--female);">LEH</div>
+      <h2>Laura Eugenia Hickman</h2>
+      <div class="bio">
+        12 Jan 1856 &ndash; ca. late 1880s<br>
+        Daughter of Roger &amp; Margaret Campbell Hickman<br>
+        Unmarried &bull; &ldquo;The Lady&rdquo; of the family &bull; Died in her early thirties
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Laura Eugenia Hickman was born on January 12, 1856, the seventh child of Roger and Margaret Campbell Hickman. She was remembered by the family as &ldquo;a very beautiful woman.&rdquo; A card in the family Bible preserves a piece of material and a braid of her lovely brown hair.</p>
+      <p>Laura was never in good health, so she remained at the family home on Back Creek until her death in her early thirties. She told the family &ldquo;it was a poor house that could not afford one lady.&rdquo; Laura was the Lady.</p>
+      <p>But grandmother was forever grateful to this &ldquo;lovely, haunted sister&rdquo; for one act of quiet courage: throwing Victorian propriety to the winds and explaining the facts of life to the younger girls. Laura had not been prepared for puberty herself &mdash; she had gone to the creek in cold weather to wash her clothes and bathe, developed a terrible cold with complications, and nearly died. After that, grandmother made sure that all the girls in the family knew well in advance of the changes that would come.</p>
+    </div>
+
+</div>
+</div>
+
+<!-- Emma Susan Sabrina Hickman Modal -->
+<div class="modal-overlay" id="modal-emma">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-emma')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo" style="background: var(--female);">ESH</div>
+      <h2>Emma Susan Sabrina Hickman</h2>
+      <div class="bio">
+        15 Nov 1852 &ndash; ca. 1920<br>
+        Daughter of Roger &amp; Margaret Campbell Hickman<br>
+        Married James Bulgar &bull; No children
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Emma Susan Sabrina Hickman was born on November 15, 1852, the fifth child of Roger and Margaret Campbell Hickman. She married James Bulgar, and though they had no children, their love left a lasting impression on the family.</p>
+      <p>When family members first met James Bulgar, they found him to be &ldquo;a dapper man with the most beautiful manners.&rdquo; Aunt Emma had died a few years before his visit, and he was still grieving for her. Grandmother told the household help that &ldquo;he had certainly been a devoted husband.&rdquo;</p>
+      <p>In the back of the Hoge family booklet is a poem entitled &ldquo;I Miss Thee&rdquo; that James Bulgar wrote to &ldquo;the beautiful Emma Sabrina Hickman&rdquo; &mdash; a testament to the depth of his love and loss.</p>
+    </div>
+
+</div>
+</div>
+
+<!-- Mary Elizabeth Hickman Ryder "Aunt Lizzie" Modal -->
+<div class="modal-overlay" id="modal-mary-elizabeth">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-mary-elizabeth')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo"><img src="photos/archive_mary_elizabeth_1880.jpg" alt="Mary Elizabeth Hickman, ca. 1880"></div>
+      <h2>Mary Elizabeth Hickman Ryder</h2>
+      <div class="bio">
+        17 Feb 1840 &ndash; 12 Apr 1904<br>
+        &ldquo;Aunt Lizzie&rdquo; &bull; Daughter of Roger &amp; Martha Ann Lockridge Hickman<br>
+        Married Stuart S. Ryder &bull; No children
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Mary Elizabeth Hickman &mdash; &ldquo;Aunt Lizzie&rdquo; &mdash; was born on February 17, 1840, the second child of Roger Hickman&rsquo;s first marriage to Martha Ann Lockridge. She married Stuart S. Ryder, and they had no children.</p>
+      <p>Aunt Lizzie was famous in the family for prowling around the house at night &mdash; a trait later generations would call &ldquo;the Hickman blood.&rdquo; One morning, the neighbors were going about their early chores when Uncle Stuart was heard to exclaim: &ldquo;A man can never get any sleep around here. The Hickmans prowl all night and the Lightners are up before dawn.&rdquo;</p>
+      <p>There is also a &ldquo;very wonderful story&rdquo; of grandfather Rose being less than kind to Aunt Lizzie, to which she responded with a Biblical quotation so perfectly appropriate that it &ldquo;really put him in his place.&rdquo; She was known for visiting the farm at least once a year, and the family was always delighted to see her. A daguerreotype from circa 1880 survives in the archive.</p>
+    </div>
+
+    <div class="photo-gallery">
+      <h3 class="modal-section-title">Photo Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/archive_mary_elizabeth_1880.jpg" alt="Mary Elizabeth Hickman, ca. 1880">
+          <div class="caption">Mary Elizabeth &ldquo;Lizzie&rdquo; Hickman, ca. 1880</div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Matilda Margaret Hickman Hepler "Aunt Tilly" Modal -->
+<div class="modal-overlay" id="modal-matilda">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-matilda')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo" style="background: var(--female);">MMH</div>
+      <h2>Matilda Margaret Hickman Hepler</h2>
+      <div class="bio">
+        24 Jul 1854<br>
+        &ldquo;Aunt Tilly&rdquo; &bull; Daughter of Roger &amp; Margaret Campbell Hickman<br>
+        Married Mr. Hepler &bull; Children: Forrest, William, Minnie
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Matilda Margaret Hickman was born on July 24, 1854, the sixth child of Roger and Margaret Campbell Hickman. She married into the Hepler family and had three children: Forrest, William, and Minnie.</p>
+      <p>Grandmother often said that &ldquo;the most beautiful bride in the family had been Aunt Tilly.&rdquo; The last time Marian Hoge MacKenzie saw her, Tilly was very old and very ill, &ldquo;but she had the Hickman nose.&rdquo;</p>
+    </div>
+
+</div>
+</div>
+
 <!-- Lightbox for full-size photos -->
 <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img" src="" alt="Full size photo">
@@ -5502,6 +5875,37 @@ The original letters are preserved in the family archive but the ornate handwrit
   }
 })();
 
+// Featured stories rotator
+(function() {
+  var stories = document.querySelectorAll('#featured-stories .featured-card');
+  var dotsContainer = document.getElementById('featured-dots');
+  var current = 0;
+  if (stories.length > 1 && dotsContainer) {
+    for (var i = 0; i < stories.length; i++) {
+      var dot = document.createElement('button');
+      dot.className = i === 0 ? 'active' : '';
+      dot.setAttribute('aria-label', 'Story ' + (i + 1));
+      dot.addEventListener('click', (function(idx) {
+        return function() {
+          stories[current].classList.remove('active');
+          dotsContainer.children[current].classList.remove('active');
+          current = idx;
+          stories[current].classList.add('active');
+          dotsContainer.children[current].classList.add('active');
+        };
+      })(i));
+      dotsContainer.appendChild(dot);
+    }
+    setInterval(function() {
+      stories[current].classList.remove('active');
+      dotsContainer.children[current].classList.remove('active');
+      current = (current + 1) % stories.length;
+      stories[current].classList.add('active');
+      dotsContainer.children[current].classList.add('active');
+    }, 7000);
+  }
+})();
+
 // Make all person cards clickable
 document.addEventListener('DOMContentLoaded', function() {
   // Exact-match map (checked first, takes priority over prefix matches)
@@ -5534,6 +5938,12 @@ document.addEventListener('DOMContentLoaded', function() {
     'Evelyn Abbott': 'modal-evelyn',
     'Penelope Ruth Hickman': 'modal-penelope',
     'Gilbert Paris Bowman Jr.': 'modal-gilbert',
+    'Virginia Alice': 'modal-virginia-alice',
+    'Thomas Brown': 'modal-thomas-brown',
+    'Laura Eugenia': 'modal-laura',
+    'Emma Susan Sabina': 'modal-emma',
+    'Mary Elizabeth': 'modal-mary-elizabeth',
+    'Matilda Margaret': 'modal-matilda',
   };
 
   // Prefix-match map (checked only if no exact match found)
