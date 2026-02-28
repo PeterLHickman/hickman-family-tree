@@ -91,7 +91,7 @@
   /* Connector lines */
   .connector-down {
     width: 2px;
-    height: 20px;
+    height: 12px;
     background: var(--line);
     margin: 0 auto;
   }
@@ -279,7 +279,7 @@
 
   /* Section */
   .section {
-    margin: 20px 0;
+    margin: 12px 0;
     padding: 15px;
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -618,47 +618,55 @@
     line-height: 1.3;
   }
 
-  /* Sunrise banner */
-  .sunrise-banner {
-    max-width: 700px;
-    margin: 0 auto 20px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid var(--border);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  /* Hero banner with Sunrise background */
+  .hero-banner {
+    background: url('photos/sunrise_homestead.jpg') center/cover no-repeat;
+    margin: -20px -20px 15px -20px;
     position: relative;
+    overflow: hidden;
+    animation: kenburns-bg 20s ease-in-out infinite alternate;
   }
 
-  .sunrise-banner img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    animation: kenburns 20s ease-in-out infinite alternate;
-    transform-origin: 30% 40%;
+  @keyframes kenburns-bg {
+    0%   { background-position: 30% 40%; background-size: 110% auto; }
+    50%  { background-position: 35% 35%; background-size: 120% auto; }
+    100% { background-position: 25% 45%; background-size: 115% auto; }
   }
 
-  @keyframes kenburns {
-    0%   { transform: scale(1)    translate(0, 0); }
-    50%  { transform: scale(1.12) translate(-2%, -1%); }
-    100% { transform: scale(1.06) translate(1%, -2%); }
+  .hero-overlay {
+    background: linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.55)
+    );
+    padding: 50px 20px 30px;
+    text-align: center;
   }
 
-  .sunrise-banner .banner-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+  .hero-banner h1 {
     color: white;
-    padding: 20px 15px 10px;
-    font-size: 13px;
-    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: 5px;
   }
 
-  .sunrise-banner .banner-caption strong {
-    font-style: normal;
-    font-size: 15px;
+  .hero-banner .subtitle {
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    margin-bottom: 8px;
+  }
+
+  .hero-caption {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+
+  .hero-banner .legend-item {
+    color: rgba(255,255,255,0.85);
+  }
+
+  .hero-banner .legend-dot {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.3);
   }
 
   /* Lightbox for full-size photos */
@@ -1093,26 +1101,17 @@
   </div>
 </nav>
 
-<h1>Hickman Family Tree</h1>
-<p class="subtitle">Descendants of Roger Hickman (1813&ndash;1889) &bull; Back Creek, Bath County, Virginia</p>
-
-<div class="legend no-print">
-  <div class="legend-item"><div class="legend-dot" style="border-color: #5a8eb8; background: var(--male);"></div> Male</div>
-  <div class="legend-item"><div class="legend-dot" style="border-color: #b85a8e; background: var(--female);"></div> Female</div>
-  <div class="legend-item"><div class="legend-dot" style="border-color: var(--highlight); background: #fffcf5;"></div> Direct Line</div>
-  <div class="legend-item"><span style="color: var(--highlight);">&#9829;</span> Marriage</div>
-</div>
-
-<div class="photo-instructions no-print">
-  Photos from the Hickman family archive.
-  
-</div>
-
-
-<div class="sunrise-banner">
-  <img src="photos/sunrise_homestead.jpg" alt="Sunrise - The Hickman family home on Back Creek, Bath County, Virginia, 1931">
-  <div class="banner-caption">
-    <strong>&ldquo;Sunrise&rdquo;</strong> &mdash; The Hickman family home on Back Creek, Bath County, Virginia, ca. 1931
+<div class="hero-banner">
+  <div class="hero-overlay">
+    <h1>Hickman Family Tree</h1>
+    <p class="subtitle">Descendants of Roger Hickman (1813&ndash;1889) &bull; Back Creek, Bath County, Virginia</p>
+    <p class="hero-caption">&ldquo;Sunrise&rdquo; &mdash; The Hickman family home on Back Creek, ca. 1931</p>
+    <div class="legend no-print">
+      <div class="legend-item"><div class="legend-dot" style="border-color: #5a8eb8; background: var(--male);"></div> Male</div>
+      <div class="legend-item"><div class="legend-dot" style="border-color: #b85a8e; background: var(--female);"></div> Female</div>
+      <div class="legend-item"><div class="legend-dot" style="border-color: var(--highlight); background: #fffcf5;"></div> Direct Line</div>
+      <div class="legend-item"><span style="color: var(--highlight);">&#9829;</span> Marriage</div>
+    </div>
   </div>
 </div>
 
