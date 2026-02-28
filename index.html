@@ -3852,6 +3852,57 @@ We would be very glad to see you all, but don&rsquo;t expect ever to see old Vir
 </div>
 </div>
 
+<!-- Jean "Patti" Glenn Modal -->
+<div class="modal-overlay" id="modal-patti">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-patti')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo">PG</div>
+      <h2>Jean Paxton &ldquo;Patti&rdquo; Glenn</h2>
+      <div class="bio">
+        May 28, 1947, Waynesboro, VA<br>
+        Teacher &bull; College of William &amp; Mary &rsquo;69 &bull; VCU M.Ed.<br>
+        Married Julian Kenneth &ldquo;Pete&rdquo; Hickman Jr.
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Jean Paxton Glenn was born on May 28, 1947 in Waynesboro, Virginia, in the Blue Ridge valley between the Blue Ridge and Allegheny mountains. She was named after her mother; her father, Francis Berkely Glenn, was superintendent of schools. She had an older sister Peggy and an older brother Burke (Francis Berkely Jr.), both significantly older &mdash; &ldquo;Peggy graduated from college when I graduated from kindergarten, so I just don&rsquo;t remember much of them because they were so much older. I just thought they were away at &lsquo;cottage&rsquo; where &lsquo;cottage cheese&rsquo; came from.&rdquo;</p>
+      <p>Patti attended Jackson-Wilson Elementary, where her father had his office, and was an excellent student throughout school. A student teacher named Susan Copenhaver who boarded at the Glenn home inspired her to teach: &ldquo;She let me help her make up games to play with the kids. I had the greatest time helping her, and so I decided that I wanted to become a teacher.&rdquo; In high school she played in the marching band with her best friend Susan Griffith, who lived next door on Chestnut Avenue.</p>
+      <p>She was admitted early decision to the College of William and Mary, graduating in the spring of 1969. Her first teaching job was at Matthew F. Morey Elementary in inner-city Richmond &mdash; a difficult assignment with serious poverty and discipline challenges that tested her but ultimately forged her as a teacher. She earned a master&rsquo;s degree from Virginia Commonwealth University while teaching.</p>
+      <p>In 1971 she was selected for an exchange teaching program in England, teaching first-graders at a Church of England school in Evercreech, near Shepton Mallet in Somerset. She shipped her beloved yellow Volkswagen convertible &ldquo;Quincy&rdquo; across the Atlantic and spent the year traveling &mdash; Portugal at Christmas, Ireland at Easter, Scandinavia in the summer. It was during this time that Pete Hickman flew to Denmark to meet her, and they traveled through Germany and Paris to England, where he proposed in a pub. &ldquo;I sent my parents a telegram the next day.&rdquo;</p>
+      <p>They married at her parents&rsquo; house in Waynesboro, honeymooned at the Ivy Cottage Inn in Hot Springs, Virginia, and settled in Richmond on Forest Hill Avenue. Patti taught at Patrick Henry Elementary while raising three sons: Peter, Ian, and Brendan. &ldquo;That was the favorite time of my life, when you guys were little. That is the best thing I have ever done; to be your mom.&rdquo;</p>
+      <p>After her marriage ended in 1988, Patti faced the loss of both parents in quick succession &mdash; her father to a stroke in April 1989, her mother to cancer three weeks later. She moved back to Waynesboro and carried on. &ldquo;In a way it was good, because for once I was in charge. I was having to do all of this and take care of you guys and I had to be the strong one, and that made me a much stronger person I think.&rdquo;</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Correspondence</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>&ldquo;Our Introduction Was of the Strangest Sort&rdquo; &mdash; Peter&rsquo;s Essay About Mom</strong>
+          <span class="correspondence-source">Peter Lightner Hickman II &mdash; school essay, University of Oregon, ca. 2000</span>
+        </div>
+        <div class="correspondence-body"><em>Peter wrote the following biographical essay about his mother as a college assignment. Excerpts:</em>
+
+&ldquo;Our introduction was of the strangest sort: one that I will never remember and she will never forget. From day one she was the support with which I began to grow. And though she let go a little more with each passing year, the feeling of her support has always been there. Her support has shaped me like a little tree is shaped by the wires that hold it straight.&rdquo;
+
+On teaching in inner-city Richmond: &ldquo;We are talking about screaming obscenities and throwing chairs across the room. Any kid with an IQ of one hundred was definitely considered one of our brightest. It was kind of tough for me.&rdquo;
+
+On England: &ldquo;All throughout high school my mother and I never spoke below a yell but we both cried all the way to Williamsburg.&rdquo;
+
+On her children: &ldquo;Oh, it was wonderful. That was the favorite time of my life, when you guys were little. That is the best thing I have ever done; to be your mom. I used to watch you sleep at night because I was so afraid that something would happen.&rdquo;
+
+On strength: &ldquo;In a way it was good, because for once I was in charge, I was having to do all of this and take care of you guys and I had to be the strong one, and that made me a much stronger person I think.&rdquo;
+
+&ldquo;I have gained a new appreciation for my mother through this assignment. I have a much better understanding of who she is as a person, and I have a better understanding of what she has been through. She has devoted her life to me and my brothers and I know there is no way that I will ever be able to repay her for that.&rdquo;</div>
+      </div>
+    </div>
+
+</div>
+</div>
+
 <!-- Peter Lightner Hickman II Modal -->
 <div class="modal-overlay" id="modal-plh-ii">
   <div class="modal">
@@ -4457,6 +4508,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'Kathleen "Jimmie" Hickman': 'modal-kathleen',
     'Ian Berkley Hickman': 'modal-ian',
     'Brendan Carlyle Hickman': 'modal-brendan',
+    'Jean "Patti" Glenn': 'modal-patti',
   };
 
   // Prefix-match map (checked only if no exact match found)
