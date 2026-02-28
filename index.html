@@ -1490,6 +1490,101 @@
       margin: 0 !important;
     }
   }
+
+  /* ====== MOBILE RESPONSIVE FIXES ====== */
+
+  /* Small phones (480px and below) */
+  @media (max-width: 480px) {
+    .person { width: 110px; padding: 6px 3px; }
+    .person .photo { width: 38px; height: 38px; font-size: 13px; }
+    .small-person { width: 85px; }
+    .small-person .photo { width: 28px; height: 28px; font-size: 10px; }
+    .generation { gap: 6px; }
+    .couple { flex-direction: column; gap: 4px; }
+    .marriage-group { max-width: 100% !important; margin: 8px 2px !important; padding: 10px; }
+    .section { padding: 12px 8px; margin: 8px 2px !important; }
+    .section-title { font-size: 16px; }
+    .modal-photo { width: 200px; height: 200px; font-size: 48px; }
+    .modal-header h2 { font-size: 18px; }
+    .hero-overlay { padding: 100px 16px 50px; }
+    .hero-banner h1 { font-size: 22px; }
+    .hero-banner .subtitle { font-size: 11px; }
+    .archive-frame { height: 250px; }
+    .archive-frame img { max-height: 220px; }
+    .tribute-photo { width: 120px; height: 120px; }
+    .featured-card.active { flex-direction: column; gap: 10px; }
+    .featured-card .featured-info { text-align: center; }
+    .featured-card .featured-teaser { max-width: 100%; }
+    .welcome-bar { padding: 16px 12px; }
+    .welcome-bar p { font-size: 13px; }
+    .welcome-bar .welcome-nav a { padding: 4px 8px; font-size: 11px; }
+    .gallery-item { width: 110px !important; }
+    .gallery-item img { height: 100px !important; }
+  }
+
+  /* Medium phones (600px and below) */
+  @media (max-width: 600px) {
+    .featured-card.active { flex-direction: column; gap: 12px; }
+    .featured-card .featured-info { text-align: center; }
+    .featured-card .featured-teaser { max-width: 100%; }
+    .person .dates { font-size: 10px; }
+    .person .note { font-size: 9px; }
+    .modal-photo { width: 240px; height: 240px; }
+  }
+
+  /* Touch target fixes (all mobile) */
+  @media (max-width: 768px) {
+    .modal-close {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+    }
+    .archive-nav button { width: 40px; height: 40px; }
+    .nav-toggle { padding: 12px; }
+    .tl-filter { padding: 8px 12px; min-height: 36px; }
+    .featured-dots button,
+    .tribute-dot { width: 14px; height: 14px; }
+    .search-clear {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .back-to-top { width: 44px; height: 44px; }
+  }
+
+  /* Prevent iOS auto-zoom on form focus */
+  @media (max-width: 768px) {
+    .search-input { font-size: 16px; }
+    .feedback-section input,
+    .feedback-section textarea,
+    input[type="text"],
+    input[type="email"],
+    textarea { font-size: 16px; }
+  }
+
+  /* Lightbox close button for mobile */
+  .lightbox-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    border: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2001;
+  }
 </style>
 </head>
 <body>
@@ -5821,6 +5916,7 @@ The original letters are preserved in the family archive but the ornate handwrit
 
 <!-- Lightbox for full-size photos -->
 <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">&times;</button>
   <img id="lightbox-img" src="" alt="Full size photo">
 </div>
 
