@@ -1270,15 +1270,15 @@
 </nav>
 
 <div class="hero-banner">
-  <div class="hero-slide active" style="background-image: url('photos/sunrise_homestead.jpg')"></div>
-  <div class="hero-slide" style="background-image: url('photos/peter_ollie_family.jpg')"></div>
-  <div class="hero-slide" style="background-image: url('photos/siblings_group.jpg')"></div>
-  <div class="hero-slide" style="background-image: url('photos/gathering1.jpg')"></div>
-  <div class="hero-slide" style="background-image: url('photos/gathering2.jpg')"></div>
+  <div class="hero-slide active" style="background-image: url('photos/sunrise_homestead.jpg')" data-caption="&ldquo;Sunrise&rdquo; &mdash; The Hickman family home on Back Creek, ca. 1931"></div>
+  <div class="hero-slide" style="background-image: url('photos/peter_ollie_family.jpg')" data-caption="Peter Lightner Hickman &amp; Ollie Gertrude Lockridge with family"></div>
+  <div class="hero-slide" style="background-image: url('photos/siblings_group.jpg')" data-caption="The Hickman siblings at Sunrise"></div>
+  <div class="hero-slide" style="background-image: url('photos/gathering1.jpg')" data-caption="A Hickman family gathering"></div>
+  <div class="hero-slide" style="background-image: url('photos/gathering2.jpg')" data-caption="A Hickman family gathering"></div>
   <div class="hero-overlay">
     <h1>Hickman Family Tree</h1>
     <p class="subtitle">Descendants of William Roger Hickman (1813&ndash;1889) &bull; Back Creek, Bath County, Virginia</p>
-    <p class="hero-caption">&ldquo;Sunrise&rdquo; &mdash; The Hickman family home on Back Creek, ca. 1931</p>
+    <p class="hero-caption" id="hero-caption">&ldquo;Sunrise&rdquo; &mdash; The Hickman family home on Back Creek, ca. 1931</p>
     <div class="legend no-print">
       <div class="legend-item"><div class="legend-dot" style="border-color: #5a8eb8; background: var(--male);"></div> Male</div>
       <div class="legend-item"><div class="legend-dot" style="border-color: #b85a8e; background: var(--female);"></div> Female</div>
@@ -4218,12 +4218,16 @@ The original letters are preserved in the family archive but the ornate handwrit
 // Hero slideshow
 (function() {
   var slides = document.querySelectorAll('.hero-slide');
+  var caption = document.getElementById('hero-caption');
   var current = 0;
   if (slides.length > 1) {
     setInterval(function() {
       slides[current].classList.remove('active');
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
+      if (caption && slides[current].dataset.caption) {
+        caption.innerHTML = slides[current].dataset.caption;
+      }
     }, 6000);
   }
 })();
