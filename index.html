@@ -2692,21 +2692,42 @@
 <div class="section no-print" id="section-family-news" style="max-width: 700px; margin: 30px auto;">
   <div class="section-title">Family News</div>
   <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 20px;">
-    Share family milestones, updates, and memories. Births, graduations, weddings, reunions &mdash; if it&rsquo;s Hickman news, we want to hear it.
+    Share family milestones, updates, and memories. Births, graduations, weddings, reunions &mdash; if it&rsquo;s Hickman news, we want to hear it. Sign in with GitHub to post directly, or use the form below.
   </p>
-  <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; max-width: 600px; margin: 0 auto;">
-    <form action="https://formspree.io/f/mkovekgy" method="POST" enctype="multipart/form-data">
-      <input type="text" name="name" placeholder="Your name" required style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; background: white;">
-      <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; background: white;">
-      <textarea name="news" rows="4" placeholder="Share your news &mdash; a birth, a wedding, a graduation, a memory, a reunion, or anything else&hellip;" required style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; resize: vertical; background: white;"></textarea>
-      <div style="margin-bottom: 12px;">
-        <label style="font-size: 12px; color: var(--text-light);">Attach a photo (optional):</label>
-        <input type="file" name="photo" accept="image/*" style="font-size: 12px; margin-top: 4px;">
-      </div>
-      <input type="hidden" name="_subject" value="Hickman Family News Submission">
-      <button type="submit" style="background: var(--highlight); color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 13px; cursor: pointer;">Share News</button>
-    </form>
+  <div style="max-width: 640px; margin: 0 auto 20px;">
+    <script src="https://giscus.app/client.js"
+            data-repo="PeterLHickman/hickman-family-tree"
+            data-repo-id="R_kgDORawMpQ"
+            data-category="Announcements"
+            data-category-id="DIC_kwDORawMpc4C3Z4d"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="bottom"
+            data-theme="preferred_color_scheme"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+    </script>
   </div>
+  <details style="max-width: 600px; margin: 0 auto;">
+    <summary style="font-size: 13px; color: var(--text-light); cursor: pointer; text-align: center;">Don&rsquo;t have a GitHub account? Submit news by email instead.</summary>
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 12px;">
+      <form action="https://formspree.io/f/mkovekgy" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Your name" required style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; background: white;">
+        <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; background: white;">
+        <textarea name="news" rows="4" placeholder="Share your news &mdash; a birth, a wedding, a graduation, a memory, a reunion, or anything else&hellip;" required style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; resize: vertical; background: white;"></textarea>
+        <div style="margin-bottom: 12px;">
+          <label style="font-size: 12px; color: var(--text-light);">Attach a photo (optional):</label>
+          <input type="file" name="photo" accept="image/*" style="font-size: 12px; margin-top: 4px;">
+        </div>
+        <input type="hidden" name="_subject" value="Hickman Family News Submission">
+        <button type="submit" style="background: var(--highlight); color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 13px; cursor: pointer;">Share News</button>
+      </form>
+    </div>
+  </details>
 </div>
 
 <!-- Dedication -->
