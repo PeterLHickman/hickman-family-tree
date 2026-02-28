@@ -1129,10 +1129,33 @@
     border-radius: 16px;
     border: 1px solid #e0d8c8;
     text-align: center;
+    position: relative;
+    overflow: hidden;
   }
 
   .tribute-section .section-title {
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+  }
+
+  .tribute-carousel {
+    position: relative;
+    min-height: 320px;
+  }
+
+  .tribute-card {
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+  }
+
+  .tribute-card.active {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
   }
 
   .tribute-subtitle {
@@ -1145,36 +1168,22 @@
   .tribute-dates {
     font-size: 14px;
     color: var(--text-light);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
   }
 
   .tribute-photo {
-    width: 400px;
-    height: 400px;
-    border-radius: 12px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--highlight);
-    margin: 0 auto 25px;
+    margin: 0 auto 20px;
     display: block;
-  }
-
-  .tribute-narrative {
-    text-align: left;
-    max-width: 650px;
-    margin: 0 auto 30px;
-  }
-
-  .tribute-narrative p {
-    font-size: 15px;
-    line-height: 1.8;
-    color: #4a3e2e;
-    font-family: Georgia, 'Times New Roman', serif;
-    margin-bottom: 14px;
   }
 
   .tribute-quote {
     max-width: 600px;
-    margin: 25px auto 0;
+    margin: 0 auto;
     padding: 20px 25px;
     background: rgba(212,168,83,0.08);
     border-left: 4px solid var(--highlight);
@@ -1196,6 +1205,28 @@
     font-size: 12px;
     color: var(--text-light);
     font-style: normal;
+  }
+
+  .tribute-dots {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .tribute-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d4c8b0;
+    cursor: pointer;
+    transition: background 0.3s;
+    border: none;
+    padding: 0;
+  }
+
+  .tribute-dot.active {
+    background: var(--highlight);
   }
 
   /* ========== MOBILE RESPONSIVE ========== */
@@ -1230,7 +1261,7 @@
     .modal { padding: 20px; }
     .modal-photo { width: 280px; height: 280px; }
     .modal-header h2 { font-size: 22px; }
-    .tribute-photo { width: 280px; height: 280px; }
+    .tribute-photo { width: 160px; height: 160px; }
   }
 </style>
 </head>
@@ -2197,49 +2228,114 @@
 </div>
 
 <!-- ============================================================ -->
-<!-- BILL GABRIEL TRIBUTE -->
+<!-- IN MEMORIAM CAROUSEL -->
 <!-- ============================================================ -->
 <div class="tribute-section" id="section-tribute">
   <div class="section-title">In Memoriam</div>
-  <div class="tribute-subtitle">Herman William &ldquo;Bill&rdquo; Gabriel III</div>
-  <div class="tribute-dates">December 21, 1933 &ndash; 2020</div>
 
-  <img src="photos/bill_portrait.jpg" alt="Bill Gabriel" class="tribute-photo">
-
-  <div class="tribute-narrative">
-    <p>Bill Gabriel was born in Richmond, Virginia, the elder son of Ruth Hickman Gabriel and Hermann William Gabriel Jr. He attended Virginia Polytechnic Institute as a cadet and went on to earn a doctorate in wildlife biology from the University of Montana.</p>
-
-    <p>His career with the U.S. Forest Service took him across the American West&mdash;from Utah and Wyoming to Alaska and finally Montana, where he settled in the Bitterroot Valley at what he affectionately called &ldquo;The Beautiful Bitter Root Bird Farm.&rdquo; Bill was a gifted nature writer and photographer who found his deepest contentment watching pygmy owls roost in his woodpile and tracking the coveys of gray partridge through long mountain winters.</p>
-
-    <p>Bill was project-oriented by nature, and after retiring he turned that drive to a task that would define his later years: preserving the Hickman family history. What he expected to be a simple project at Christmas 1992 grew into a multi-year labor of love. He transcribed hundreds of letters dating back to the 1830s, compiled three volumes of family correspondence, and worked closely with his uncle Clare&mdash;the family&rsquo;s recognized authority on Hickman history&mdash;to piece together the story of the family on Back Creek.</p>
-
-    <p>Bill also adventured with his brother Henmar&mdash;floating the Colorado River through the Grand Canyon, rafting the Salmon River, hiking with llamas in Hell&rsquo;s Canyon, and canoeing the Missouri. He authored the memoir &ldquo;Memories of a Career&rdquo; and never stopped writing letters to his Hickman cousins, filled with observations about birds, weather, comets, and the passage of time.</p>
-
-    <p>The archive that forms the foundation of this website exists because of Bill Gabriel. His devotion to family, his meticulous care with documents, and his belief that these stories mattered have given future generations a window into the world of Back Creek. He never married. He died in Montana in 2020.</p>
-  </div>
-
-  <div class="tribute-quote">
-    <p>&ldquo;What I thought, last Christmas, would be a fairly simple task has turned into a multi-year project. And that is fine with me, because I am project-oriented. Instead of a routine, go-to-the-office and shuffle-the-papers job, I always worked on projects that could be defined, measured, and had definite products marking their completion.&rdquo;</p>
-    <cite>&mdash; Bill Gabriel, letter to Hickman cousins, October 25, 1993</cite>
-  </div>
-
-  <div class="photo-gallery" style="margin-top: 25px;">
-    <h3 class="modal-section-title">Photos</h3>
-    <div class="gallery-grid">
-      <div class="gallery-item" onclick="showLightbox(this)">
-        <img src="photos/bill_portrait.jpg" alt="Bill Gabriel VPI cadet">
-        <div class="caption">VPI cadet headshot</div>
+  <div class="tribute-carousel">
+    <div class="tribute-card active">
+      <img src="photos/bill_portrait.jpg" alt="Bill Gabriel" class="tribute-photo">
+      <div class="tribute-subtitle">Herman William &ldquo;Bill&rdquo; Gabriel III</div>
+      <div class="tribute-dates">1933 &ndash; 2020</div>
+      <div class="tribute-quote">
+        <p>&ldquo;What I thought, last Christmas, would be a fairly simple task has turned into a multi-year project. And that is fine with me, because I am project-oriented.&rdquo;</p>
+        <cite>&mdash; Letter to Hickman cousins, October 1993</cite>
       </div>
-      <div class="gallery-item" onclick="showLightbox(this)">
-        <img src="photos/bill_gallery1.jpg" alt="Bill Gabriel">
-        <div class="caption">Bill Gabriel</div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/julian_portrait.jpg" alt="Julian Kenneth Hickman" class="tribute-photo">
+      <div class="tribute-subtitle">Julian Kenneth Hickman</div>
+      <div class="tribute-dates">1911 &ndash; 1964</div>
+      <div class="tribute-quote">
+        <p>&ldquo;As I observe the clouds moving hand in hand down the blue highway of the sky I often think of the unity there is and must be in life.&rdquo;</p>
+        <cite>&mdash; Letter to Brownie, June 1961</cite>
       </div>
-      <div class="gallery-item" onclick="showLightbox(this)">
-        <img src="photos/bill_gallery2.jpg" alt="H. William Bill Gabriel">
-        <div class="caption">H. William &ldquo;Bill&rdquo; Gabriel</div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/plh_portrait.jpg" alt="Peter Lightner Hickman" class="tribute-photo">
+      <div class="tribute-subtitle">Peter Lightner Hickman</div>
+      <div class="tribute-dates">1858 &ndash; 1937</div>
+      <div class="tribute-quote">
+        <p>&ldquo;He was known as a devoted family man &mdash; honest, modest, and firm in his convictions. For many years he served Bath County as a justice of the peace and was a ruling elder in the Presbyterian church.&rdquo;</p>
+        <cite>&mdash; Obituary, Recorder, 1937</cite>
+      </div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/ollie_portrait.jpg" alt="Ollie Gertrude Lockridge" class="tribute-photo">
+      <div class="tribute-subtitle">Ollie Gertrude Lockridge Hickman</div>
+      <div class="tribute-dates">1870 &ndash; 1965</div>
+      <div class="tribute-quote">
+        <p>&ldquo;Never have I seen a person of ninety years of age who has the keen interest in life and people that mother has.&rdquo;</p>
+        <cite>&mdash; Julian, letter to Roger in Manila, April 1961</cite>
+      </div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/roger_portrait.jpg" alt="Roger Lockridge Hickman" class="tribute-photo">
+      <div class="tribute-subtitle">Dr. Roger Lockridge &ldquo;Roge&rdquo; Hickman</div>
+      <div class="tribute-dates">1896 &ndash; 1979</div>
+      <div class="tribute-quote">
+        <p>&ldquo;Roger has certainly known how to contribute to life and to receive pleasures from life.&rdquo;</p>
+        <cite>&mdash; Julian, letter to Brownie, June 1961</cite>
+      </div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/virge_portrait.jpg" alt="Virginia Hickman Campbell" class="tribute-photo">
+      <div class="tribute-subtitle">Ollie Virginia &ldquo;Virge&rdquo; Hickman Campbell</div>
+      <div class="tribute-dates">1902 &ndash; 1996</div>
+      <div class="tribute-quote">
+        <p>&ldquo;My mother would be deeply grieved if she knew the faith she had so tenaciously clung to had been betrayed.&rdquo;</p>
+        <cite>&mdash; Letter to Richmond Home for Ladies, September 1965</cite>
+      </div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/clare_portrait.jpg" alt="Clare Brown Hickman" class="tribute-photo">
+      <div class="tribute-subtitle">Clare Brown &ldquo;Brownie&rdquo; Hickman</div>
+      <div class="tribute-dates">1905 &ndash; 1997</div>
+      <div class="tribute-quote">
+        <p>&ldquo;The family&rsquo;s recognized authority on Hickman history, Clare worked closely with his nephew Bill Gabriel to piece together the story of the family on Back Creek.&rdquo;</p>
+        <cite>&mdash; Family history</cite>
+      </div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/ruth_portrait.jpg" alt="Ruth Gertrude Hickman" class="tribute-photo">
+      <div class="tribute-subtitle">Ruth Gertrude Hickman Gabriel Hardy</div>
+      <div class="tribute-dates">1908 &ndash; 1997</div>
+      <div class="tribute-quote">
+        <p>&ldquo;I have two fine boys whom I adore. I have a good position and I get along with everybody. I do miss my family terribly.&rdquo;</p>
+        <cite>&mdash; Letter to Virge, May 1941</cite>
+      </div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/harry_portrait.jpg" alt="Harry Herman Hickman" class="tribute-photo">
+      <div class="tribute-subtitle">Harry Herman Hickman</div>
+      <div class="tribute-dates">1914 &ndash; 1999</div>
+      <div class="tribute-quote">
+        <p>&ldquo;All of us, practically, have lost our closest friends out here. We simply cannot be thankful enough that the end has come.&rdquo;</p>
+        <cite>&mdash; V-Mail from Ie Shima, August 1945</cite>
+      </div>
+    </div>
+
+    <div class="tribute-card">
+      <img src="photos/forrest_portrait.jpg" alt="Forrest Elwood Hickman" class="tribute-photo">
+      <div class="tribute-subtitle">Forrest Elwood &ldquo;Si&rdquo; Hickman</div>
+      <div class="tribute-dates">1898 &ndash; 1954</div>
+      <div class="tribute-quote">
+        <p>&ldquo;The second son of Peter and Ollie, Si lived a quiet life in Elkton, Virginia. Unmarried, he remained close to the family and his passing drew the siblings together one last time.&rdquo;</p>
+        <cite>&mdash; Family history</cite>
       </div>
     </div>
   </div>
+
+  <div class="tribute-dots" id="tribute-dots"></div>
 </div>
 
 <!-- ============================================================ -->
@@ -2612,6 +2708,51 @@ The National Archives returned her inquiry with a form: &ldquo;We have found no 
 
 At the time of her application, Ollie was living on no income, no property, no Social Security, and no pension &mdash; dependent on her children. The application was ultimately denied because Confederate service records were incomplete, a common frustration for legitimate descendants.</div>
       </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>&ldquo;Dear Squire&rdquo; &mdash; Ollie&rsquo;s Courtship Letter &mdash; March 6, 1895</strong>
+          <span class="correspondence-source">Ollie Gertrude Lockridge to Peter Lightner Hickman, typed secretly at work on General Hocking Coal Co. letterhead, Columbus, Ohio</span>
+        </div>
+        <div class="correspondence-body">Columbus, O. March 6, 1895.
+
+Dear Squire:&mdash;
+
+I received your letter last evening. You have not fully understood my meaning in my former letter to you. I did not mean that I never expected to marry, neither did I mean that I would not marry you, but as you do not seem to look at this matter the same as I do, it seems almost useless to try to explain my meaning.
+
+By Hamp&rsquo;s marriage you perhaps see the position it places me in, viz: the main support of my mother and sister, and so long as I am sure of this position, I would not care to give it up for something uncertain, or in other words, until we could see what we could do. If a person can have no assurance of a fair living before marriage, what can they expect after?
+
+I have always lived well and it takes some means to do so, but Squire, I do not say these things to provoke or discourage you but for both our sakes. I would rather live single all my life rather than married and have to pinch and economize so much. It would make us both miserable. Suppose you were to come out here and try the grocery business? It seems to be very good. You could at least come out and see.
+
+Write soon.
+
+With love,
+Ollise</div>
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Sun Rise Farm Report &mdash; December 27, 1895</strong>
+          <span class="correspondence-source">John A. Robinson to Peter &amp; Ollie Hickman, reporting on the farm while the newlyweds were in Columbus</span>
+        </div>
+        <div class="correspondence-body">Sun Rise, Bath County, Virginia
+December 27, 1895
+
+Dear Friend,
+
+I received your kind letter a few days ago and was truly glad to hear from you and your wife. This leaves us all very bad with the cold, but I trust when these few lines reaches you it will find both you and your wife well and doing well.
+
+So you would be glad to know how we are getting along &mdash; we are getting along very well at present. Your cows was looking splendid before they was taken off of the meadow. Your little gray, you would hardly recognize her &mdash; her back is gotten well, and the mare and colt is looking well. The sheep also, and two work horses are looking about like they did when you was here.
+
+We have gathered the corn. You had 401 1/2 barrels of corn. I had the same. This is the corn that was raised on the new ground. And on the old part, you had 8, I had 4. I had the little field cleaned out now and fenced, and the fence below your house &mdash; they are 835.
+
+I will tell you and your wife about a big meeting at the Dunkard church held by Rev. Mr. Clark. Mrs. Nancy J. Lewis got converted. They was several held up their hands &mdash; Mrs. Byrd, John Byrd, Miss Ollie Sharp, Mrs. Simmons and a Miss Simes, Mr. Brown Lightner and his wife, and Mr. Andrew Curry and his wife. Meeting is still continued.
+
+I will bring my letter to a close as I have nothing to relate at present. We all send our best respects to you and Miss Ollie &mdash; Mrs. Hickman I should have said. Excuse my bad spelling.
+
+Your truly,
+John A. Robinson</div>
+      </div>
     </div>
 
     <div class="photo-gallery">
@@ -2710,6 +2851,18 @@ Real life is something that flows by unknown to us and possibly foreign to us. I
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/roger_ruth_group.jpg" alt="Roger and Ruth">
           <div class="caption">Roger &amp; Ruth</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/roger_nell_clinton.png" alt="Roger and Nell in Clinton, Oklahoma">
+          <div class="caption">Roger &amp; Nell, Clinton, OK</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/roger_1965.png" alt="Roger Hickman, 1965">
+          <div class="caption">Roger, 1965</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/hickman_reunion_1936.png" alt="Hickman family reunion, 1936">
+          <div class="caption">Hickman reunion, 1936</div>
         </div>
       </div>
     </div>
@@ -2892,6 +3045,10 @@ LETS ALL VOTE &mdash; Your Bro. Clare.</div>
           <img src="photos/clare_gallery2.jpg" alt="Clare later years">
           <div class="caption">Later years</div>
         </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/clare_june63.jpg" alt="Clare and Juanita, June 1963">
+          <div class="caption">June 1963</div>
+        </div>
       </div>
     </div>
 
@@ -2956,6 +3113,10 @@ I waited until I saw that she was made comfortable &mdash; by putting a rubber r
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/ruth_gallery2.jpg" alt="Ruth traveling">
           <div class="caption">Traveling abroad</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/ruth_later.jpg" alt="Ruth in later years">
+          <div class="caption">Ruth, later years</div>
         </div>
       </div>
     </div>
@@ -3918,6 +4079,14 @@ The original letters are preserved in the family archive but the ornate handwrit
           <img src="photos/warren_campbell.jpg" alt="Warren Doc Campbell">
           <div class="caption">Warren &ldquo;Doc&rdquo; Campbell</div>
         </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/doc_fence.jpg" alt="Doc Campbell on a fence in the mountains">
+          <div class="caption">Doc on the fence, Back Creek</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/doc_virge_young.jpg" alt="Doc and Virge as a young couple">
+          <div class="caption">Doc &amp; Virge, young couple</div>
+        </div>
       </div>
     </div>
 
@@ -4229,6 +4398,37 @@ The original letters are preserved in the family archive but the ornate handwrit
         caption.innerHTML = slides[current].dataset.caption;
       }
     }, 6000);
+  }
+})();
+
+// In Memoriam carousel
+(function() {
+  var cards = document.querySelectorAll('.tribute-card');
+  var dotsContainer = document.getElementById('tribute-dots');
+  var current = 0;
+  if (cards.length > 1 && dotsContainer) {
+    for (var i = 0; i < cards.length; i++) {
+      var dot = document.createElement('button');
+      dot.className = 'tribute-dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Tribute ' + (i + 1));
+      dot.addEventListener('click', (function(idx) {
+        return function() {
+          cards[current].classList.remove('active');
+          dotsContainer.children[current].classList.remove('active');
+          current = idx;
+          cards[current].classList.add('active');
+          dotsContainer.children[current].classList.add('active');
+        };
+      })(i));
+      dotsContainer.appendChild(dot);
+    }
+    setInterval(function() {
+      cards[current].classList.remove('active');
+      dotsContainer.children[current].classList.remove('active');
+      current = (current + 1) % cards.length;
+      cards[current].classList.add('active');
+      dotsContainer.children[current].classList.add('active');
+    }, 8000);
   }
 })();
 
