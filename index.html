@@ -1629,7 +1629,7 @@
     <!-- 2. Forrest "Si" -->
     <div class="family-unit">
       <div class="person male">
-        <div class="photo">FE</div>
+        <div class="photo"><img src="photos/forrest_portrait.jpg" alt="Forrest Elwood Hickman"></div>
         <div class="name">Forrest Elwood</div>
         <div class="nickname">"Si"</div>
         <div class="dates">1898&ndash;1954</div>
@@ -1681,7 +1681,7 @@
           <div class="note">m. Gilbert Bowman</div>
         </div>
         <div class="person female small-person">
-          <div class="photo">KH</div>
+          <div class="photo"><img src="photos/kathleen_hickman.jpg" alt="Kathleen Jimmie Hickman"></div>
           <div class="name">Kathleen James</div>
           <div class="nickname">"Jimmie"</div>
           <div class="dates"></div>
@@ -1714,7 +1714,7 @@
       <div style="font-size: 8px; color: var(--text-light); text-align: center;">m. 8 Apr 1933, Richmond</div>
       <div class="children-row">
         <div class="person male small-person">
-          <div class="photo">BG</div>
+          <div class="photo"><img src="photos/bill_gallery3.jpg" alt="Bill Gabriel"></div>
           <div class="name">Herman Wm. "Bill" Gabriel III</div>
           <div class="dates">b. 1933</div>
           <div class="note">unmarried; UT/WY/AK/MT<br>family historian</div>
@@ -1844,7 +1844,7 @@
       <div class="family-unit">
         <div class="couple">
           <div class="person female">
-            <div class="photo">CB</div>
+            <div class="photo"><img src="photos/carolyn_hickman.jpg" alt="Carolyn Brown Hickman"></div>
             <div class="name">Carolyn Brown Hickman</div>
             <div class="dates"></div>
             <div class="note">Richmond, VA</div>
@@ -2034,7 +2034,7 @@
           <div class="family-unit">
             <div class="couple">
               <div class="person female small-person">
-                <div class="photo">VS</div>
+                <div class="photo"><img src="photos/vicki_mudd.jpg" alt="Victoria Scott Mudd"></div>
                 <div class="name">Victoria Scott Mudd</div>
                 <div class="dates"></div>
               </div>
@@ -2173,7 +2173,7 @@
             <h3 style="color: var(--accent2); font-size: 12px;">&#9829; Marriage 2 &mdash; m. 13 Oct 1973</h3>
             <div class="marriage-header">
               <div class="person female" style="width: 110px;">
-                <div class="photo">PG</div>
+                <div class="photo"><img src="photos/patti_museum.jpg" alt="Jean Patti Glenn"></div>
                 <div class="name">Jean "Patti" Glenn</div>
                 <div class="note" style="font-size: 7px;">d/o Jean &amp; Francis Berkerly Glenn</div>
               </div>
@@ -4106,8 +4106,8 @@ We would be very glad to see you all, but don&rsquo;t expect ever to see old Vir
           <div class="caption">Pete with young Peter, ca. 1980</div>
         </div>
         <div class="gallery-item" onclick="showLightbox(this)">
-          <img src="photos/pete_peter_mcguire.jpg" alt="Pete and Peter in McGuire School shirts">
-          <div class="caption">Pete &amp; Peter in matching McGuire School shirts</div>
+          <img src="photos/pete_peter_mcguire.jpg" alt="Brendan and Pete in McGuire School shirts">
+          <div class="caption">Brendan &amp; Pete in matching McGuire School shirts</div>
         </div>
       </div>
     </div>
@@ -4511,9 +4511,37 @@ The original letters are preserved in the family archive but the ornate handwrit
           <img src="photos/neva_daughter_car.jpg" alt="Neva Martin Hickman, ca. 1950s">
           <div class="caption">Neva, ca. early 1950s</div>
         </div>
+      </div>
+    </div>
+
+</div>
+</div>
+
+<!-- Victoria "Vicki" Scott Mudd Modal -->
+<div class="modal-overlay" id="modal-vicki">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-vicki')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo"><img src="photos/vicki_mudd.jpg" alt="Victoria Scott Mudd"></div>
+      <h2>Victoria Scott &ldquo;Vicki&rdquo; Mudd</h2>
+      <div class="bio">
+        Daughter of Neva Martin Hickman &amp; Thomas Mudd<br>
+        m. Kit Charbonneau<br>
+        Generation 8
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Victoria Scott &ldquo;Vicki&rdquo; Mudd is the daughter of Neva Martin Hickman and Thomas Mudd. She married Kit Charbonneau. Vicki is part of the eighth generation descended from the Back Creek Hickmans through her mother&rsquo;s line.</p>
+    </div>
+
+    <div class="photo-gallery">
+      <h3 class="modal-section-title">Photo Gallery</h3>
+      <div class="gallery-grid">
         <div class="gallery-item" onclick="showLightbox(this)">
-          <img src="photos/neva_daughter.jpg" alt="Vicki (misidentified)">
-          <div class="caption">Previously identified as Neva &mdash; actually Vicki</div>
+          <img src="photos/vicki_mudd.jpg" alt="Vicki Mudd">
+          <div class="caption">Vicki Mudd</div>
         </div>
       </div>
     </div>
@@ -4830,6 +4858,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'Ian Berkley Hickman': 'modal-ian',
     'Brendan Carlyle Hickman': 'modal-brendan',
     'Jean "Patti" Glenn': 'modal-patti',
+    'Victoria Scott Mudd': 'modal-vicki',
   };
 
   // Prefix-match map (checked only if no exact match found)
