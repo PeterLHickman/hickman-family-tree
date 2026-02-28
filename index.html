@@ -562,6 +562,118 @@
     margin-top: 10px;
   }
 
+
+  /* Photo gallery in modals */
+  .photo-gallery {
+    margin: 18px 0;
+    padding: 15px;
+    background: #fdfcfa;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .photo-gallery h4 {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .gallery-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .gallery-item {
+    width: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--photo-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-item .caption {
+    font-size: 9px;
+    color: var(--text-light);
+    text-align: center;
+    padding: 4px;
+    line-height: 1.3;
+  }
+
+  /* Sunrise banner */
+  .sunrise-banner {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    position: relative;
+  }
+
+  .sunrise-banner img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .sunrise-banner .banner-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    padding: 20px 15px 10px;
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  .sunrise-banner .banner-caption strong {
+    font-style: normal;
+    font-size: 15px;
+  }
+
+  /* Lightbox for full-size photos */
+  .lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .lightbox-overlay.active {
+    display: flex;
+  }
+
+  .lightbox-overlay img {
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  }
+
   /* Print styles */
   @media print {
     body { padding: 10px; font-size: 10px; }
@@ -622,6 +734,14 @@
 <div class="photo-instructions no-print">
   Photos from the Hickman family archive.
   
+</div>
+
+
+<div class="sunrise-banner">
+  <img src="photos/sunrise_homestead.jpg" alt="Sunrise - The Hickman family home on Back Creek, Bath County, Virginia, 1931">
+  <div class="banner-caption">
+    <strong>&ldquo;Sunrise&rdquo;</strong> &mdash; The Hickman family home on Back Creek, Bath County, Virginia, ca. 1931
+  </div>
 </div>
 
 <div class="tree">
@@ -1537,7 +1657,30 @@ Sincerely your brother, Julian.</div>
       </audio>
     </div>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/plh_portrait.jpg" alt="Peter Lightner Hickman studio portrait">
+          <div class="caption">Studio portrait</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/peter_ollie_family.jpg" alt="Peter and Ollie family">
+          <div class="caption">Peter &amp; Ollie with family</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/sunrise_homestead.jpg" alt="Sunrise homestead 1931">
+          <div class="caption">&ldquo;Sunrise&rdquo; homestead, 1931</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/siblings_group.jpg" alt="The siblings at Sunrise">
+          <div class="caption">The siblings together</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 </div>
 
 <!-- Ollie Modal -->
@@ -1622,7 +1765,26 @@ Mrs. P. L. Hickman.</div>
       </audio>
     </div>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/ollie_portrait.jpg" alt="Ollie Gertrude Lockridge Hickman">
+          <div class="caption">Ollie in later years</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/peter_ollie_family.jpg" alt="Peter and Ollie family">
+          <div class="caption">With Peter &amp; family</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/harry_ollie.jpg" alt="Ollie with Harry">
+          <div class="caption">With son Harry</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 </div>
 
 
@@ -1672,7 +1834,26 @@ As a &ldquo;kid,&rdquo; I was amazed by the pleasures of the printed page. This 
 Real life is something that flows by unknown to us and possibly foreign to us. I want to assure you, as almost all of my useful years are over, that my greatest pleasure, enjoyment, happiness and satisfaction was found in routine work in my fields, and by reading about far-away places, then years later, in visiting such places as Fiji or Samoa.</div>
     </div>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/roger_portrait.jpg" alt="Roger at Casemate Museum">
+          <div class="caption">At the Casemate Museum</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/roger_gallery1.jpg" alt="Roger and Nellie">
+          <div class="caption">Roger &amp; Nellie</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/roger_ruth_group.jpg" alt="Roger and Ruth">
+          <div class="caption">Roger &amp; Ruth</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 </div>
 
 <!-- Forrest Modal -->
@@ -1740,7 +1921,26 @@ I had attended a family reunion near Hot Springs, Virginia, on July 11th at whic
       <div class="text">I am in full accord to selling the farm to Mrs. Shifflett for the sum of $7,500.00. In fact, I am somewhat relieved that it will be sold rather than have you and Clare try to carry on. I am also rather pleased that the farm will be sold to someone who will have a community interest in the activities of the valley rather than someone who will buy it for its commercial value.</div>
     </div>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/virge_portrait.jpg" alt="Virge and Doc Campbell">
+          <div class="caption">With Doc Campbell</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/virge_gallery1.jpg" alt="Virginia at Christmas">
+          <div class="caption">Christmas with stockings</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/virge_gallery2.jpg" alt="Young Virginia and Doc">
+          <div class="caption">Young Virge &amp; Doc</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 </div>
 
 <!-- Clare Modal -->
@@ -1773,7 +1973,26 @@ LETS ALL VOTE &mdash; Your Bro. Clare.</div>
       Clare was recognized as the family&rsquo;s authority on Hickman history. Bill Gabriel worked with him extensively on the family history project in the 1990s. Though few of Clare&rsquo;s own letters survive, his meticulous knowledge of the family&rsquo;s past informed much of the archive that exists today.
     </p>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/clare_portrait.jpg" alt="Clare B. Hickman studio portrait">
+          <div class="caption">Studio portrait, Hodges</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/clare_gallery1.jpg" alt="Clare dressed up">
+          <div class="caption">Clare &amp; Juanita, June &rsquo;63</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/clare_gallery2.jpg" alt="Clare later years">
+          <div class="caption">Later years</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 </div>
 
 <!-- Ruth Modal -->
@@ -1808,7 +2027,26 @@ I am going to see if Fred and Marian will take Henmar for me for a period of a f
 I waited until I saw that she was made comfortable &mdash; by putting a rubber ring under her as her back is getting sore. Mrs. Doak just told me also that mother does not ask for the bed pan now and that with great difficulty she was able to get her to take a little liquid this morning.</div>
     </div>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/ruth_portrait.jpg" alt="Ruth Hickman Gabriel portrait">
+          <div class="caption">Professional portrait</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/ruth_gallery1.jpg" alt="Ruth with family">
+          <div class="caption">Wedding photo</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/ruth_gallery2.jpg" alt="Ruth traveling">
+          <div class="caption">Traveling abroad</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 </div>
 
 <!-- Julian Modal -->
@@ -1845,7 +2083,26 @@ A lawyer&rsquo;s life must be vicarious as well as episodical. I have learned to
 Of all the Hickman clan, I think it is generally conceded by all that the elder has the more repentive mind. Mother is looking forward to getting back to Virginia for a while in June. Never have I seen a person of ninety years of age who has the keen interest in life and people that mother has.</div>
     </div>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/julian_portrait.jpg" alt="Julian in living room, May 1963">
+          <div class="caption">At home, May 1963</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/julian_gallery1.jpg" alt="Julian with family">
+          <div class="caption">With family at home</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/julian_gallery2.jpg" alt="Julian Kenneth Hickman">
+          <div class="caption">JKH</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 </div>
 
 <!-- Harry Modal -->
@@ -1884,7 +2141,26 @@ The sixty pointers, presumably will be leaving Ie Shima on the 5th of Nov. going
 I am going to have all of my jaw teeth X-rayed, having all of those pulled that look on the verge of going bad. The few remaining jaw teeth are nothing but huge fillings, so I will be removing possible trouble if I have them all pulled. I hope our children don&rsquo;t inherit our miserable teeth conditions.</div>
     </div>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/harry_portrait.jpg" alt="Harry H. Hickman WWII military portrait">
+          <div class="caption">WWII military portrait</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/harry_gallery1.jpg" alt="Harry Hickman">
+          <div class="caption">Harry</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/harry_ollie.jpg" alt="Harry with mother Ollie">
+          <div class="caption">With mother Ollie</div>
+        </div>
+      </div>
+    </div>
+
+</div>
 </div>
 
 <!-- Bill Gabriel Modal -->
@@ -1924,7 +2200,32 @@ One of the really neat things this winter was how there were predators in the ya
 On the other hand, I hated to see the dwindling size of the covey of gray partridge. It started with twelve birds in the fall. There were nine of the birds in my yard almost every day during the worst of the winter to get the cracked corn and millet I put out for them, and I was beginning to believe they would make it through the winter. Then, with the thaw and declining snow cover, I began to see one fewer birds every couple days. Two weeks ago there were only three, and now there are none.</div>
     </div>
 
-  </div>
+  
+    <div class="photo-gallery">
+      <h4>Photo Gallery</h4>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/bill_portrait.jpg" alt="Bill Gabriel VPI cadet">
+          <div class="caption">VPI cadet headshot</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/bill_gallery1.jpg" alt="Bill Gabriel">
+          <div class="caption">Bill Gabriel</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/bill_gallery2.jpg" alt="H. William Bill Gabriel">
+          <div class="caption">H. William &ldquo;Bill&rdquo; Gabriel</div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</div>
+
+
+<!-- Lightbox for full-size photos -->
+<div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Full size photo">
 </div>
 
 <script>
@@ -2059,6 +2360,20 @@ function submitFeedback(e) {
   setTimeout(function() {
     document.getElementById('fb-success').style.display = 'none';
   }, 5000);
+}
+
+
+// Lightbox for gallery photos
+function showLightbox(el) {
+  var img = el.querySelector('img');
+  if (img) {
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').classList.add('active');
+  }
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
 }
 </script>
 
