@@ -1377,7 +1377,9 @@
       <li><a href="#section-timeline">Timeline</a></li>
       <li><a href="#section-map">Family Map</a></li>
       <li><a href="#section-mystery">Mystery Photos</a></li>
-      <li><a href="#feedback-form">Feedback</a></li>
+      <li><a href="#feedback-form">Contribute</a></li>
+      <li><a href="#section-archives">Archives</a></li>
+      <li><a href="#section-family-news">Family News</a></li>
     </ul>
   </div>
 </nav>
@@ -2609,16 +2611,101 @@
 </div>
 
 <div class="feedback-section no-print" id="feedback-form">
-  <h3>Suggest Changes or Additions</h3>
-  <p>Know something that should be corrected or added to this family tree? Submit your suggestion below.</p>
-  <form action="https://formspree.io/f/mkovekgy" method="POST">
+  <h3>Contribute to This Archive</h3>
+  <p>Do you have family photos, letters, documents, or memories not already included here? Do you see something that needs correcting? We want to hear from you. Upload photos or documents directly, or just tell us what you know.</p>
+  <form action="https://formspree.io/f/mkovekgy" method="POST" enctype="multipart/form-data">
     <input type="text" name="name" placeholder="Your name" required>
     <input type="email" name="email" placeholder="Your email (optional)">
     <input type="text" name="relation" placeholder="Your relation to the family (optional)">
-    <textarea name="suggestion" placeholder="Describe the change or addition you&rsquo;d like to suggest..." required></textarea>
-    <input type="hidden" name="_subject" value="Hickman Family Tree - Suggestion">
-    <button type="submit">Submit Suggestion</button>
+    <textarea name="suggestion" placeholder="Describe what you&rsquo;d like to share, correct, or add&hellip;" required></textarea>
+    <div style="margin-bottom: 12px;">
+      <label style="font-size: 13px; color: var(--text-light); display: block; margin-bottom: 6px;">Attach a photo or document (optional, max 10 MB):</label>
+      <input type="file" name="attachment" accept="image/*,.pdf,.doc,.docx" style="font-size: 13px;">
+    </div>
+    <input type="hidden" name="_subject" value="Hickman Family Tree - Contribution">
+    <button type="submit">Submit</button>
   </form>
+</div>
+
+<!-- ============================================================ -->
+<!-- WHAT'S NEXT -->
+<!-- ============================================================ -->
+<div class="section no-print" id="section-whats-next" style="max-width: 700px; margin: 30px auto;">
+  <div class="section-title">What&rsquo;s Next</div>
+  <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 20px;">
+    This site is a living project &mdash; here&rsquo;s where we are and where we&rsquo;re headed.
+  </p>
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+    <div style="flex: 1; min-width: 200px; max-width: 320px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+      <h4 style="font-size: 14px; color: var(--highlight); margin-bottom: 8px;">What We&rsquo;ve Done</h4>
+      <ul style="font-size: 12px; color: var(--text); line-height: 1.8; padding-left: 16px; margin: 0;">
+        <li>Organized 676 items across 53 folders from 1833&ndash;2022</li>
+        <li>Indexed 78 notable correspondence entries</li>
+        <li>Built 28 interactive profiles with letters &amp; photos</li>
+        <li>Digitized 275 vintage photos from EPS/PICT formats</li>
+        <li>Transcribed 50+ handwritten letters to readable text</li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 200px; max-width: 320px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+      <h4 style="font-size: 14px; color: var(--highlight); margin-bottom: 8px;">What&rsquo;s Coming</h4>
+      <ul style="font-size: 12px; color: var(--text); line-height: 1.8; padding-left: 16px; margin: 0;">
+        <li>More profiles for extended family members</li>
+        <li>Oral history excerpts from recorded interviews</li>
+        <li>Clare Hickman&rsquo;s Bath County Virginia history</li>
+        <li>Bill Gabriel&rsquo;s memoir &ldquo;Memories of a Career&rdquo;</li>
+        <li>Expanded GEDCOM family tree data</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MUSEUM COLLECTIONS & ARCHIVES -->
+<!-- ============================================================ -->
+<div class="section" id="section-archives" style="max-width: 700px; margin: 30px auto;">
+  <div class="section-title">Collections &amp; Archives</div>
+  <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 20px;">
+    Family materials are held in the following collections. Researchers and family members can contact these institutions for access to additional documents beyond what is presented on this site.
+  </p>
+  <div style="display: flex; flex-direction: column; gap: 12px; max-width: 600px; margin: 0 auto;">
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+      <h4 style="font-size: 14px; margin-bottom: 4px;">Virginia Tech Special Collections</h4>
+      <p style="font-size: 12px; color: var(--text); margin-bottom: 6px;">H. William Gabriel Papers &mdash; including correspondence, photographs, manuscripts, published articles, and materials related to forest and wildlife conservation across six continents.</p>
+      <a href="https://ead.lib.virginia.edu/vivaxtf/view?docId=oai/VT/repositories_2_resources_2065.xml" target="_blank" rel="noopener" style="font-size: 12px; color: var(--highlight);">View Finding Aid &rarr;</a>
+    </div>
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+      <h4 style="font-size: 14px; margin-bottom: 4px;">The Hickman Family Archive</h4>
+      <p style="font-size: 12px; color: var(--text); margin-bottom: 6px;">676 indexed items in 53 folders spanning 1833&ndash;2022: handwritten letters, legal documents, genealogical records, photographs, a 450-page memoir, and the &ldquo;Hickmans of Back Creek&rdquo; manuscript. Held by Peter L. Hickman II.</p>
+      <a href="#feedback-form" style="font-size: 12px; color: var(--highlight);">Contact the family &rarr;</a>
+    </div>
+    <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+      <h4 style="font-size: 14px; margin-bottom: 4px;">Bath County Historical Society</h4>
+      <p style="font-size: 12px; color: var(--text); margin-bottom: 6px;">Records related to the Hickman family of Back Creek, Bath County, Virginia &mdash; including land records, court documents, and local histories dating to the 18th century.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- FAMILY NEWS -->
+<!-- ============================================================ -->
+<div class="section no-print" id="section-family-news" style="max-width: 700px; margin: 30px auto;">
+  <div class="section-title">Family News</div>
+  <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 20px;">
+    Share family milestones, updates, and memories. Births, graduations, weddings, reunions &mdash; if it&rsquo;s Hickman news, we want to hear it.
+  </p>
+  <div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 20px; max-width: 600px; margin: 0 auto;">
+    <form action="https://formspree.io/f/mkovekgy" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Your name" required style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; background: white;">
+      <input type="email" name="email" placeholder="Your email (optional)" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; background: white;">
+      <textarea name="news" rows="4" placeholder="Share your news &mdash; a birth, a wedding, a graduation, a memory, a reunion, or anything else&hellip;" required style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; margin-bottom: 10px; resize: vertical; background: white;"></textarea>
+      <div style="margin-bottom: 12px;">
+        <label style="font-size: 12px; color: var(--text-light);">Attach a photo (optional):</label>
+        <input type="file" name="photo" accept="image/*" style="font-size: 12px; margin-top: 4px;">
+      </div>
+      <input type="hidden" name="_subject" value="Hickman Family News Submission">
+      <button type="submit" style="background: var(--highlight); color: white; border: none; padding: 10px 24px; border-radius: 8px; font-size: 13px; cursor: pointer;">Share News</button>
+    </form>
+  </div>
 </div>
 
 <!-- Dedication -->
@@ -5528,11 +5615,29 @@ function clearSearch() {
     if (!yearMatch) return;
 
     var parent = h3.closest('.marriage-group');
-    var names = [];
+    // Find spouse name(s) inside this marriage group
+    var spouseNames = [];
     parent.querySelectorAll('.marriage-header .person .name').forEach(function(n) {
-      names.push(n.textContent.trim());
+      spouseNames.push(n.textContent.trim());
     });
-    var personNames = names.length > 0 ? 'Roger Hickman & ' + names.join(', ') : 'Unknown';
+    // Find the parent person (the one who has multiple marriages)
+    // Walk up from the marriage-group to find the nearest ancestor with a .person .name
+    var ancestor = parent.parentElement;
+    var ownerName = '';
+    while (ancestor && !ownerName) {
+      // Check for a person card that is a direct child or sibling before this flex container
+      var prevSib = ancestor.previousElementSibling;
+      if (prevSib) {
+        var nameEl = prevSib.querySelector('.person .name');
+        if (nameEl) { ownerName = nameEl.textContent.trim(); break; }
+      }
+      // Also check if the ancestor itself contains a person card before the marriage groups
+      var personCards = ancestor.querySelectorAll(':scope > .person .name, :scope > div > .person .name');
+      if (personCards.length > 0) { ownerName = personCards[0].textContent.trim(); break; }
+      ancestor = ancestor.parentElement;
+    }
+    if (!ownerName) ownerName = 'Unknown';
+    var personNames = spouseNames.length > 0 ? ownerName + ' & ' + spouseNames.join(', ') : ownerName;
     var mYear = parseInt(yearMatch[1]);
     var mkey = personNames + '|marriage|' + mYear;
     if (!seenCards[mkey]) {
