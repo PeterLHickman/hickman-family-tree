@@ -1262,6 +1262,88 @@
     .modal-photo { width: 280px; height: 280px; }
     .modal-header h2 { font-size: 22px; }
     .tribute-photo { width: 160px; height: 160px; }
+    .archive-viewer { max-width: 100%; padding: 15px; }
+    .archive-frame { height: 300px; }
+    .archive-frame img { max-height: 280px; }
+    .archive-caption { font-size: 12px; }
+    .archive-nav { gap: 8px; }
+    .archive-nav button { width: 36px; height: 36px; font-size: 16px; }
+  }
+
+  /* 1996 Photo Archive Viewer */
+  .archive-viewer {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .archive-frame {
+    position: relative;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a1a;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    cursor: pointer;
+  }
+  .archive-frame img {
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    position: absolute;
+  }
+  .archive-frame img.active {
+    opacity: 1;
+    position: relative;
+  }
+  .archive-caption {
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text);
+    margin-top: 10px;
+    min-height: 20px;
+    transition: opacity 0.5s;
+  }
+  .archive-counter {
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-light);
+    margin-top: 4px;
+  }
+  .archive-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 12px;
+  }
+  .archive-nav button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .archive-nav button:hover {
+    background: var(--highlight);
+    color: white;
+  }
+  .archive-nav .archive-play {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
   }
 </style>
 </head>
@@ -2389,6 +2471,47 @@
 <!-- ============================================================ -->
 
 
+<!-- 1996 Photo Archive Viewer -->
+<div class="section no-print" id="section-archive" style="max-width: 700px; margin: 30px auto;">
+  <div class="section-title">The 1996 Photo Archive</div>
+  <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 15px;">
+    In 1996, Bill Gabriel scanned the family&rsquo;s photo collection &mdash; portraits, landscapes, and heirlooms spanning
+    from the Civil War to the late twentieth century. This curated selection from that archive includes images
+    never before published.
+  </p>
+  <div class="archive-viewer" id="archive-viewer">
+    <div class="archive-frame" onclick="archiveNext()">
+      <img class="active" src="photos/archive_lanty_csa.jpg" alt="Lanty Hickman, Confederate soldier" data-caption="Lanty W. Hickman, Confederate States Army">
+      <img src="photos/archive_aj_hickman.jpg" alt="Andrew Jackson Hickman" data-caption="Andrew Jackson Hickman (1813&ndash;1895)">
+      <img src="photos/archive_mary_elizabeth_1880.jpg" alt="Mary Elizabeth Hickman, 1880" data-caption="Mary Elizabeth &ldquo;Lizzie&rdquo; Hickman, ca. 1880 &mdash; daguerreotype">
+      <img src="photos/archive_callison_couple.jpg" alt="Isaac and Huldah Callison" data-caption="Isaac &amp; Huldah Callison &mdash; whose letters from Illinois are among the archive&rsquo;s finest">
+      <img src="photos/archive_pl_ollie_1895.jpg" alt="Peter Lightner Hickman and Ollie Lockridge, 1895" data-caption="Peter Lightner Hickman &amp; Ollie Gertrude Lockridge, wedding portrait, 1895">
+      <img src="photos/archive_ollie_lockridge.jpg" alt="Ollie Gertrude Lockridge" data-caption="Ollie Gertrude Lockridge, young portrait">
+      <img src="photos/archive_sunrise_1937.jpg" alt="Sun Rise homestead, 1937" data-caption="&ldquo;Sun Rise&rdquo; &mdash; the Hickman family home on Back Creek, front view, 1937">
+      <img src="photos/archive_home_place.jpg" alt="Hickman home place, Back Creek" data-caption="The Hickman home place, Back Creek, Bath County, Virginia">
+      <img src="photos/archive_haystacks.jpg" alt="Haystacks on Back Creek" data-caption="Haystacks on Back Creek &mdash; the agricultural life of the valley">
+      <img src="photos/archive_roger_1914.jpg" alt="Roger L. Hickman, 1914" data-caption="Roger Lockridge Hickman, 1914">
+      <img src="photos/archive_stuart_robinson_1916.jpg" alt="Stuart Robinson, 1916" data-caption="Stuart Robinson, Back Creek, winter 1916">
+      <img src="photos/archive_family_1922.jpg" alt="Hickman family, 1922" data-caption="The Hickman family, 1922 &mdash; Peter &amp; Ollie with their children">
+      <img src="photos/archive_uncle_bobs_packard.jpg" alt="Uncle Bob's Packard" data-caption="&ldquo;Uncle Bob&rsquo;s Packard&rdquo; &mdash; family gathering at the car, ca. 1920s">
+      <img src="photos/archive_virge_1927.jpg" alt="Virginia Hickman, 1927" data-caption="Virginia &ldquo;Virge&rdquo; Hickman, 1927">
+      <img src="photos/archive_ruth_1927.jpg" alt="Ruth Hickman, 1927" data-caption="Ruth Gertrude Hickman, 1927">
+      <img src="photos/archive_brownie_ollie_virge.jpg" alt="Brownie, Ollie, and Virge" data-caption="&ldquo;Brownie&rdquo; (Clare), Ollie, and Virge &mdash; three Hickman women together">
+      <img src="photos/archive_reunion_1937.jpg" alt="Hickman reunion, 1937" data-caption="Hickman family reunion, 1937 &mdash; at Sun Rise on Back Creek">
+      <img src="photos/archive_jk_1951.jpg" alt="Julian Kenneth Hickman, 1951" data-caption="Julian Kenneth Hickman, 1951 &mdash; Attorney at Law, Harrisonburg">
+      <img src="photos/archive_reunion_1953.jpg" alt="Hickman reunion, 1953" data-caption="Hickman family reunion, 1953">
+      <img src="photos/archive_clare_1993.jpg" alt="Clare Brown Hickman, 1993" data-caption="Clare Brown Hickman, 1993 &mdash; family historian, age 88">
+    </div>
+    <div class="archive-caption" id="archive-caption">Lanty W. Hickman, Confederate States Army</div>
+    <div class="archive-counter" id="archive-counter">1 of 20</div>
+    <div class="archive-nav">
+      <button onclick="archivePrev()" title="Previous">&larr;</button>
+      <button class="archive-play" onclick="archiveTogglePlay()" id="archive-play-btn" title="Pause auto-play">&#10074;&#10074;</button>
+      <button onclick="archiveNext()" title="Next">&rarr;</button>
+    </div>
+  </div>
+</div>
+
 <!-- Unidentified Photos Section -->
 <div class="section no-print" id="section-mystery" style="max-width: 800px; margin: 30px auto;">
   <div class="section-title">Can You Help Identify These Photos?</div>
@@ -2770,6 +2893,10 @@ John A. Robinson</div>
           <img src="photos/harry_ollie.jpg" alt="Ollie with Harry">
           <div class="caption">With son Harry</div>
         </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/ollie_young.jpg" alt="Young Ollie Lockridge">
+          <div class="caption">Ollie as a young woman, ca. 1890s</div>
+        </div>
       </div>
     </div>
 
@@ -2835,6 +2962,31 @@ As a &ldquo;kid,&rdquo; I was amazed by the pleasures of the printed page. This 
 
 Real life is something that flows by unknown to us and possibly foreign to us. I want to assure you, as almost all of my useful years are over, that my greatest pleasure, enjoyment, happiness and satisfaction was found in routine work in my fields, and by reading about far-away places, then years later, in visiting such places as Fiji or Samoa.</div>
       </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Last Will and Testament &mdash; October 6, 1977</strong>
+          <span class="correspondence-source">Roger Lockridge Hickman &mdash; his final wishes, with characteristic directness</span>
+        </div>
+        <div class="correspondence-body">I, Roger Lockridge Hickman, a citizen of Shelby County, Tennessee, residing at Harold Apartments, Apt. 405, 23 S. Pauline Street, Memphis, Tennessee, being of sound mind and over seventy-one years of age, do hereby make, publish and declare this to be my Last Will and Testament, revoking all former wills and codicils heretofore made by me.
+
+<strong>ITEM I &mdash; Cremation</strong>
+I direct that my body be cremated and that my ashes be disposed of without a container. My cremation fee of $549.00 has been paid and my friend of long standing, Gerald H. Hickman, has the contract. <em>No laudatory or religious services shall be carried out regardless of who requests same. This has been my wish for fifty years and now it is an unchangeable demand.</em> Instead of flowers, those who wish may send the equivalent in cash to Lee College of Memphis, Tennessee.
+
+<strong>ITEM II</strong>
+My daughter, Mrs. Ann H. Luecke, Route 5, Box 415-J, Conroe, Texas 77301, is a joint owner with me with the right of survivorship of a savings and loan account. It is at the Imperial Savings and Loan of Claremont, California.
+
+<strong>ITEM III</strong>
+Mary Craig Hickman, not a relative, has been a friend of many years and has been kind and thoughtful in many of my trying situations. Accordingly, I hereby give and bequeath to her as a token payment One Thousand ($1,000.00) Dollars for her labor, writing materials and postage, to continue my international correspondence.
+
+<strong>ITEM V</strong>
+I leave my residuary estate to the following persons who are each to receive one-fifth of my residuary estate, to wit: Mrs. Warren Campbell; Mrs. Edward Hardy; C. B. Hickman; Harry H. Hickman &mdash; my brothers and sisters; and Mrs. Ann H. Luecke, my daughter.
+
+<strong>ITEM VI</strong>
+I hereby appoint my brother, Harry H. Hickman, to serve without bond, as the executor of my estate.
+
+<em>Estate total: $30,890.95. Each of five beneficiaries received $5,548.59. Probated in Shelby County, Tennessee. Harry H. Hickman served as executor.</em></div>
+      </div>
     </div>
 
     <div class="photo-gallery">
@@ -2875,7 +3027,7 @@ Real life is something that flows by unknown to us and possibly foreign to us. I
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-forrest')">&times;</button>
     <div class="modal-header">
-      <div class="modal-photo">FE</div>
+      <div class="modal-photo"><img src="photos/forrest_portrait.jpg" alt="Forrest Elwood Hickman"></div>
       <h2>Forrest Elwood &ldquo;Si&rdquo; Hickman</h2>
       <div class="bio">
         1898, Back Creek, VA &ndash; 1954, Elkton, VA<br>
@@ -2911,6 +3063,20 @@ Mother has been awfully tired as we all have been. She is one marvelous person, 
         <div class="correspondence-body">I have purposely delayed in replying to your letter because I wanted time to think. My feeling of loyalty and brotherly love toward each other outweighs all emotions or apprehensions regarding honesty in settling the affairs of a deceased brother. Si did not slave seven days per week &mdash; hours on end &mdash; to accumulate money for the rest of his brothers to wrangle over. I am indeed grateful for any portion I receive from this source. As I told you I do not measure success or happiness by the dollar sign.
 
 Mother is taking Si&rsquo;s going very hard and when she knows there is dissention among us that adds to her sorrow. Let there be no bitterness or harsh words at this time in our lives.</div>
+      </div>
+    </div>
+
+    <div class="photo-gallery">
+      <h3 class="modal-section-title">Photo Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/forrest_portrait.jpg" alt="Forrest Elwood Hickman, 1929">
+          <div class="caption">Forrest &ldquo;Si&rdquo; Hickman, 1929</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/forrest_station.jpg" alt="Forrest at Esso station, Elkton">
+          <div class="caption">Si at the Esso station, Elkton, VA</div>
+        </div>
       </div>
     </div>
 
@@ -3400,6 +3566,60 @@ NOW, THEREFORE, BE IT RESOLVED that our sincere sympathy be expressed to Mrs. Hi
 
 BE IT FURTHER RESOLVED that these resolutions be adopted and spread upon the official minutes of the Club.</div>
       </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>&ldquo;The Lure of Things&rdquo; &mdash; Letter to Brownie, March 14, 1963</strong>
+          <span class="correspondence-source">Julian K. Hickman to Clare &ldquo;Brownie&rdquo; Hickman &mdash; a meditation on materialism and a Back Creek proverb</span>
+        </div>
+        <div class="correspondence-body">Dearest Brownie:
+
+I regret that you have the feeling that I probably have neglected you by not writing. Really I have not, because there have been many times when I wanted to write, but it seems that the press of duty and responsibilities have kept me fairly well occupied for more hours in a day than I care to spend.
+
+I am glad you enjoyed &ldquo;the lure of things&rdquo;. Having had a slight bit of personal experience with &ldquo;the lure of things&rdquo; and having had considerable professional experience with &ldquo;the lure of things&rdquo;, I feel that I can speak from a slight storehouse of knowledge. My storehouse of knowledge many times, however, seems to be utterly void of thought and many times is incapable of appropriate response.
+
+The Back Creek expression: &ldquo;Don&rsquo;t itch for something you are not willing to scratch for,&rdquo; is a rule that most of us fail to follow. We continue in our foolish ways until some internal or external force shocks us into a revaluation of &ldquo;things&rdquo;. Many years ago, I tried to set in my own thinking a lack of lusting in my heart for objects which I did not need and could not afford.
+
+We have had a cold, snowy winter here. I am delighted to say that the last few days have been very pleasant, and with the coming of Spring, I generally lose my dreams about spending my life in the Virgin Islands.
+
+I am enclosing some pictures which you will enjoy. Tell Sally and all the rest of them hello for me. Every time I think that you are a great-grandmother, I think there must be some biological quirk in the Hickman family strain. It hardly seems possible that you have a great-grandchild.
+
+Love,
+Julian</div>
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>A Catalog of Fourteen Letters to National Figures &mdash; April 24, 1964</strong>
+          <span class="correspondence-source">Julian K. Hickman to Mother &amp; Family &mdash; circulating his letters to senators, congressmen, and political leaders</span>
+        </div>
+        <div class="correspondence-body">Dearest Mother and All,
+
+Through the years I have received a few favorable comments from friends, people not so friendly, attorneys, and a Judge or two on the metaphoric quality of some of my letters, pleadings, etc. Many of the letters are not necessarily of an esoteric nature, therefore, the thought occurred to me that you, my brothers and sisters, my children, and Brownie may be interested in reading, at your leisure, a few of the letters. After you have read them, please forward them to Harry, who in turn will mail them to Roger, and he in turn will mail them to Brownie, and she will mail them to Neva Martin. After Neva Martin and Ruth have read them, I will get them from Neva Martin.
+
+<em>The fourteen letters and their subjects:</em>
+Neva Martin and Pete &mdash; &ldquo;Hope, Faith, Work&rdquo; (April 12, 1964)
+Mana &mdash; &ldquo;Honor&rdquo; (March 27, 1964)
+Dirksen &mdash; &ldquo;Civil Rights&rdquo; (March 30, 1964)
+Bankrupt &mdash; &ldquo;Virtue&rdquo; (February 14, 1964)
+Valentine &mdash; &ldquo;Conscience&rdquo; (February 6, 1964)
+Dellinger &mdash; &ldquo;Mysticism / Sex&rdquo; (September 17, 1962)
+Byrd &mdash; &ldquo;Free Enterprise&rdquo; (April 13, 1962)
+Ames &mdash; &ldquo;Laymen&rdquo; (October 26, 1959)
+Editor &mdash; &ldquo;Keynote&rdquo; (August 14, 1956)
+Booker &mdash; &ldquo;Dentures&rdquo; (August 12, 1957)
+Gabriel &mdash; &ldquo;New World&rdquo; (June 8, 1956)
+Voters &mdash; &ldquo;Slums&rdquo; (November 4, 1955)
+McCarthy &mdash; &ldquo;Skunk&rdquo; (June 19, 1954)
+Mobs &mdash; (April 1, 1964)
+
+You will observe from the small sample enclosed that the subjects have a wide range, but all of them have been keyed primarily to men&rsquo;s responsibility to himself, his Maker, and his fellow men. Too often we confine our view to the limits of three long mountains and a wood, without looking up to the sky which is, after all, not so very tall, even though we cannot see the top.
+
+If man is made better by the work of valor &mdash; great or small, work of service and acts of faith of those who have gone on before, and it is the living memory of their work that composes the choir invisible. Our work in a community of effort may be small, but the mind of man cannot measure effort, nor can it measure the fruitful results of that effort.
+
+Love to all,
+Julian</div>
+      </div>
     </div>
 
     <div class="photo-gallery">
@@ -3616,6 +3836,10 @@ In lieu of flowers, please consider a donation to the Five Valleys Audubon Socie
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/bill_gallery2.jpg" alt="H. William Bill Gabriel">
           <div class="caption">H. William &ldquo;Bill&rdquo; Gabriel</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/bill_gallery3.jpg" alt="Bill Gabriel portrait">
+          <div class="caption">Bill Gabriel, bearded portrait</div>
         </div>
       </div>
     </div>
@@ -4060,6 +4284,10 @@ This bit of curmudgeonly snarkiness is simply too much to bear. I demand the sat
           <img src="photos/neva_bubbo.jpg" alt="Neva Lee Martin Hickman">
           <div class="caption">Neva Lee Martin &ldquo;Bubbo&rdquo;</div>
         </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/neva_bubbo_young.jpg" alt="Young Neva Lee Martin">
+          <div class="caption">Neva as a young woman, ca. 1930s</div>
+        </div>
       </div>
     </div>
 
@@ -4203,6 +4431,10 @@ The original letters are preserved in the family archive but the ornate handwrit
         <div class="gallery-item" onclick="showLightbox(this)">
           <img src="photos/neva_daughter.jpg" alt="Neva Martin Hickman">
           <div class="caption">Neva Martin Hickman</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/neva_daughter_car.jpg" alt="Neva Martin Hickman, ca. 1950s">
+          <div class="caption">Neva, ca. early 1950s</div>
         </div>
       </div>
     </div>
@@ -5043,6 +5275,55 @@ function clearSearch() {
   // Fit bounds to show all markers
   var bounds = L.latLngBounds(locations.map(function(l) { return [l.lat, l.lng]; }));
   map.fitBounds(bounds, { padding: [30, 30] });
+})();
+
+// ── 1996 Photo Archive Viewer ──
+(function() {
+  var imgs = document.querySelectorAll('#archive-viewer .archive-frame img');
+  var captionEl = document.getElementById('archive-caption');
+  var counterEl = document.getElementById('archive-counter');
+  var playBtn = document.getElementById('archive-play-btn');
+  var current = 0;
+  var playing = true;
+  var timer;
+
+  function showSlide(idx) {
+    imgs[current].classList.remove('active');
+    current = (idx + imgs.length) % imgs.length;
+    imgs[current].classList.add('active');
+    if (captionEl) captionEl.innerHTML = imgs[current].getAttribute('data-caption') || '';
+    if (counterEl) counterEl.textContent = (current + 1) + ' of ' + imgs.length;
+  }
+
+  function startTimer() {
+    if (timer) clearInterval(timer);
+    timer = setInterval(function() { showSlide(current + 1); }, 5000);
+  }
+
+  if (imgs.length > 1) {
+    startTimer();
+  }
+
+  window.archiveNext = function() {
+    showSlide(current + 1);
+    if (playing) startTimer();
+  };
+  window.archivePrev = function() {
+    showSlide(current - 1);
+    if (playing) startTimer();
+  };
+  window.archiveTogglePlay = function() {
+    playing = !playing;
+    if (playing) {
+      startTimer();
+      if (playBtn) playBtn.innerHTML = '&#10074;&#10074;';
+      if (playBtn) playBtn.title = 'Pause auto-play';
+    } else {
+      if (timer) clearInterval(timer);
+      if (playBtn) playBtn.innerHTML = '&#9654;';
+      if (playBtn) playBtn.title = 'Resume auto-play';
+    }
+  };
 })();
 
 // ── Correspondence toggle (expand/collapse) ──
