@@ -1281,88 +1281,6 @@
     .modal-photo { width: 280px; height: 280px; }
     .modal-header h2 { font-size: 22px; }
     .tribute-photo { width: 160px; height: 160px; }
-    .archive-viewer { max-width: 100%; padding: 15px; }
-    .archive-frame { height: 300px; }
-    .archive-frame img { max-height: 280px; }
-    .archive-caption { font-size: 12px; }
-    .archive-nav { gap: 8px; }
-    .archive-nav button { width: 36px; height: 36px; font-size: 16px; }
-  }
-
-  /* 1996 Photo Archive Viewer */
-  .archive-viewer {
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-  }
-  .archive-frame {
-    position: relative;
-    height: 420px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #1a1a1a;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 2px solid var(--border);
-    cursor: pointer;
-  }
-  .archive-frame img {
-    max-width: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    position: absolute;
-  }
-  .archive-frame img.active {
-    opacity: 1;
-    position: relative;
-  }
-  .archive-caption {
-    text-align: center;
-    font-size: 14px;
-    font-style: italic;
-    color: var(--text);
-    margin-top: 10px;
-    min-height: 20px;
-    transition: opacity 0.5s;
-  }
-  .archive-counter {
-    text-align: center;
-    font-size: 11px;
-    color: var(--text-light);
-    margin-top: 4px;
-  }
-  .archive-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 12px;
-  }
-  .archive-nav button {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: var(--card-bg);
-    color: var(--text);
-    font-size: 18px;
-    cursor: pointer;
-    transition: background 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .archive-nav button:hover {
-    background: var(--highlight);
-    color: white;
-  }
-  .archive-nav .archive-play {
-    width: 34px;
-    height: 34px;
-    font-size: 14px;
   }
 
   /* Welcome & orientation */
@@ -1437,90 +1355,6 @@
   }
   .mission-section .mission-link:hover { text-decoration: underline; }
 
-  /* Featured stories rotator */
-  .featured-stories {
-    max-width: 700px;
-    margin: 0 auto 20px;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 18px 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    text-align: center;
-  }
-  .featured-stories h3 {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
-  }
-  .featured-card {
-    display: none;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 8px;
-    transition: background 0.2s;
-  }
-  .featured-card.active { display: flex; align-items: center; gap: 16px; justify-content: center; }
-  .featured-card:hover { background: var(--bg); }
-  .featured-card .featured-thumb {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--border);
-    flex-shrink: 0;
-  }
-  .featured-card .featured-initials {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: var(--photo-bg);
-    border: 2px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: var(--text-light);
-    flex-shrink: 0;
-  }
-  .featured-card .featured-info {
-    text-align: left;
-  }
-  .featured-card .featured-name {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 2px;
-  }
-  .featured-card .featured-teaser {
-    font-size: 12px;
-    color: var(--text-light);
-    line-height: 1.5;
-    max-width: 400px;
-  }
-  .featured-dots {
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    margin-top: 10px;
-  }
-  .featured-dots button {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: var(--bg);
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.2s;
-  }
-  .featured-dots button.active {
-    background: var(--highlight);
-    border-color: var(--highlight);
-  }
-
   /* Responsive two-column grid for wide screens */
   .dual-column {
     display: block;
@@ -1559,12 +1393,7 @@
     .hero-overlay { padding: 100px 16px 50px; }
     .hero-banner h1 { font-size: 22px; }
     .hero-banner .subtitle { font-size: 11px; }
-    .archive-frame { height: 250px; }
-    .archive-frame img { max-height: 220px; }
     .tribute-photo { width: 120px; height: 120px; }
-    .featured-card.active { flex-direction: column; gap: 10px; }
-    .featured-card .featured-info { text-align: center; }
-    .featured-card .featured-teaser { max-width: 100%; }
     .welcome-bar { padding: 16px 12px; }
     .welcome-bar p { font-size: 13px; }
     .welcome-bar .welcome-nav a { padding: 4px 8px; font-size: 11px; }
@@ -1574,9 +1403,6 @@
 
   /* Medium phones (600px and below) */
   @media (max-width: 600px) {
-    .featured-card.active { flex-direction: column; gap: 12px; }
-    .featured-card .featured-info { text-align: center; }
-    .featured-card .featured-teaser { max-width: 100%; }
     .person .dates { font-size: 10px; }
     .person .note { font-size: 9px; }
     .modal-photo { width: 240px; height: 240px; }
@@ -1592,10 +1418,8 @@
       justify-content: center;
       font-size: 28px;
     }
-    .archive-nav button { width: 40px; height: 40px; }
     .nav-toggle { padding: 12px; }
     .tl-filter { padding: 8px 12px; min-height: 36px; }
-    .featured-dots button,
     .tribute-dot { width: 14px; height: 14px; }
     .search-clear {
       width: 32px;
@@ -1676,15 +1500,30 @@
 </nav>
 
 <div class="hero-banner">
-  <div class="hero-slide active" style="background-image: url('photos/sunrise_homestead.jpg')" data-caption="&ldquo;Sunrise&rdquo; &mdash; The Hickman family home on Back Creek, ca. 1931"></div>
-  <div class="hero-slide" style="background-image: url('photos/peter_ollie_family.jpg')" data-caption="Peter Lightner Hickman &amp; Ollie Gertrude Lockridge with family"></div>
-  <div class="hero-slide" style="background-image: url('photos/siblings_group.jpg')" data-caption="The Hickman siblings at Sunrise"></div>
-  <div class="hero-slide" style="background-image: url('photos/gathering1.jpg')" data-caption="A Hickman family gathering"></div>
-  <div class="hero-slide" style="background-image: url('photos/gathering2.jpg')" data-caption="A Hickman family gathering"></div>
+  <div class="hero-slide active" style="background-image: url('photos/archive_lanty_csa.jpg')" data-caption="Lanty W. Hickman, Confederate States Army"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_aj_hickman.jpg')" data-caption="Andrew Jackson Hickman (1813&ndash;1895)"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_mary_elizabeth_1880.jpg')" data-caption="Mary Elizabeth &ldquo;Lizzie&rdquo; Hickman, ca. 1880 &mdash; daguerreotype"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_callison_couple.jpg')" data-caption="Isaac &amp; Huldah Callison &mdash; whose letters from Illinois are among the archive&rsquo;s finest"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_pl_ollie_1895.jpg')" data-caption="Peter Lightner Hickman &amp; Ollie Gertrude Lockridge, wedding portrait, 1895"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_ollie_lockridge.jpg')" data-caption="Ollie Gertrude Lockridge, young portrait"></div>
+  <div class="hero-slide" style="background-image: url('photos/sunrise_homestead.jpg')" data-caption="&ldquo;Sun Rise&rdquo; &mdash; The Hickman family home on Back Creek, 1937"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_home_place.jpg')" data-caption="The Hickman home place, Back Creek, Bath County, Virginia"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_haystacks.jpg')" data-caption="Haystacks on Back Creek &mdash; the agricultural life of the valley"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_roger_1914.jpg')" data-caption="Roger Lockridge Hickman, 1914"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_stuart_robinson_1916.jpg')" data-caption="Stuart Robinson, Back Creek, winter 1916"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_family_1922.jpg')" data-caption="The Hickman family, 1922 &mdash; Peter &amp; Ollie with their children"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_uncle_bobs_packard.jpg')" data-caption="&ldquo;Uncle Bob&rsquo;s Packard&rdquo; &mdash; family gathering at the car, ca. 1920s"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_virge_1927.jpg')" data-caption="Virginia &ldquo;Virge&rdquo; Hickman, 1927"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_ruth_1927.jpg')" data-caption="Ruth Gertrude Hickman, 1927"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_brownie_ollie_virge.jpg')" data-caption="&ldquo;Brownie&rdquo; (Clare), Ollie, and Virge &mdash; three Hickman women together"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_reunion_1937.jpg')" data-caption="Hickman family reunion, 1937 &mdash; at Sun Rise on Back Creek"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_jk_1951.jpg')" data-caption="Julian Kenneth Hickman, 1951 &mdash; Attorney at Law, Harrisonburg"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_reunion_1953.jpg')" data-caption="Hickman family reunion, 1953"></div>
+  <div class="hero-slide" style="background-image: url('photos/archive_clare_1993.jpg')" data-caption="Clare Brown Hickman, 1993 &mdash; family historian, age 88"></div>
   <div class="hero-overlay">
     <h1>Hickmans of Back Creek Family History</h1>
     <p class="subtitle">Descendants of William Roger Hickman (1813&ndash;1889) &bull; Back Creek, Bath County, Virginia</p>
-    <p class="hero-caption" id="hero-caption">&ldquo;Sunrise&rdquo; &mdash; The Hickman family home on Back Creek, ca. 1931</p>
+    <p class="hero-caption" id="hero-caption">Lanty W. Hickman, Confederate States Army</p>
     <div class="legend no-print">
       <div class="legend-item"><div class="legend-dot" style="border-color: #5a8eb8; background: var(--male);"></div> Male</div>
       <div class="legend-item"><div class="legend-dot" style="border-color: #b85a8e; background: var(--female);"></div> Female</div>
@@ -1757,95 +1596,6 @@
       <button type="submit" style="padding: 6px 16px; font-size: 13px; background: var(--highlight); color: white; border: none; border-radius: 16px; cursor: pointer;">Get Updates</button>
     </form>
   </div>
-</div>
-
-<!-- ============================================================ -->
-<!-- FEATURED STORIES ROTATOR -->
-<!-- ============================================================ -->
-<div class="featured-stories no-print" id="featured-stories">
-  <h3>The 1996 Photo Archive</h3>
-  <p style="font-size: 12px; color: var(--text-light); margin-bottom: 12px;">In 1996, Bill Gabriel scanned the family&rsquo;s photo collection &mdash; portraits, landscapes, and heirlooms spanning from the Civil War to the late twentieth century.</p>
-  <div class="featured-card active">
-    <img class="featured-thumb" src="photos/archive_lanty_csa.jpg" alt="Lanty Hickman" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Lanty W. Hickman</div><div class="featured-teaser">Confederate States Army</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_aj_hickman.jpg" alt="Andrew Jackson Hickman" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Andrew Jackson Hickman</div><div class="featured-teaser">1813&ndash;1895</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_mary_elizabeth_1880.jpg" alt="Mary Elizabeth Hickman" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Mary Elizabeth &ldquo;Lizzie&rdquo; Hickman</div><div class="featured-teaser">Daguerreotype, ca. 1880</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_callison_couple.jpg" alt="Isaac and Huldah Callison" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Isaac &amp; Huldah Callison</div><div class="featured-teaser">Whose letters from Illinois are among the archive&rsquo;s finest</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_pl_ollie_1895.jpg" alt="Peter and Ollie, 1895" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Peter Lightner Hickman &amp; Ollie Lockridge</div><div class="featured-teaser">Wedding portrait, 1895</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_ollie_lockridge.jpg" alt="Ollie Gertrude Lockridge" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Ollie Gertrude Lockridge</div><div class="featured-teaser">Young portrait</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_sunrise_1937.jpg" alt="Sun Rise homestead" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">&ldquo;Sun Rise&rdquo;</div><div class="featured-teaser">The Hickman family home on Back Creek, 1937</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_home_place.jpg" alt="Hickman home place" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">The Hickman Home Place</div><div class="featured-teaser">Back Creek, Bath County, Virginia</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_haystacks.jpg" alt="Haystacks on Back Creek" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Haystacks on Back Creek</div><div class="featured-teaser">The agricultural life of the valley</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_roger_1914.jpg" alt="Roger Hickman, 1914" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Roger Lockridge Hickman</div><div class="featured-teaser">1914</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_stuart_robinson_1916.jpg" alt="Stuart Robinson, 1916" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Stuart Robinson</div><div class="featured-teaser">Back Creek, winter 1916</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_family_1922.jpg" alt="Hickman family, 1922" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">The Hickman Family</div><div class="featured-teaser">Peter &amp; Ollie with their children, 1922</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_uncle_bobs_packard.jpg" alt="Uncle Bob's Packard" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">&ldquo;Uncle Bob&rsquo;s Packard&rdquo;</div><div class="featured-teaser">Family gathering at the car, ca. 1920s</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_virge_1927.jpg" alt="Virginia Hickman, 1927" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Virginia &ldquo;Virge&rdquo; Hickman</div><div class="featured-teaser">1927</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_ruth_1927.jpg" alt="Ruth Hickman, 1927" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Ruth Gertrude Hickman</div><div class="featured-teaser">1927</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_brownie_ollie_virge.jpg" alt="Brownie, Ollie, and Virge" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">&ldquo;Brownie,&rdquo; Ollie &amp; Virge</div><div class="featured-teaser">Three Hickman women together</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_reunion_1937.jpg" alt="Hickman reunion, 1937" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Hickman Family Reunion</div><div class="featured-teaser">At Sun Rise on Back Creek, 1937</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_jk_1951.jpg" alt="Julian Kenneth Hickman, 1951" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Julian Kenneth Hickman</div><div class="featured-teaser">Attorney at Law, Harrisonburg, 1951</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_reunion_1953.jpg" alt="Hickman reunion, 1953" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Hickman Family Reunion</div><div class="featured-teaser">1953</div></div>
-  </div>
-  <div class="featured-card">
-    <img class="featured-thumb" src="photos/archive_clare_1993.jpg" alt="Clare Brown Hickman, 1993" style="border-radius: 6px; width: 80px; height: 80px;">
-    <div class="featured-info"><div class="featured-name">Clare Brown Hickman</div><div class="featured-teaser">Family historian, age 88, 1993</div></div>
-  </div>
-  <div class="featured-dots" id="featured-dots"></div>
 </div>
 
 <div class="tree">
@@ -6110,37 +5860,6 @@ The original letters are preserved in the family archive but the ornate handwrit
   }
 })();
 
-// Featured stories rotator
-(function() {
-  var stories = document.querySelectorAll('#featured-stories .featured-card');
-  var dotsContainer = document.getElementById('featured-dots');
-  var current = 0;
-  if (stories.length > 1 && dotsContainer) {
-    for (var i = 0; i < stories.length; i++) {
-      var dot = document.createElement('button');
-      dot.className = i === 0 ? 'active' : '';
-      dot.setAttribute('aria-label', 'Story ' + (i + 1));
-      dot.addEventListener('click', (function(idx) {
-        return function() {
-          stories[current].classList.remove('active');
-          dotsContainer.children[current].classList.remove('active');
-          current = idx;
-          stories[current].classList.add('active');
-          dotsContainer.children[current].classList.add('active');
-        };
-      })(i));
-      dotsContainer.appendChild(dot);
-    }
-    setInterval(function() {
-      stories[current].classList.remove('active');
-      dotsContainer.children[current].classList.remove('active');
-      current = (current + 1) % stories.length;
-      stories[current].classList.add('active');
-      dotsContainer.children[current].classList.add('active');
-    }, 7000);
-  }
-})();
-
 // Make all person cards clickable
 document.addEventListener('DOMContentLoaded', function() {
   // Exact-match map (checked first, takes priority over prefix matches)
@@ -6812,55 +6531,6 @@ function clearSearch() {
   // Fit bounds to show all markers
   var bounds = L.latLngBounds(locations.map(function(l) { return [l.lat, l.lng]; }));
   map.fitBounds(bounds, { padding: [30, 30] });
-})();
-
-// ── 1996 Photo Archive Viewer ──
-(function() {
-  var imgs = document.querySelectorAll('#archive-viewer .archive-frame img');
-  var captionEl = document.getElementById('archive-caption');
-  var counterEl = document.getElementById('archive-counter');
-  var playBtn = document.getElementById('archive-play-btn');
-  var current = 0;
-  var playing = true;
-  var timer;
-
-  function showSlide(idx) {
-    imgs[current].classList.remove('active');
-    current = (idx + imgs.length) % imgs.length;
-    imgs[current].classList.add('active');
-    if (captionEl) captionEl.innerHTML = imgs[current].getAttribute('data-caption') || '';
-    if (counterEl) counterEl.textContent = (current + 1) + ' of ' + imgs.length;
-  }
-
-  function startTimer() {
-    if (timer) clearInterval(timer);
-    timer = setInterval(function() { showSlide(current + 1); }, 5000);
-  }
-
-  if (imgs.length > 1) {
-    startTimer();
-  }
-
-  window.archiveNext = function() {
-    showSlide(current + 1);
-    if (playing) startTimer();
-  };
-  window.archivePrev = function() {
-    showSlide(current - 1);
-    if (playing) startTimer();
-  };
-  window.archiveTogglePlay = function() {
-    playing = !playing;
-    if (playing) {
-      startTimer();
-      if (playBtn) playBtn.innerHTML = '&#10074;&#10074;';
-      if (playBtn) playBtn.title = 'Pause auto-play';
-    } else {
-      if (timer) clearInterval(timer);
-      if (playBtn) playBtn.innerHTML = '&#9654;';
-      if (playBtn) playBtn.title = 'Resume auto-play';
-    }
-  };
 })();
 
 // ── Correspondence toggle (expand/collapse) ──
