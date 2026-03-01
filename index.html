@@ -1630,7 +1630,7 @@
       </div>
       <div class="children-row">
         <div class="person male small-person deceased">
-          <div class="photo">LW</div>
+          <div class="photo"><img src="photos/lanty_hickman.jpg" alt="Lanty William Hickman"></div>
           <div class="name">Lanty William</div>
           <div class="dates">1838&ndash;1906</div>
           <div class="note">CSA Cavalry</div>
@@ -1668,7 +1668,7 @@
           <div class="note">died young</div>
         </div>
         <div class="person female small-person deceased">
-          <div class="photo">VA</div>
+          <div class="photo"><img src="photos/virginia_alice_hickman.jpg" alt="Virginia Alice Hickman"></div>
           <div class="name">Virginia Alice</div>
           <div class="nickname">"Jennie"</div>
           <div class="dates">1848&ndash;1933</div>
@@ -1744,7 +1744,7 @@
           <div class="note">died in infancy</div>
         </div>
         <div class="person male small-person deceased">
-          <div class="photo">RS</div>
+          <div class="photo"><img src="photos/robert_sidney_hickman.jpg" alt="Robert Sidney Hickman"></div>
           <div class="name">Robert Sidney</div>
           <div class="dates">~1872&ndash;1954</div>
         </div>
@@ -2392,12 +2392,12 @@
             <div style="font-size: 8px; color: var(--text-light); text-align: center;">m. 28 Dec 2004</div>
             <div class="children-row">
               <div class="person female small-person" style="width: 85px;">
-                <div class="photo" style="width: 30px; height: 30px; font-size: 11px;">SO</div>
+                <div class="photo" style="width: 30px; height: 30px; font-size: 11px;"><img src="photos/sara_ollie_hickman.jpg" alt="Sara Ollie Hickman"></div>
                 <div class="name">Sara Ollie</div>
                 <div class="dates"></div>
               </div>
               <div class="person female small-person" style="width: 85px;">
-                <div class="photo" style="width: 30px; height: 30px; font-size: 11px;">HC</div>
+                <div class="photo" style="width: 30px; height: 30px; font-size: 11px;"><img src="photos/hanna_claire_hickman.jpg" alt="Hanna Claire Hickman"></div>
                 <div class="name">Hanna Claire</div>
                 <div class="dates"></div>
               </div>
@@ -5613,12 +5613,50 @@ The original letters are preserved in the family archive but the ornate handwrit
 </div>
 </div>
 
+<!-- Lanty William Hickman Modal -->
+<div class="modal-overlay" id="modal-lanty">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-lanty')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo"><img src="photos/lanty_hickman.jpg" alt="Lanty William Hickman"></div>
+      <h2>Lanty William Hickman</h2>
+      <div class="bio">
+        1838 &ndash; 1906<br>
+        Son of Roger &amp; Martha Ann Lockridge Hickman<br>
+        Confederate States Army &bull; Bath County, Virginia
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Lanty William Hickman was born in 1838, the eldest son of William Roger Hickman and his first wife Martha Ann Lockridge, daughter of Colonel Lanty Lockridge of Pocahontas County. His mother died on May 25, 1843, when Lanty was only five years old, leaving him and his sister Mary Elizabeth &ldquo;Lizzie&rdquo; motherless. A third sibling, infant Harriet Ellen, died just two weeks after Martha Ann.</p>
+      <p>During the Civil War, Lanty served in the Confederate cavalry. A striking portrait of him in his CSA uniform survives in the family archive &mdash; one of the earliest photographs in the collection. After the war, Lanty remained in Bath County, Virginia.</p>
+      <p>Lanty died in 1906. His portrait, both in uniform and in civilian dress with his distinctive full beard, connects the modern family to the generation that lived through the Civil War on Back Creek.</p>
+    </div>
+
+    <div class="photo-gallery">
+      <h3 class="modal-section-title">Photo Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/archive_lanty_csa.jpg" alt="Lanty W. Hickman, CSA">
+          <div class="caption">Lanty in Confederate uniform</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img src="photos/lanty_hickman.jpg" alt="Lanty William Hickman">
+          <div class="caption">Lanty William Hickman, civilian portrait</div>
+        </div>
+      </div>
+    </div>
+
+</div>
+</div>
+
 <!-- Virginia Alice Hickman "Aunt Jenny" Modal -->
 <div class="modal-overlay" id="modal-virginia-alice">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-virginia-alice')">&times;</button>
     <div class="modal-header">
-      <div class="modal-photo" style="background: var(--female);">VAH</div>
+      <div class="modal-photo"><img src="photos/virginia_alice_hickman.jpg" alt="Virginia Alice Hickman Hamilton"></div>
       <h2>Virginia Alice Hickman Hamilton</h2>
       <div class="bio">
         13 May 1848 &ndash; ca. 1930s<br>
@@ -5882,6 +5920,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'Evelyn Abbott': 'modal-evelyn',
     'Penelope Ruth Hickman': 'modal-penelope',
     'Gilbert Paris Bowman Jr.': 'modal-gilbert',
+    'Lanty William': 'modal-lanty',
     'Virginia Alice': 'modal-virginia-alice',
     'Thomas Brown': 'modal-thomas-brown',
     'Laura Eugenia': 'modal-laura',
