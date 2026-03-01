@@ -384,6 +384,25 @@
 
   .modal-close:hover { color: var(--text); }
 
+  .modal-update-btn {
+    display: block;
+    text-align: center;
+    margin: 20px auto 0;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--highlight);
+    border: 1px solid var(--highlight);
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    max-width: 260px;
+  }
+  .modal-update-btn:hover {
+    background: var(--highlight);
+    color: #fff;
+  }
+
   .modal-header {
     display: flex;
     flex-direction: column;
@@ -1387,6 +1406,37 @@
     border-color: var(--highlight);
   }
 
+  /* Mission statement */
+  .mission-section {
+    max-width: 700px;
+    margin: 0 auto 20px;
+    padding: 24px 28px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .mission-section h3 {
+    font-size: 16px;
+    color: var(--highlight);
+    margin-bottom: 14px;
+  }
+  .mission-section p {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .mission-section p:last-of-type { margin-bottom: 0; }
+  .mission-section .mission-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--highlight);
+    text-decoration: none;
+  }
+  .mission-section .mission-link:hover { text-decoration: underline; }
+
   /* Featured stories rotator */
   .featured-stories {
     max-width: 700px;
@@ -1620,6 +1670,7 @@
       <li><a href="#feedback-form">Contribute</a></li>
       <li><a href="#section-archives">Archives</a></li>
       <li><a href="#section-family-news">Family News</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
   </div>
 </nav>
@@ -1658,7 +1709,29 @@
     <a href="#section-mystery">Mystery Photos</a>
     <a href="#section-archives">Collections</a>
     <a href="#section-family-news">Family News</a>
+    <a href="#section-mission">Our Mission</a>
     <a href="#feedback-form">Contribute</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- MISSION STATEMENT -->
+<!-- ============================================================ -->
+<div class="mission-section no-print" id="section-mission">
+  <h3>Why This Site Exists</h3>
+  <p>The Hickmans have scattered before. From Back Creek to Arkansas, Montana, Alaska, Richmond, and Washington, D.C. &mdash; every generation drifted apart. But they wrote letters. From 1833 to 1993, they put pen to paper and kept the threads alive. We have over 670 of those letters, and they prove something simple: <strong>staying connected across distance is possible if someone makes the effort.</strong></p>
+  <p>The current generation has scattered again &mdash; Portland, D.C., Virginia, and beyond. This website is our version of those letters. The archive is the evidence. The site is the bridge.</p>
+  <p>It started at Aunt Neva&rsquo;s celebration of life in December 2025, where boxes of family papers and photographs opened a window into five generations of connection. This site is how we keep that window open.</p>
+  <a href="about.html" class="mission-link">Read the full story &rarr;</a>
+  <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border);">
+    <p style="font-size: 12px; color: var(--text-light); margin-bottom: 8px;">Get notified when the site is updated:</p>
+    <form action="https://formspree.io/f/mkovekgy" method="POST" style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+      <input type="email" name="email" placeholder="Your email" required style="padding: 6px 12px; font-size: 13px; border: 1px solid var(--border); border-radius: 16px; background: var(--bg); color: var(--text); width: 200px; font-size: 16px;">
+      <input type="hidden" name="_subject" value="Hickman Family Tree - Subscribe">
+      <input type="hidden" name="type" value="subscribe">
+      <button type="submit" style="padding: 6px 16px; font-size: 13px; background: var(--highlight); color: white; border: none; border-radius: 16px; cursor: pointer;">Get Updates</button>
+    </form>
   </div>
 </div>
 
@@ -2064,7 +2137,7 @@
           <div class="photo"><img src="photos/neva_daughter_car.jpg" alt="Neva Martin Hickman"></div>
           <div class="name">Neva Martin</div>
           <div class="dates"></div>
-          <div class="note">m. (1) Thomas Mudd<br>m. (2) Stanley Strong (div.)<br>died single</div>
+          <div class="note">m. (1) Thomas Mudd<br>m. (2) Stanley Strong (div.)</div>
         </div>
         <div class="person male small-person">
           <div class="photo"><img src="photos/pete_hickman_ii.jpg" alt="Pete Hickman Jr."></div>
@@ -2332,7 +2405,7 @@
             <div class="photo"><img src="photos/neva_daughter_car.jpg" alt="Neva Martin Hickman"></div>
             <div class="name">Neva Martin Hickman</div>
             <div class="dates"></div>
-            <div class="note">m. (2) Stanley Strong (div.)<br>died single</div>
+            <div class="note">m. (1) Thomas Mudd<br>m. (2) Stanley Strong (div.)</div>
           </div>
           <span class="ring">&#9829;</span>
           <div class="person male">
@@ -2540,7 +2613,7 @@
             <div class="children-row">
               <div class="person male small-person" style="width: 85px;">
                 <div class="photo" style="width: 30px; height: 30px; font-size: 11px;">DH</div>
-                <div class="name">Devin Hickman</div>
+                <div class="name">Deven Julian Hickman</div>
                 <div class="dates"></div>
               </div>
             </div>
@@ -3006,6 +3079,42 @@
   </div>
 </div>
 </div><!-- end dual-column: what's next + collections -->
+
+<!-- ============================================================ -->
+<!-- WRITE A LETTER -->
+<!-- ============================================================ -->
+<div class="section no-print" id="section-letters" style="max-width: 700px; margin: 30px auto;">
+  <div class="section-title">Write a Letter</div>
+  <p style="text-align: center; font-size: 13px; color: var(--text-light); margin-bottom: 20px;">
+    For 160 years, the Hickmans stayed connected by writing letters. The archive has over 670 of them. Bill Gabriel once noted that the younger generations had stopped writing. Let&rsquo;s change that.
+  </p>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 20px;">
+    <div style="flex: 1; min-width: 260px; max-width: 340px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+      <h4 style="font-size: 14px; color: var(--highlight); margin-bottom: 10px;">Letter Prompts</h4>
+      <p style="font-size: 12px; color: var(--text-light); margin-bottom: 10px;">Not sure what to write? Start with one of these:</p>
+      <ul style="font-size: 12px; color: var(--text); line-height: 2; padding-left: 16px; margin: 0;">
+        <li>What&rsquo;s the best thing that happened to you this year?</li>
+        <li>What do you want your grandchildren to know about your life right now?</li>
+        <li>Describe where you live &mdash; the view from your window, your neighborhood.</li>
+        <li>What family story do you wish someone had written down?</li>
+        <li>What&rsquo;s something about you that would surprise your relatives?</li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 260px; max-width: 340px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 16px;">
+      <h4 style="font-size: 14px; color: var(--highlight); margin-bottom: 10px;">How to Submit</h4>
+      <ul style="font-size: 12px; color: var(--text); line-height: 2; padding-left: 16px; margin: 0;">
+        <li><strong>Write it by hand</strong> and mail it to Peter</li>
+        <li><strong>Type it up</strong> and email it in</li>
+        <li><strong>Upload it</strong> using the <a href="#feedback-form" style="color: var(--highlight);">Contribute form</a> below</li>
+      </ul>
+      <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border);">
+        <h4 style="font-size: 14px; color: var(--highlight); margin-bottom: 8px;">The Promise</h4>
+        <p style="font-size: 12px; color: var(--text); line-height: 1.8;">Every letter submitted will be added to the family archive for future generations. Your words today become tomorrow&rsquo;s history &mdash; just like Roger&rsquo;s and Ruth&rsquo;s and Bill&rsquo;s letters did for us.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ============================================================ -->
 <!-- FAMILY NEWS -->
@@ -5352,8 +5461,8 @@ The original letters are preserved in the family archive but the ornate handwrit
 
     <div class="modal-bio-section">
       <h3 class="modal-section-title">Biography</h3>
-      <p>Neva Martin Hickman was born in 1939, the elder child and only daughter of Julian Kenneth Hickman and Neva Lee Martin. She was named after her mother. Neva married Thomas Mudd and later Stanley Strong, though the second marriage ended in divorce. She had no children.</p>
-      <p>After her father Julian&rsquo;s death in 1964, Neva remained close to the Virginia family. She held a collection of family papers and documents from her mother&rsquo;s side, which Peter Hickman collected from her friend Kami in 2020, adding them to the growing family archive.</p>
+      <p>Neva Martin Hickman was born in 1939, the elder child and only daughter of Julian Kenneth Hickman and Neva Lee Martin. She was named after her mother. Neva married Thomas Mudd on October 29, 1960, and together they had three daughters: Victoria Scott &ldquo;Vicki&rdquo; Mudd, Cammy DeSalle Mudd, and Emily Thomas Mudd. She later married Stanley Strong, though that marriage ended in divorce.</p>
+      <p>After her father Julian&rsquo;s death in 1964, Neva remained close to the Virginia family. She held a collection of family papers and documents from her mother&rsquo;s side, which Peter Hickman collected from her daughter Cammy Mudd Louth in 2020, adding them to the growing family archive.</p>
     </div>
 
     <div class="photo-gallery">
@@ -5604,14 +5713,14 @@ The original letters are preserved in the family archive but the ornate handwrit
       <div class="bio">
         Son of Julian Kenneth &ldquo;Pete&rdquo; Hickman Jr. &amp; Patti Glenn<br>
         Appalachian Trail &bull; Pacific Crest Trail &bull; Continental Divide Trail (FKT)<br>
-        Father of Devin Hickman (with Emily Anderson)
+        Father of Deven Julian Hickman (with Emily Anderson)
       </div>
     </div>
 
     <div class="modal-bio-section">
       <h3 class="modal-section-title">Biography</h3>
       <p>Brendan Carlyle Hickman is the youngest son of Pete Hickman Jr. and his second wife Jean &ldquo;Patti&rdquo; Glenn. An elite long-distance hiker, Brendan thru-hiked the Appalachian Trail, the Pacific Crest Trail in the summer of 2020 (meeting up with his father Pete&rsquo;s family on Mt. Hood during their cross-country road trip to retrieve Bill Gabriel&rsquo;s archive from Montana), and holds the fastest known time for completing the Continental Divide Trail.</p>
-      <p>Brendan has a son, Devin Hickman, with Emily Anderson &mdash; making Devin the ninth generation descended from the Back Creek Hickmans. Brendan lives in Portland, Oregon.</p>
+      <p>Brendan has a son, Deven Julian Hickman, with Emily Anderson &mdash; making Deven the ninth generation descended from the Back Creek Hickmans. Brendan lives in Portland, Oregon.</p>
     </div>
 
     <div class="photo-gallery">
@@ -6170,6 +6279,42 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+// "Suggest an update" button — inject into every modal
+function prefillUpdate(personName) {
+  // Close any open modal
+  document.querySelectorAll('.modal-overlay.active').forEach(function(m) {
+    m.classList.remove('active');
+    m.querySelectorAll('audio').forEach(function(a) { a.pause(); });
+  });
+  document.body.style.overflow = '';
+  // Scroll to feedback form and pre-fill
+  var form = document.getElementById('feedback-form');
+  if (form) {
+    form.scrollIntoView({ behavior: 'smooth' });
+    var textarea = form.querySelector('textarea[name="suggestion"]');
+    if (textarea) {
+      textarea.value = 'Re: ' + personName + ' \u2014 ';
+      textarea.focus();
+    }
+  }
+}
+
+// Inject update button into each modal
+document.querySelectorAll('.modal-overlay .modal').forEach(function(modal) {
+  var header = modal.querySelector('.modal-header h2');
+  if (!header) return;
+  var name = header.textContent.trim();
+  var btn = document.createElement('a');
+  btn.href = '#feedback-form';
+  btn.className = 'modal-update-btn';
+  btn.textContent = 'Suggest an update for this profile \u2192';
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    prefillUpdate(name);
+  });
+  modal.appendChild(btn);
+});
+
 // Lightbox for gallery photos
 function showLightbox(el) {
   var img = el.querySelector('img');
@@ -6614,6 +6759,16 @@ function clearSearch() {
       lat: 37.25, lng: -77.34, icon: iconMarry,
       title: 'Fort Lee, VA',
       html: '<div class="map-popup"><h4>Fort Lee, VA</h4><p><b>Henmar &ldquo;Gabe&rdquo; Gabriel</b> &amp; <b>Jo Ann Overby</b></p><p>Married 10 Jun 1961</p></div>'
+    },
+    {
+      lat: 38.91, lng: -77.04, icon: iconLive,
+      title: 'Washington, D.C.',
+      html: '<div class="map-popup"><img class="map-photo" src="photos/pete_hickman_ii.jpg" alt="Pete Hickman"><h4>Washington, D.C.</h4><p><b>Peter L. Hickman II</b></p><p>Site creator &amp; family archivist</p></div>'
+    },
+    {
+      lat: 45.52, lng: -122.68, icon: iconLive,
+      title: 'Portland, Oregon',
+      html: '<div class="map-popup"><h4>Portland, Oregon</h4><p><b>Brendan Hickman</b></p><p>Generation 8</p></div>'
     }
   ];
 
