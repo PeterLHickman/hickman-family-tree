@@ -752,12 +752,17 @@
   }
 
   .hero-crest {
-    width: 90px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
     height: auto;
-    margin-bottom: 12px;
-    opacity: 0.85;
+    opacity: 0.7;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+    pointer-events: none;
   }
+  .hero-crest-left { left: 30px; }
+  .hero-crest-right { right: 30px; }
 
   .hero-banner h1 {
     color: white;
@@ -1297,6 +1302,9 @@
     .modal-photo { width: 280px; height: 280px; }
     .modal-header h2 { font-size: 22px; }
     .tribute-photo { width: 160px; height: 160px; }
+    .hero-crest { width: 60px; }
+    .hero-crest-left { left: 15px; }
+    .hero-crest-right { right: 15px; }
   }
 
   /* Welcome & orientation */
@@ -1407,7 +1415,9 @@
     .modal-photo { width: 200px; height: 200px; font-size: 48px; }
     .modal-header h2 { font-size: 18px; }
     .hero-overlay { padding: 100px 16px 50px; }
-    .hero-crest { width: 65px; margin-bottom: 8px; }
+    .hero-crest { width: 45px; opacity: 0.5; }
+    .hero-crest-left { left: 8px; }
+    .hero-crest-right { right: 8px; }
     .hero-banner h1 { font-size: 22px; }
     .hero-banner .subtitle { font-size: 11px; }
     .tribute-photo { width: 120px; height: 120px; }
@@ -1538,7 +1548,8 @@
   <div class="hero-slide" style="background-image: url('photos/archive_reunion_1953.jpg')" data-caption="Hickman family reunion, 1953"></div>
   <div class="hero-slide" style="background-image: url('photos/archive_clare_1993.jpg')" data-caption="Clare Brown Hickman, 1993 &mdash; family historian, age 88"></div>
   <div class="hero-overlay">
-    <img class="hero-crest" src="photos/coat_of_arms_hero.png" alt="Hickman coat of arms — Toujours Fidele">
+    <img class="hero-crest hero-crest-left" src="photos/coat_of_arms_hero.png" alt="Hickman coat of arms — Toujours Fidele">
+    <img class="hero-crest hero-crest-right" src="photos/coat_of_arms_hero.png" alt="Hickman coat of arms — Toujours Fidele">
     <h1>Hickmans of Back Creek Family History</h1>
     <p class="subtitle">Descendants of William Roger Hickman (1813&ndash;1889) &bull; Back Creek, Bath County, Virginia</p>
     <p class="hero-caption" id="hero-caption">Lanty W. Hickman, Confederate States Army</p>
