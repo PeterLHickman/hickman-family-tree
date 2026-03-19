@@ -1594,7 +1594,7 @@
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; max-width: 700px; margin: 0 auto 16px; padding: 12px 16px; font-size: 12px; color: var(--text-light); text-align: center;">
   <span><strong style="font-size: 16px; color: var(--text);">10</strong> generations</span>
   <span><strong style="font-size: 16px; color: var(--text);">109</strong> family members</span>
-  <span><strong style="font-size: 16px; color: var(--text);">52</strong> profiles</span>
+  <span><strong style="font-size: 16px; color: var(--text);">53</strong> profiles</span>
   <span><strong style="font-size: 16px; color: var(--text);">1,729</strong> documents</span>
   <span><strong style="font-size: 16px; color: var(--text);">108</strong> photographs</span>
 </div>
@@ -1644,6 +1644,28 @@
       <input type="hidden" name="type" value="subscribe">
       <button type="submit" style="padding: 6px 16px; font-size: 13px; background: var(--highlight); color: white; border: none; border-radius: 16px; cursor: pointer;">Get Updates</button>
     </form>
+  </div>
+</div>
+
+<!-- What's New Section -->
+<div class="no-print" id="section-whats-new" style="max-width: 800px; margin: 20px auto; padding: 20px 24px; background: linear-gradient(135deg, rgba(139,90,43,0.06), rgba(74,74,74,0.03)); border: 1px solid var(--border); border-radius: 8px;">
+  <h3 style="font-size: 15px; color: var(--highlight); margin-bottom: 14px; text-align: center;">What&rsquo;s New</h3>
+  <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
+    <div style="flex: 1; min-width: 220px; max-width: 370px; background: white; border-radius: 6px; padding: 12px 14px; border: 1px solid var(--border);">
+      <p style="font-size: 11px; color: var(--text-light); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.5px;">March 2026</p>
+      <p style="font-size: 13px; color: var(--text); margin: 0 0 6px; font-weight: 600;">Four Ancestor Generations Added</p>
+      <p style="font-size: 12px; color: var(--text-light); line-height: 1.6; margin: 0;">The family tree now extends back to <strong>William Hickman of Somerset County, Maryland</strong> (d. 1765) &mdash; four generations before Roger. Includes Arthur&rsquo;s 1773 land purchase and Roger Sr.&rsquo;s Revolutionary War service.</p>
+    </div>
+    <div style="flex: 1; min-width: 220px; max-width: 370px; background: white; border-radius: 6px; padding: 12px 14px; border: 1px solid var(--border);">
+      <p style="font-size: 11px; color: var(--text-light); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.5px;">March 2026</p>
+      <p style="font-size: 13px; color: var(--text); margin: 0 0 6px; font-weight: 600;">125+ Archive Photos Added</p>
+      <p style="font-size: 12px; color: var(--text-light); line-height: 1.6; margin: 0;">Photo galleries expanded across all family member profiles with images spanning the 1890s through the 2010s &mdash; portraits, family gatherings, Sun Rise views, and military service photos.</p>
+    </div>
+    <div style="flex: 1; min-width: 220px; max-width: 370px; background: white; border-radius: 6px; padding: 12px 14px; border: 1px solid var(--border);">
+      <p style="font-size: 11px; color: var(--text-light); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.5px;">In Progress</p>
+      <p style="font-size: 13px; color: var(--text); margin: 0 0 6px; font-weight: 600;">Editorial Draft Under Review</p>
+      <p style="font-size: 12px; color: var(--text-light); line-height: 1.6; margin: 0;">Bill Gabriel&rsquo;s 33-chapter manuscript <em>&ldquo;The Hickmans of Back Creek&rdquo;</em> is being edited for publication. 464,000 words covering ten generations from Maryland to Bath County.</p>
+    </div>
   </div>
 </div>
 
@@ -2954,7 +2976,7 @@
       <ul style="font-size: 12px; color: var(--text); line-height: 1.8; padding-left: 16px; margin: 0;">
         <li>Organized 1,729 items across the correspondence archive from 1833&ndash;2022</li>
         <li>Indexed 78 notable correspondence entries</li>
-        <li>Built 52 interactive profiles with letters &amp; photos</li>
+        <li>Built 53 interactive profiles with letters &amp; photos</li>
         <li>Digitized 275 vintage photos from EPS/PICT formats</li>
         <li>Transcribed 50+ handwritten letters to readable text</li>
       </ul>
@@ -5067,6 +5089,91 @@ James Elliot (seal)</div>
   </div>
 </div>
 
+<!-- Rev. William Patton Hickman (1810-1864) Modal -->
+<div class="modal-overlay" id="modal-william-patton">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-william-patton')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo" style="background: var(--male);">WPH</div>
+      <h2>Rev. William Patton Hickman</h2>
+      <div class="bio">
+        23 Feb 1810, Back Creek, Bath County, VA &ndash; 11 May 1864, Cloyd&rsquo;s Mountain, Pulaski County, VA<br>
+        Presbyterian minister &bull; &ldquo;Profound biblical scholar&rdquo; &bull; Killed in battle at age 54<br>
+        Married Margaret R. Hoge &bull; Eight children
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>William Patton Hickman was born on February 23, 1810, on Back Creek, Bath County, Virginia, the seventh child of William Hickman (1770&ndash;1843) and Mary Elliott (1771&ndash;1842). He was born &ldquo;William Hickman Jr.&rdquo; &mdash; he adopted the middle name Patton in 1836 in memory of Elizabeth Howard Patton, the woman he loved who died of consumption in December 1834. She was the sister of his Washington College roommate, Dr. William Nicholas Patton.</p>
+      <p>In 1832, at age 22, William entered Washington College in Lexington, Virginia, to prepare for the Presbyterian ministry. He had a fellowship from the General Assembly of the Presbyterian Church to pay tuition, but relied on his family and the kindness of friends for room, board, clothing, and transportation. He earned both B.A. and M.A. degrees. In October 1839 he entered Union Theological Seminary at Hampden-Sydney, where he lived in a fourth-story room and survived largely on bread and tea. He was licensed to preach on April 23, 1842 and ordained an evangelist on November 12, 1842, at age 32.</p>
+      <p>William began as a home missionary in Pulaski County, southwestern Virginia, preaching at New Dublin Church, Walker&rsquo;s Creek in Giles County, and Newbern. He married Margaret R. Hoge, niece of General James Hoge and daughter of John Hoge, an elder of New Dublin Presbyterian Church. They raised eight children on his &ldquo;White Glade&rdquo; farm in Pulaski County.</p>
+      <p>In May 1853 he became pastor dividing his time between Blacksburg and Bell Spring Presbyterian Church. He opened a female school at Blacksburg Academy in 1857, teaching 33 scholars, nine studying Latin. He resigned from Blacksburg in December 1860 after a painful incident involving the attack on his eldest daughter Eliza Jane by a church member. He continued as pastor of Bell Spring Church until his death.</p>
+      <p>William owned a slave named Jesse, inherited from his father&rsquo;s 1843 will. His nephew William Taylor, the Methodist Bishop of Africa, published a pamphlet against slavery in England &mdash; a striking contrast within the same family.</p>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Death at Cloyd&rsquo;s Mountain &mdash; May 9, 1864</h3>
+      <p>On May 8, 1864, William spent his Sabbath with his family. The next morning, as a Montgomery County home guard company crossed Back Creek bound for the battlefield, the minister &mdash; wearing his high silk hat &mdash; picked up a gun and joined the guardsmen. His object was to minister to the wounded and dying, but seeing an invading army in his very neighborhood was more than his courageous spirit could stand, and he shouldered his musket and went into the thickest of the fight.</p>
+      <p>The battle pitted roughly 3,000 Confederate troops, militia, and home guards against 6,100 Union troops under General George Crook. Two future U.S. Presidents fought in the battle: Rutherford B. Hayes as brigade commander and William McKinley as a lieutenant in the 23rd Ohio.</p>
+      <p>William was defending a gun of the Ringold Battery alongside Lt. William H. Lipscomb and 29 men when he was shot. His last words: <strong>&ldquo;Do your best, boys, my work is ended!&rdquo;</strong> His son James Brown Hickman, just fifteen years old, was also wounded in the battle. William called to his stripling son to never mind him, but to fill his place in the ranks.</p>
+      <p>Union forces found William in civilian dress and considered him a bushwhacker, denying him medical attention. He lay on the battlefield Monday evening and all day Tuesday. Female friends were allowed to minister to him during the daytime but were driven away at night. On Wednesday morning, May 11, he was placed in an ambulance bound for Major Joseph Cloyd&rsquo;s house. He died either en route or just after entering the yard, two days after the battle, at age 54.</p>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">William &amp; Margaret&rsquo;s Eight Children</h3>
+      <ul style="font-size: 0.92em; line-height: 1.8; padding-left: 20px;">
+        <li><strong>Eliza Jane Hickman</strong> (1844&ndash;1872) &mdash; married E. J. Huff</li>
+        <li><strong>Mary Crockett Hickman</strong> (1846&ndash;1917) &mdash; married William A. Chumbley, a Confederate veteran who lost an eye at Second Manassas</li>
+        <li><strong>James Brown Hickman</strong> (1848&ndash;1908) &mdash; wounded at age 15 at Cloyd&rsquo;s Mountain alongside his father; later moved to Nebraska</li>
+        <li><strong>Emily Susen Hickman</strong> (c.1850&ndash;1862) &mdash; died at age 12</li>
+        <li><strong>William White Hickman</strong> (31 Dec 1852&ndash;14 Nov 1854) &mdash; died in infancy</li>
+        <li><strong>John Hoge Hickman</strong> (9 Mar 1855&ndash;1935) &mdash; went to Nebraska at age 17</li>
+        <li><strong>Kate Lyle Hickman</strong> (27 Dec 1856&ndash;1918) &mdash; married John M. Brown</li>
+        <li><strong>Leila Lowry Hickman</strong> (6 Dec 1858&ndash;?)</li>
+      </ul>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Correspondence &amp; Documents</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>&ldquo;Four Months and Not a Line&rdquo; &mdash; Letter to Brother Roger, 1833</strong>
+          <span class="correspondence-source">William Hickman (the son, future minister) to his brother Roger on Back Creek &mdash; his first year at Washington College in Lexington</span>
+        </div>
+        <div class="correspondence-body">I have nothing perticular to write you, but I would inquire wither you have forgotten how to write or not? you doubtless have, or you would have written to me before this time, four months have passed since I came here and I have not received a line from one of my relations, but I hope you have not forgotten altogether although you have neglected to write to me.</div>
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Obituary &mdash; Salem, Virginia, May 20, 1864</strong>
+          <span class="correspondence-source">Salem newspaper obituary, signed &ldquo;F. J.&rdquo; &mdash; eleven days after the battle</span>
+        </div>
+        <div class="correspondence-body">He rushed forward to take their place, and almost immediately fell, mortally wounded in the body. He survived until Wednesday morning. During the time he remained upon the ground he was denied all access of friends&mdash;a refinement of cruelty only to be expected from the enemy we are called to fight.
+
+Servant of God, well done!
+Rest from thy lov&rsquo;d employ;
+The battle fought, the victory won,
+Enter thy Master&rsquo;s joy.</div>
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Synod of Virginia Memorial &mdash; October 1864</strong>
+          <span class="correspondence-source">Memorial resolution adopted at Lexington, five months after the battle</span>
+        </div>
+        <div class="correspondence-body">The deceased was a profound biblical scholar, a devout christian and an able minister of the New Testament.</div>
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">In the Archive</h3>
+      <p style="font-size: 0.92em; line-height: 1.7;">48 letters from William P. Hickman survive in the archive, spanning 1833&ndash;1860, nearly all written to his brother Roger on Back Creek. Four editorial chapters cover his life in detail: <em>William the Seminarian</em> (Ch04), <em>William the Country Preacher</em> (Ch06), <em>William P. Hickman &mdash; A New Start in Blacksburg</em> (Ch12), and <em>Civil War Years</em> (Ch13). Bill Gabriel published a scholarly article on William P. in <em>The Smithfield Review</em>, Vol. III (1999).</p>
+    </div>
+  </div>
+</div>
+
 <!-- Roger Hickman (Patriarch) Modal -->
 <div class="modal-overlay" id="modal-wrh">
   <div class="modal">
@@ -5100,7 +5207,7 @@ James Elliot (seal)</div>
         <li><strong>Roger Hickman</strong> (1813&ndash;1889) &mdash; this man. Three children by Martha Ann Lockridge, nine by Margaret Campbell, six by Rebecca Ann Lowry.</li>
       </ul>
       <p style="font-size: 0.92em; margin-top: 8px;">Arthur&rsquo;s brother <strong>Sotha Hickman</strong> (1748&ndash;1831) was a pioneer of Harrison County, West Virginia. He was captured by Indians on the Little Kanawha River and taken to Ohio, later escaping during a grand dance and traveling four days without food. He drank &ldquo;rock oil&rdquo; floating on the Hughes River to cure his sickness from overeating bear meat &mdash; an early encounter with petroleum. His gravestone at Haymond Cemetery, Quiet Dell, reads: &ldquo;Va. Mil / Rev. War.&rdquo;</p>
-      <p style="font-size: 0.92em; margin-top: 8px;"><strong>Rev. William P. Hickman</strong> (Roger&rsquo;s brother) was a Presbyterian minister &ldquo;of unusual force and powers in the pulpit.&rdquo; Though exempt from military duty, he volunteered with the Confederate home guard and fell at the Battle of Cloyd&rsquo;s Mountain on May 9, 1864. His wound was a severe one through the thigh, and he bled to death before relief could be given.</p>
+      <p style="font-size: 0.92em; margin-top: 8px;"><strong>Rev. William P. Hickman</strong> (Roger&rsquo;s brother) was a Presbyterian minister &ldquo;of unusual force and powers in the pulpit.&rdquo; Though exempt from military duty, he volunteered with the Confederate home guard and fell at the Battle of Cloyd&rsquo;s Mountain on May 9, 1864, mortally wounded in the body. His last words: &ldquo;Do your best, boys, my work is ended!&rdquo; He died two days later. His son James, just fifteen, was also wounded in the battle.</p>
     </div>
 
     <div class="modal-correspondence-section">
@@ -7263,6 +7370,9 @@ document.addEventListener('DOMContentLoaded', function() {
     'Roger Hickman': 'modal-wrh',
     'Roger Hickman Sr.': 'modal-roger-sr',
     'William Hickman': 'modal-william-builder',
+    'William Patton Hickman': 'modal-william-patton',
+    'Rev. William Patton Hickman': 'modal-william-patton',
+    'William P. Hickman': 'modal-william-patton',
     'Arthur Hickman': 'modal-arthur',
     'William Hickman of Somerset County': 'modal-william-somerset',
     'Herman William "Bill" Gabriel III': 'modal-bill',
