@@ -257,6 +257,49 @@
     margin-top: 2px;
   }
 
+  /* Military service badges */
+  .mil-badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-top: 2px;
+    line-height: 1.3;
+    letter-spacing: 0.3px;
+  }
+  .mil-badge.rev-war {
+    background: #f5ecd7;
+    color: #6b5a2e;
+    border: 1px solid #c9b06b;
+  }
+  .mil-badge.rev-war::before {
+    content: "⚔ ";
+    font-size: 8px;
+  }
+  .mil-badge.csa {
+    background: #e8e8e8;
+    color: #555;
+    border: 1px solid #999;
+  }
+  .mil-badge.csa::before {
+    content: "★ ";
+  }
+  .mil-badge.federal {
+    background: #dce8f5;
+    color: #2a5082;
+    border: 1px solid #7a9fc5;
+  }
+  .mil-badge.federal::before {
+    content: "★ ";
+  }
+  .modal-header .mil-badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    vertical-align: middle;
+    margin-left: 6px;
+  }
+
   /* Family unit (couple + children) */
   .family-unit {
     display: flex;
@@ -1464,6 +1507,9 @@
       <div class="legend-item"><div class="legend-dot" style="border-color: #b85a8e; background: var(--female);"></div> Female</div>
       <div class="legend-item"><div class="legend-dot" style="border-color: var(--highlight); background: #fffcf5;"></div> Direct Line</div>
       <div class="legend-item"><span style="color: var(--highlight);">&#9829;</span> Marriage</div>
+      <div class="legend-item"><span class="mil-badge rev-war">Rev. War</span></div>
+      <div class="legend-item"><span class="mil-badge csa">CSA</span></div>
+      <div class="legend-item"><span class="mil-badge federal">Federal</span></div>
     </div>
   </div>
 </div>
@@ -1612,6 +1658,7 @@
       <div class="name">Roger Hickman Sr.</div>
       <div class="dates">c. 1740 &ndash; 1827</div>
       <div class="note">Revolutionary War veteran &bull; First to live on Back Creek</div>
+      <span class="mil-badge rev-war">Rev. War</span>
     </div>
     <div style="display: flex; align-items: center;">
       <div class="ring" style="font-size: 14px; color: var(--highlight);">&#9829;</div>
@@ -1659,6 +1706,7 @@
       <div class="name">William Patton Hickman</div>
       <div class="dates">1810&ndash;1864</div>
       <div class="note">Presbyterian minister &bull; KIA Cloyd&rsquo;s Mountain</div>
+      <span class="mil-badge csa">CSA</span>
     </div>
     <div class="person male direct-line" style="width: 150px;">
       <div class="photo" style="width: 65px; height: 65px; font-size: 22px;">RH</div>
@@ -1688,6 +1736,7 @@
           <div class="name">Lanty William</div>
           <div class="dates">1838&ndash;1906</div>
           <div class="note">CSA Cavalry</div>
+          <span class="mil-badge csa">CSA</span>
         </div>
         <div class="person female small-person deceased">
           <div class="photo"><img loading="lazy" src="photos/archive_mary_elizabeth_1880.jpg" alt="Mary Elizabeth Hickman"></div>
@@ -1902,6 +1951,7 @@
           <div class="photo"><img loading="lazy" src="photos/warren_campbell.jpg" alt="Warren Doc Campbell"></div>
           <div class="name">Warren "Doc" Campbell</div>
           <div class="dates">1893&ndash;1974</div>
+          <span class="mil-badge federal">WWI</span>
         </div>
       </div>
       <div style="font-size: 8px; color: var(--text-light); text-align: center;">m. 19 Sep 1927</div>
@@ -1976,6 +2026,7 @@
           <div class="nickname">"Gabe"</div>
           <div class="dates"></div>
           <div class="note">m. Jo Ann Overby</div>
+          <span class="mil-badge federal">Military</span>
         </div>
       </div>
     </div>
@@ -2436,6 +2487,7 @@
                 <div class="photo"><img loading="lazy" src="photos/peter_hickman_iraq.jpg" alt="Peter Lightner Hickman II"></div>
                 <div class="name">Peter Lightner Hickman II</div>
                 <div class="dates"></div>
+                <span class="mil-badge federal">USAF</span>
               </div>
               <span class="ring" style="font-size: 10px;">&#9829;</span>
               <div class="person female small-person">
@@ -4831,7 +4883,7 @@ In lieu of flowers, please consider a donation to the Five Valleys Audubon Socie
     <button class="modal-close" onclick="closeModal('modal-roger-sr')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo" style="background: var(--male);">RH</div>
-      <h2>Roger Hickman</h2>
+      <h2>Roger Hickman <span class="mil-badge rev-war">Rev. War</span></h2>
       <div class="bio">
         c. 1740 &ndash; 1827, Back Creek, Bath County, Virginia<br>
         Revolutionary War veteran &bull; First Hickman to settle on Back Creek<br>
@@ -4963,7 +5015,7 @@ James Elliot (seal)</div>
     <button class="modal-close" onclick="closeModal('modal-william-patton')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo" style="background: var(--male);">WPH</div>
-      <h2>Rev. William Patton Hickman</h2>
+      <h2>Rev. William Patton Hickman <span class="mil-badge csa">CSA</span></h2>
       <div class="bio">
         23 Feb 1810, Back Creek, Bath County, VA &ndash; 11 May 1864, Cloyd&rsquo;s Mountain, Pulaski County, VA<br>
         Presbyterian minister &bull; &ldquo;Profound biblical scholar&rdquo; &bull; Killed in battle at age 54<br>
@@ -5557,7 +5609,7 @@ On strength: &ldquo;In a way it was good, because for once I was in charge, I wa
     <button class="modal-close" onclick="closeModal('modal-plh-ii')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img loading="lazy" src="photos/peter_hickman_iraq.jpg" alt="Peter Lightner Hickman II, Iraq 2004"></div>
-      <h2>Peter Lightner Hickman II</h2>
+      <h2>Peter Lightner Hickman II <span class="mil-badge federal">USAF</span></h2>
       <div class="bio">
         Son of Julian K. &ldquo;Pete&rdquo; Hickman II &amp; Jean &ldquo;Patti&rdquo; Glenn<br>
         U.S. Air Force officer &bull; University of Oregon &bull; Arizona State University<br>
@@ -5905,7 +5957,7 @@ This bit of curmudgeonly snarkiness is simply too much to bear. I demand the sat
     <button class="modal-close" onclick="closeModal('modal-gabe')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img loading="lazy" src="photos/gabe_portrait.jpg" alt="Henmar Ruskin Gabe Gabriel"></div>
-      <h2>Henmar Ruskin &ldquo;Gabe&rdquo; Gabriel</h2>
+      <h2>Henmar Ruskin &ldquo;Gabe&rdquo; Gabriel <span class="mil-badge federal">Military</span></h2>
       <div class="bio">
         1936<br>
         Military career<br>
@@ -5946,7 +5998,7 @@ This bit of curmudgeonly snarkiness is simply too much to bear. I demand the sat
     <button class="modal-close" onclick="closeModal('modal-doc')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img loading="lazy" src="photos/warren_campbell.jpg" alt="Warren Doc Campbell"></div>
-      <h2>Warren &ldquo;Doc&rdquo; Campbell</h2>
+      <h2>Warren &ldquo;Doc&rdquo; Campbell <span class="mil-badge federal">WWI</span></h2>
       <div class="bio">
         Married Virginia &ldquo;Virge&rdquo; Hickman, 1927<br>
         Richmond &amp; Monterey, VA<br>
@@ -6675,7 +6727,7 @@ The original letters are preserved in the family archive but the ornate handwrit
     <button class="modal-close" onclick="closeModal('modal-lanty')">&times;</button>
     <div class="modal-header">
       <div class="modal-photo"><img loading="lazy" src="photos/lanty_hickman.jpg" alt="Lanty William Hickman"></div>
-      <h2>Lanty William Hickman</h2>
+      <h2>Lanty William Hickman <span class="mil-badge csa">CSA</span></h2>
       <div class="bio">
         22 Oct 1838, Back Creek, VA &ndash; 19 Sep 1906<br>
         Son of Roger &amp; Martha Ann Lockridge Hickman<br>
