@@ -173,8 +173,7 @@
     position: relative;
   }
 
-  .person:hover {
-    transform: translateY(-2px);
+  .person.clickable:hover {
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
 
@@ -620,6 +619,7 @@
   }
 
   .clickable:hover {
+    transform: translateY(-2px);
     box-shadow: 0 4px 16px rgba(212,168,83,0.4);
     border-color: var(--highlight);
   }
