@@ -1037,103 +1037,6 @@
     transform: translateY(0);
   }
 
-  /* ========== TIMELINE ========== */
-  .timeline {
-    position: relative;
-    padding: 10px 0 10px 80px;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 104px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--border);
-  }
-
-  .tl-event {
-    position: relative;
-    margin-left: 30px;
-    margin-bottom: 12px;
-    padding: 10px 14px;
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font-size: 12px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transition: opacity 0.3s;
-  }
-
-  .tl-event.hidden { display: none; }
-
-  .tl-dot {
-    position: absolute;
-    left: -22px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 0 0 1px var(--border);
-  }
-
-  .tl-dot.birth { background: #6b8e5a; }
-  .tl-dot.death { background: #999; }
-  .tl-dot.marriage { background: var(--highlight); }
-
-  .tl-year {
-    position: absolute;
-    left: -80px;
-    width: 50px;
-    text-align: right;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--text-light);
-  }
-
-  .tl-thumb {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--photo-bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--text-light);
-    flex-shrink: 0;
-    overflow: hidden;
-    border: 1px solid var(--border);
-  }
-
-  .tl-thumb img { width: 100%; height: 100%; object-fit: cover; }
-  .tl-text { flex: 1; }
-  .tl-name { font-weight: 600; color: var(--text); }
-  .tl-detail { color: var(--text-light); font-size: 11px; }
-
-  .tl-filter {
-    background: none;
-    border: 1px solid var(--border);
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 11px;
-    cursor: pointer;
-    color: var(--text-light);
-    margin: 0 2px;
-    transition: background 0.2s, color 0.2s;
-  }
-
-  .tl-filter.active,
-  .tl-filter:hover {
-    background: var(--highlight);
-    color: white;
-    border-color: var(--highlight);
-  }
-
   /* ========== MAP ========== */
   #family-map { z-index: 1; }
 
@@ -1293,10 +1196,6 @@
       order: 3;
       margin-bottom: 8px;
     }
-    .timeline { padding-left: 30px; }
-    .timeline::before { left: 54px; }
-    .tl-dot { left: -22px; width: 10px; height: 10px; }
-    .tl-year { left: -50px; width: 40px; font-size: 9px; }
     #family-map { height: 350px !important; }
     .modal { padding: 20px; }
     .modal-photo { width: 280px; height: 280px; }
@@ -1444,7 +1343,6 @@
       font-size: 28px;
     }
     .nav-toggle { padding: 12px; }
-    .tl-filter { padding: 8px 12px; min-height: 36px; }
     .tribute-dot { width: 14px; height: 14px; }
     .search-clear {
       width: 32px;
@@ -1513,7 +1411,6 @@
         </ul>
       </li>
       <li><a href="#section-tribute">Bill&rsquo;s Tribute</a></li>
-      <li><a href="#section-timeline">Timeline</a></li>
       <li><a href="#section-map">Family Map</a></li>
       <li><a href="#section-mystery">Mystery Photos</a></li>
       <li><a href="#feedback-form">Contribute</a></li>
@@ -1576,11 +1473,10 @@
 <!-- ============================================================ -->
 <div class="welcome-bar no-print">
   <p>Welcome to the Hickman family archive &mdash; a living record of the descendants of <strong>Roger Hickman</strong> who settled on Back Creek in Bath County, Virginia. This site brings together five generations of letters, photographs, and stories drawn from a private archive of over 1,700 documents spanning 1833&ndash;2022.</p>
-  <p style="font-size: 13px; color: var(--text-light);">Click any highlighted name on the tree to explore their letters, photos, and biography. Scroll down to explore the timeline, family map, photo archives, and more.</p>
+  <p style="font-size: 13px; color: var(--text-light);">Click any highlighted name on the tree to explore their letters, photos, and biography. Scroll down to explore the family map, photo archives, and more.</p>
   <div class="welcome-nav">
     <a href="#section-roger">Family Tree</a>
     <a href="#section-tribute">Bill&rsquo;s Tribute</a>
-    <a href="#section-timeline">Timeline</a>
     <a href="#section-map">Family Map</a>
     <a href="#section-mystery">Mystery Photos</a>
     <a href="#section-archives">Collections</a>
@@ -1612,31 +1508,7 @@
   <p>The Hickmans of Back Creek were kind enough to capture some bit of their lives and relationships in correspondence, and then carefully shepherd that correspondence through the centuries. Handwritten or typed lines share the thoughts, hopes, and concerns of people whose blood still runs in our veins and whose faces and names we borrow. The rich web of family history gathered here came from the simple act of keeping in touch &mdash; one letter at a time, sharing the details, challenges, joys, tragedies, and triumphs of life.</p>
   <p>The true mission of this website is to encourage reflection on the works of love this family undertook as their lives and fortunes took them far from home and back again. Their commitment to building family bonds overcame distance, disagreements, and time. This page is intended to encourage the continuation of that tradition &mdash; so that future generations can experience the joy of getting to know themselves through connection to their family, past, present, and future.</p>
 
-  <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border);">
-    <h3 style="font-size: 15px; color: var(--highlight); margin-bottom: 10px;">Write a Letter</h3>
-    <p style="font-size: 13px; color: var(--text-light); margin-bottom: 14px;">Bill Gabriel once noted that the younger generations had stopped writing. Let&rsquo;s change that. Not sure what to write? Start with one of these:</p>
-    <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 16px;">
-      <div style="flex: 1; min-width: 240px; max-width: 310px; text-align: left;">
-        <ul style="font-size: 12px; color: var(--text); line-height: 2; padding-left: 16px; margin: 0;">
-          <li>What&rsquo;s the best thing that happened to you this year?</li>
-          <li>What do you want your grandchildren to know about your life right now?</li>
-          <li>Describe where you live &mdash; the view from your window, your neighborhood.</li>
-          <li>What family story do you wish someone had written down?</li>
-        </ul>
-      </div>
-      <div style="flex: 1; min-width: 240px; max-width: 310px; text-align: left;">
-        <p style="font-size: 13px; color: var(--highlight); font-weight: 600; margin-bottom: 6px;">How to submit:</p>
-        <ul style="font-size: 12px; color: var(--text); line-height: 2; padding-left: 16px; margin: 0 0 10px;">
-          <li><strong>Write it by hand</strong> and send a copy to Peter</li>
-          <li><strong>Type it up</strong> and email it in</li>
-          <li><strong>Upload it</strong> via the <a href="#feedback-form" style="color: var(--highlight);">Contribute form</a></li>
-        </ul>
-        <p style="font-size: 12px; color: var(--text-light); line-height: 1.7;">Every letter submitted will be added to the family archive for future generations &mdash; just like Roger&rsquo;s and Ruth&rsquo;s and Bill&rsquo;s letters did for us.</p>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center;">
+  <div style="margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: center;">
     <a href="about.html" class="mission-link" style="margin: 0;">Read the full story &rarr;</a>
     <form action="https://formspree.io/f/mkovekgy" method="POST" style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
       <input type="email" name="email" placeholder="Your email" required style="padding: 6px 12px; border: 1px solid var(--border); border-radius: 16px; background: var(--bg); color: var(--text); width: 180px; font-size: 16px;">
@@ -2802,25 +2674,6 @@
     Traditional Appalachian &amp; old-time music from the hills of Virginia
   </p>
   <iframe style="border-radius: 12px;" src="https://open.spotify.com/embed/playlist/0UhXP3LbgDqEPRJDVdTdRe?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-</div>
-
-<!-- ============================================================ -->
-<!-- FAMILY TIMELINE -->
-<!-- ============================================================ -->
-<div class="section" id="section-timeline" style="max-width: 800px; margin: 30px auto;">
-  <div class="section-title">Family Timeline</div>
-  <p style="text-align: center; font-size: 12px; color: var(--text-light); margin-bottom: 20px;">
-    Key events from the Hickman family history, spanning nearly two centuries.
-  </p>
-  <div style="text-align: center; margin-bottom: 15px;">
-    <button class="tl-filter active" data-filter="all">All Events</button>
-    <button class="tl-filter" data-filter="birth">Births</button>
-    <button class="tl-filter" data-filter="death">Deaths</button>
-    <button class="tl-filter" data-filter="marriage">Marriages</button>
-  </div>
-  <div class="timeline" id="timeline-container">
-    <!-- Populated by JavaScript -->
-  </div>
 </div>
 
 <!-- ============================================================ -->
@@ -7694,216 +7547,6 @@ function clearSearch() {
     card.classList.remove('search-dim', 'search-match');
   });
 }
-
-
-// ========== TIMELINE ==========
-
-(function buildTimeline() {
-  var events = [];
-  var seenCards = {};
-
-  // Extract births and deaths from person cards
-  document.querySelectorAll('.person').forEach(function(card) {
-    var nameEl = card.querySelector('.name');
-    var datesEl = card.querySelector('.dates');
-    var photoEl = card.querySelector('.photo');
-    if (!nameEl || !datesEl) return;
-
-    var name = nameEl.textContent.trim();
-    var datesText = datesEl.textContent.trim();
-    if (!datesText) return;
-
-    // Get photo thumbnail
-    var thumbHtml = '';
-    if (photoEl) {
-      var img = photoEl.querySelector('img');
-      if (img) {
-        thumbHtml = '<img loading="lazy" src="' + img.getAttribute('src') + '" alt="' + name + '">';
-      } else {
-        thumbHtml = photoEl.textContent.trim();
-      }
-    }
-
-    // Parse dates: "1896-1979", "20 Jul 1813 – 14 Feb 1889", "b. 1933", "~1872–1954"
-    var normalized = datesText.replace(/\u2013/g, '-').replace(/&ndash;/g, '-');
-    var parts = normalized.split(/\s*-\s*/);
-
-    // Birth
-    var birthPart = parts[0] ? parts[0].replace(/^b\.\s*/i, '') : '';
-    var birthMatch = birthPart.match(/(\d{4})/);
-    if (birthMatch) {
-      var birthYear = parseInt(birthMatch[1]);
-      var key = name + '|birth|' + birthYear;
-      if (!seenCards[key]) {
-        seenCards[key] = true;
-        events.push({
-          year: birthYear,
-          type: 'birth',
-          name: name,
-          detail: 'Born ' + birthPart.trim(),
-          thumb: thumbHtml
-        });
-      }
-    }
-
-    // Death
-    if (parts.length > 1 && parts[1]) {
-      var deathMatch = parts[1].match(/(\d{4})/);
-      if (deathMatch) {
-        var deathYear = parseInt(deathMatch[1]);
-        var dkey = name + '|death|' + deathYear;
-        if (!seenCards[dkey]) {
-          seenCards[dkey] = true;
-          events.push({
-            year: deathYear,
-            type: 'death',
-            name: name,
-            detail: 'Died ' + parts[1].trim(),
-            thumb: thumbHtml
-          });
-        }
-      }
-    }
-  });
-
-  // Extract marriages
-  // Pattern 1: marriage-group h3 text like "Marriage 1 — m. 11 Jan 1838"
-  document.querySelectorAll('.marriage-group h3').forEach(function(h3) {
-    var text = h3.textContent;
-    var mMatch = text.match(/m\.\s*(.+)/i);
-    if (!mMatch) return;
-    var yearMatch = mMatch[1].match(/(\d{4})/);
-    if (!yearMatch) return;
-
-    var parent = h3.closest('.marriage-group');
-    // Find spouse name(s) inside this marriage group
-    var spouseNames = [];
-    parent.querySelectorAll('.marriage-header .person .name').forEach(function(n) {
-      spouseNames.push(n.textContent.trim());
-    });
-    // Find the parent person (the one who has multiple marriages)
-    // Walk up from the marriage-group to find the nearest ancestor with a .person .name
-    var ancestor = parent.parentElement;
-    var ownerName = '';
-    while (ancestor && !ownerName) {
-      // Check for a person card that is a direct child or sibling before this flex container
-      var prevSib = ancestor.previousElementSibling;
-      if (prevSib) {
-        var nameEl = prevSib.querySelector('.person .name');
-        if (nameEl) { ownerName = nameEl.textContent.trim(); break; }
-      }
-      // Also check if the ancestor itself contains a person card before the marriage groups
-      var personCards = ancestor.querySelectorAll(':scope > .person .name, :scope > div > .person .name');
-      if (personCards.length > 0) { ownerName = personCards[0].textContent.trim(); break; }
-      ancestor = ancestor.parentElement;
-    }
-    if (!ownerName) ownerName = 'Unknown';
-    var personNames = spouseNames.length > 0 ? ownerName + ' & ' + spouseNames.join(', ') : ownerName;
-    var mYear = parseInt(yearMatch[1]);
-    var mkey = personNames + '|marriage|' + mYear;
-    if (!seenCards[mkey]) {
-      seenCards[mkey] = true;
-      events.push({
-        year: mYear,
-        type: 'marriage',
-        name: personNames,
-        detail: 'Married ' + mMatch[1].trim(),
-        thumb: ''
-      });
-    }
-  });
-
-  // Pattern 2: inline marriage date text like "m. 18 Sep 1895" in small divs
-  var allElements = document.querySelectorAll('.family-unit > div, .couple + div');
-  allElements.forEach(function(el) {
-    var text = el.textContent.trim();
-    if (text.indexOf('m.') !== 0) return;
-    var yearMatch = text.match(/(\d{4})/);
-    if (!yearMatch) return;
-
-    var parent = el.closest('.family-unit');
-    if (!parent) return;
-    var names = [];
-    var couple = parent.querySelector('.couple');
-    if (couple) {
-      couple.querySelectorAll('.person .name').forEach(function(n) {
-        names.push(n.textContent.trim());
-      });
-    }
-    if (names.length === 0) return;
-
-    var personNames = names.join(' & ');
-    var mYear = parseInt(yearMatch[1]);
-    var mkey = personNames + '|marriage|' + mYear;
-    if (!seenCards[mkey]) {
-      seenCards[mkey] = true;
-      events.push({
-        year: mYear,
-        type: 'marriage',
-        name: personNames,
-        detail: 'Married ' + text.replace(/^m\.\s*/i, ''),
-        thumb: ''
-      });
-    }
-  });
-
-  // Also catch the PLH + Ollie marriage date (different HTML structure)
-  var plhSection = document.getElementById('section-plh');
-  if (plhSection) {
-    var plhDateDivs = plhSection.querySelectorAll('div');
-    plhDateDivs.forEach(function(d) {
-      if (d.textContent.trim().indexOf('m. 18 Sep 1895') !== -1) {
-        var mkey = 'Peter Lightner Hickman & Ollie Gertrude Lockridge|marriage|1895';
-        if (!seenCards[mkey]) {
-          seenCards[mkey] = true;
-          events.push({
-            year: 1895,
-            type: 'marriage',
-            name: 'Peter Lightner Hickman & Ollie Gertrude Lockridge',
-            detail: 'Married 18 Sep 1895',
-            thumb: ''
-          });
-        }
-      }
-    });
-  }
-
-  // Sort by year
-  events.sort(function(a, b) { return a.year - b.year; });
-
-  // Render timeline
-  var container = document.getElementById('timeline-container');
-  if (!container) return;
-
-  events.forEach(function(ev) {
-    var div = document.createElement('div');
-    div.className = 'tl-event';
-    div.setAttribute('data-type', ev.type);
-    div.innerHTML =
-      '<div class="tl-year">' + ev.year + '</div>' +
-      '<div class="tl-dot ' + ev.type + '"></div>' +
-      '<div class="tl-thumb">' + (ev.thumb || '--') + '</div>' +
-      '<div class="tl-text"><span class="tl-name">' + ev.name + '</span>' +
-      '<div class="tl-detail">' + ev.detail + '</div></div>';
-    container.appendChild(div);
-  });
-
-  // Filter buttons
-  document.querySelectorAll('.tl-filter').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.tl-filter').forEach(function(b) { b.classList.remove('active'); });
-      this.classList.add('active');
-      var filter = this.getAttribute('data-filter');
-      document.querySelectorAll('.tl-event').forEach(function(ev) {
-        if (filter === 'all' || ev.getAttribute('data-type') === filter) {
-          ev.classList.remove('hidden');
-        } else {
-          ev.classList.add('hidden');
-        }
-      });
-    });
-  });
-})();
 
 
 // ========== INTERACTIVE MAP ==========
