@@ -2976,7 +2976,7 @@
       <ul style="font-size: 12px; color: var(--text); line-height: 1.8; padding-left: 16px; margin: 0;">
         <li>Organized 1,729 items across the correspondence archive from 1833&ndash;2022</li>
         <li>Indexed 78 notable correspondence entries</li>
-        <li>Built 59 interactive profiles with letters &amp; photos</li>
+        <li>Built 60 interactive profiles with letters &amp; photos</li>
         <li>Digitized 275 vintage photos from EPS/PICT formats</li>
         <li>Transcribed 50+ handwritten letters to readable text</li>
       </ul>
@@ -5147,6 +5147,54 @@ Enter thy Master&rsquo;s joy.</div>
     <div class="modal-bio-section">
       <h3 class="modal-section-title">In the Archive</h3>
       <p style="font-size: 0.92em; line-height: 1.7;">48 letters from William P. Hickman survive in the archive, spanning 1833&ndash;1860, nearly all written to his brother Roger on Back Creek. Four editorial chapters cover his life in detail: <em>William the Seminarian</em> (Ch04), <em>William the Country Preacher</em> (Ch06), <em>William P. Hickman &mdash; A New Start in Blacksburg</em> (Ch12), and <em>Civil War Years</em> (Ch13). Bill Gabriel published a scholarly article on William P. in <em>The Smithfield Review</em>, Vol. III (1999).</p>
+    </div>
+  </div>
+</div>
+
+<!-- Mary Elliott Modal -->
+<div class="modal-overlay" id="modal-mary-elliott">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-mary-elliott')">&times;</button>
+    <div class="modal-header">
+      <div class="modal-photo" style="background: var(--female);">ME</div>
+      <h2>Mary Elliott Hickman</h2>
+      <div class="bio">
+        1 Apr 1771 &ndash; 18 Oct 1842, Back Creek, Bath County, Virginia<br>
+        Daughter of Capt. James Elliott, Revolutionary War militia officer<br>
+        Married William Hickman, 20 Jun 1799 &bull; Mother of nine
+      </div>
+    </div>
+
+    <div class="modal-bio-section">
+      <h3 class="modal-section-title">Biography</h3>
+      <p>Mary Elliott was born on April 1, 1771, in Rockbridge County, Virginia, the daughter of Captain James Elliott, a militia officer in the Revolutionary War. Her father&rsquo;s service record would later be used by their descendants for membership in the Daughters of the American Revolution.</p>
+      <p>Mary was 28 when she married William Hickman on June 20, 1799 &mdash; an old maid by the standards of her day. William was 29. Together they raised nine children at the new home he built for her, the house that came to be known as &ldquo;Sunrise,&rdquo; which would stand on Back Creek until about 1976. Five of their nine children left Back Creek to seek their fortunes elsewhere &mdash; Patsy to Rockbridge County, William to become Bishop of Africa, William P. to Blacksburg, Huldah to Illinois, Andrew Johnson westward through West Virginia, and Arthur to Missouri. Only the youngest, Roger, stayed on the home place.</p>
+      <p>Mary&rsquo;s sister Martha Elliott McClure wrote her shortly before her marriage to William &mdash; the earliest family letter in the archive. Mary&rsquo;s nephew, William Taylor (her grandson, who became Methodist Bishop of Africa), described her: &ldquo;She was a fond mother, but bless her good soul, she let me have my own way as the lawful sovereign in playing my own playthings.&rdquo;</p>
+      <p>Mary died on October 18, 1842, at the age of 71, a year before her husband. Her son Roger wrote to his brother William P. Hickman in September 1842 about their mother&rsquo;s declining health. Three of her grandchildren &mdash; including Roger&rsquo;s infant daughter Harriet Ellen and her own son&rsquo;s wife Martha Ann Lockridge &mdash; would die within a year of her own passing.</p>
+    </div>
+
+    <div class="modal-correspondence-section">
+      <h3 class="modal-section-title">Letters</h3>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Martha Elliott McClure to Mary Elliott &mdash; c. 1798</strong>
+          <span class="correspondence-source">Mary&rsquo;s sister writes shortly before Mary&rsquo;s marriage to William Hickman &mdash; the earliest family letter in the archive</span>
+        </div>
+        <div class="correspondence-body">Loving sister    I take this opertunity to inform you that we are well at present thanks be to the giver for it   hoping these fue lines will find you in the same state of helth   I have nothing strange to only that my daugter groes very well and I call hur  Mary for yo   Alexander desier to be rememberd to yo  and I desier to be rememberd to my brothers and sisters and to P. Betsy Keneday and all the rest of my old neors and aiquents.  no more at present but remanes your loving sister till Deth.
+
+Martha McClure
+
+please to equse my bad righten for had my child to nurse</div>
+      </div>
+      <div class="correspondence-item">
+        <div class="correspondence-header" onclick="toggleCorrespondence(this)">
+          <span class="correspondence-arrow">&#9656;</span>
+          <strong>Joseph Elliott to the family on Back Creek &mdash; 1840</strong>
+          <span class="correspondence-source">Mary&rsquo;s brother writes from afar, lamenting the long silence</span>
+        </div>
+        <div class="correspondence-body">I have neither received or heard a single Solatary word from any of you Since I parted from you in your own State&hellip;</div>
+      </div>
     </div>
   </div>
 </div>
@@ -7699,6 +7747,7 @@ document.addEventListener('DOMContentLoaded', function() {
     'Roger Hickman': 'modal-wrh',
     'Roger Hickman Sr.': 'modal-roger-sr',
     'William Hickman': 'modal-william-builder',
+    'Mary Elliott': 'modal-mary-elliott',
     'William Patton Hickman': 'modal-william-patton',
     'Rev. William Patton Hickman': 'modal-william-patton',
     'William P. Hickman': 'modal-william-patton',
