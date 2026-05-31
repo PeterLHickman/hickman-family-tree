@@ -1638,6 +1638,11 @@
   <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
     <div style="flex: 1; min-width: 220px; max-width: 370px; background: white; border-radius: 6px; padding: 12px 14px; border: 1px solid var(--border);">
       <p style="font-size: 11px; color: var(--text-light); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.5px;">May 2026</p>
+      <p style="font-size: 13px; color: var(--text); margin: 0 0 6px; font-weight: 600;">More Photos in New Modals</p>
+      <p style="font-size: 12px; color: var(--text-light); line-height: 1.6; margin: 0;">Bishop Taylor and Lockie Mower now have full photo galleries &mdash; Taylor on horseback in mission territory, Lockie with her four young Mowers in 1912. New portraits also added to Roger Lockridge, Robert Sidney, and Virge.</p>
+    </div>
+    <div style="flex: 1; min-width: 220px; max-width: 370px; background: white; border-radius: 6px; padding: 12px 14px; border: 1px solid var(--border);">
+      <p style="font-size: 11px; color: var(--text-light); margin: 0 0 4px; text-transform: uppercase; letter-spacing: 0.5px;">May 2026</p>
       <p style="font-size: 13px; color: var(--text); margin: 0 0 6px; font-weight: 600;">Naming &amp; Tree Polish</p>
       <p style="font-size: 12px; color: var(--text-light); line-height: 1.6; margin: 0;">Tree cards now show <strong>Hickman surnames</strong> consistently, the wives who married in display their full married names, Sotha and William of Maryland appear as Arthur&rsquo;s siblings, and <strong>Bishop William Taylor</strong> is now a clickable card directly under Patsy &mdash; his mother.</p>
     </div>
@@ -3669,6 +3674,18 @@ John A. Robinson</div>
           <img loading="lazy" src="photos/archive_roger_1975.jpg" alt="Roger Hickman, July 1975">
           <div class="caption">Roger, July 1975</div>
         </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_roger_5_28.png" alt="Roger, May 28">
+          <div class="caption">Roger, May 28</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_roger_office_car.png" alt="Roger's office and car">
+          <div class="caption">Roger&rsquo;s office &amp; car &mdash; medical practice</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_roger_ann_nell_1949.png" alt="Ann and Nell, 1949">
+          <div class="caption">Ann &amp; Nell, 1949</div>
+        </div>
       </div>
     </div>
     </div>
@@ -5145,7 +5162,7 @@ In lieu of flowers, please consider a donation to the Five Valleys Audubon Socie
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-bishop-taylor')">&times;</button>
     <div class="modal-header">
-      <div class="modal-photo" style="background: var(--accent2); color: white;">WT</div>
+      <div class="modal-photo"><img loading="lazy" src="photos/archive_bishop_taylor_portrait.png" alt="Bishop William Taylor"></div>
       <h2>Bishop William Taylor</h2>
       <div class="bio">
         2 May 1821 &ndash; 18 May 1902, Palo Alto, California<br>
@@ -5160,6 +5177,28 @@ In lieu of flowers, please consider a donation to the Five Valleys Audubon Socie
       <p>Converted as a young man, William entered Methodist ministry in 1842. In 1849 he was sent as a missionary to California during the gold rush, where for seven years he preached on the wharves of San Francisco and became known as &ldquo;California Taylor.&rdquo; He then spent the next two decades as a self-supporting evangelist on five continents &mdash; Australia, South Africa, the West Indies, England, India, Ceylon &mdash; pioneering what he called &ldquo;Pauline missions,&rdquo; missions that supported themselves through honest trade rather than denominational funding. He was a fierce abolitionist and published a pamphlet against slavery in England that contrasted sharply with the slaveholding among some of his own kin on Back Creek.</p>
       <p>In 1884 the Methodist Episcopal Church elected William Taylor <strong>Missionary Bishop of Africa</strong>. He was 63. Over the next twelve years he established mission stations along the Congo and across Angola, Mozambique, and Liberia, traveling with a granite endurance that astonished men half his age. He retired in 1896 and settled in Palo Alto, California, where he died on May 18, 1902, at age 81. He was married in 1846 to Isabelle Anne Kimberlin.</p>
       <p>Bishop Taylor&rsquo;s autobiography &mdash; <em>Story of My Life</em> &mdash; opens with a long meditation on his mother and his Hickman uncles and aunts, and is among the richest written sources on the early-19th-century Back Creek family. Bill Gabriel drew on it extensively for the narrative history.</p>
+    </div>
+
+    <div class="photo-gallery">
+      <h3 class="modal-section-title">Photo Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_bishop_taylor_portrait.png" alt="Bishop William Taylor">
+          <div class="caption">Bishop William Taylor</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_bishop_taylor_wife.png" alt="Bishop Taylor and his wife Isabelle">
+          <div class="caption">With his wife Isabelle Anne Kimberlin</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_bishop_taylor_horseback.png" alt="Bishop Taylor on horseback">
+          <div class="caption">On horseback &mdash; missionary travel</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_bishop_taylor_1893_dedication.jpeg" alt="1893 book dedication page">
+          <div class="caption">1893 book dedication page</div>
+        </div>
+      </div>
     </div>
 
     <div class="modal-correspondence-section">
@@ -5462,7 +5501,7 @@ Enter thy Master&rsquo;s joy.</div>
   <div class="modal">
     <button class="modal-close" onclick="closeModal('modal-lockie')">&times;</button>
     <div class="modal-header">
-      <div class="modal-photo" style="background: var(--female);">MLM</div>
+      <div class="modal-photo"><img loading="lazy" src="photos/archive_lockie_1940s.png" alt="Lockie Hickman Mower"></div>
       <h2>Mattie Lockridge &ldquo;Lockie&rdquo; Hickman Mower</h2>
       <div class="bio">
         13 Jul 1879 &ndash; 19 May 1967<br>
@@ -5483,6 +5522,32 @@ Enter thy Master&rsquo;s joy.</div>
     <div class="modal-bio-section">
       <h3 class="modal-section-title">In the Archive</h3>
       <p style="font-size: 0.92em; line-height: 1.7;">Bill Gabriel devoted an entire chapter to Lockie and her sons &mdash; Vol 3, Chapter 20, &ldquo;Lockie and the Mowers&rdquo; &mdash; running over 22,000 words and including letters, photos, and the full Cass story. He also published an article on Frank Edwin Mower&rsquo;s rescue of Cass in <em>Goldenseal</em> magazine (Summer 2000), &ldquo;How Frank Edwin Mower saved Cass.&rdquo;</p>
+    </div>
+
+    <div class="photo-gallery">
+      <h3 class="modal-section-title">Photo Gallery</h3>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_lockie_1940s.png" alt="Lockie, 1940s">
+          <div class="caption">Lockie, 1940s</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_lockie_children_1912.png" alt="Lockie with her children, 1912">
+          <div class="caption">Lockie with her children, 1912</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_mower_frank_edwin.png" alt="Frank Edwin Mower">
+          <div class="caption">Frank Edwin Mower &mdash; eldest son, founder of Mower Lumber Co.</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_mower_donald.png" alt="Donald Roger Mower">
+          <div class="caption">Donald Roger Mower &mdash; later president of the company</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_mower_marjorie_1925.png" alt="Marjorie Lockridge Mower, 1925">
+          <div class="caption">Marjorie Lockridge Mower, 1925</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -7872,6 +7937,10 @@ The original letters are preserved in the family archive but the ornate handwrit
         <div class="gallery-item" onclick="showLightbox(this)">
           <img loading="lazy" src="photos/archive_robert_house_cass.png" alt="Robert's house at Cass, WV in winter">
           <div class="caption">Robert&rsquo;s house, Cass, WV</div>
+        </div>
+        <div class="gallery-item" onclick="showLightbox(this)">
+          <img loading="lazy" src="photos/archive_robert_s_portrait.png" alt="Robert Sidney Hickman portrait">
+          <div class="caption">Robert Sidney Hickman</div>
         </div>
       </div>
     </div>
