@@ -1,8 +1,19 @@
 # Hickman Family Tree — Website Maintenance Guide
 
 This is the authoritative reference for how **hickmansofbackcreek.org** is built and
-maintained. If you're a new session (or a new person) picking up this project, read
-this first. It lives in the repo so it stays in sync with the code.
+maintained. It is written for **any maintainer — a family member, a web developer, or an
+AI assistant** — picking up the project, possibly years from now, on a different computer,
+with no prior context. Read it first. It lives inside the repository so it can never drift
+away from the code it describes.
+
+> New here and just want to make a small text fix? See **[`README.md`](README.md)** — you
+> can edit directly in your web browser with no software installed. This file is for
+> deeper changes.
+
+**Guiding principle:** everything needed to maintain this site must live *inside this
+repository*. Do not rely on notes stored on one person's computer, scripts in a temp
+folder, or any one tool. If you discover something the next maintainer will need, add it
+here and commit it.
 
 ---
 
@@ -174,7 +185,35 @@ GitHub is the primary copy, but a snapshot lives in Dropbox in case of host issu
 `index.html` and new photos there after major updates. **Do not** put the live git repo
 inside Dropbox — git + Dropbox sync conflict.
 
-## 10. Quick facts (update these as they change)
+## 10. Succession & access (the non-code lifelines)
+
+The code is safe in GitHub + Dropbox. But the **public** site also depends on two things
+that live outside the repository. Keep these recorded somewhere the family can find them
+(a password manager, a sealed document with the estate, etc.) — this is the project's
+"bus factor."
+
+1. **GitHub account** — the repo is owned by `PeterLHickman`. To continue maintaining the
+   *live* site, a successor needs either (a) login access to that account, (b) to be added
+   as a collaborator on the repo, or (c) a fork/transfer of the repo to their own account
+   (the site can be re-pointed to publish from there). The full history clones with the
+   repo, so the content itself is never locked to one account.
+2. **Domain name** — `hickmansofbackcreek.org` is registered with a domain registrar and
+   renews (typically yearly, paid). If it lapses, the friendly address stops resolving,
+   but the site stays online at the GitHub Pages URL
+   (`https://peterlhickman.github.io/hickman-family-tree/`) and the domain can be
+   re-pointed via the `CNAME` file once re-registered.
+
+> **TODO for the owner — fill in and store securely (not in this public repo):**
+> registrar name + login, domain renewal date, GitHub account recovery info, and the
+> names of anyone else who should have access. Without these, a handoff after the owner is
+> unavailable becomes much harder.
+
+If GitHub Pages or the custom domain ever fails entirely, the site is still fully
+recoverable from: (a) any git clone of this repo, or (b) the Dropbox snapshot in
+`14 - Website/`. It can be re-hosted on any static host (GitHub Pages, Netlify, Cloudflare
+Pages, plain web hosting) by uploading these files — no server required.
+
+## 11. Quick facts (update these as they change)
 
 - ~67 modal profiles; the homepage "interactive profiles" count text is near a
   `Built NN interactive profiles` line — bump it when you add profiles.
